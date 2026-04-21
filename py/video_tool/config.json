@@ -1,0 +1,33 @@
+{
+"api_list": [
+    {
+        "name": "飘零资源",
+        "url": "https://p2100.net/api.php/provide/vod/at/xml/",
+        "format": "json",
+        "searchable": true,
+        "enabled": true,
+        "group": "MV", 
+        "note": "正常，支持搜索"
+    }
+    ],
+    "mpv_path": "mpv",
+    "request_timeout": 10,
+    "max_concurrent": 5,
+    "page_size": 50,
+    "max_pages": 3,
+    "enable_ad_filter": false,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "ad_domains": [
+        "ad.", "ads.", "doubleclick", "googlead", "googlesyndication",
+        "adservice", "adserver", "advertising", "advert", "promo"
+    ], 
+        "speed_test": {
+        "enabled": true,
+        "timeout": 5
+    },
+    "health_check": {
+        "enabled": true,
+        "interval_hours": 24,
+        "auto_disable": true
+    }
+}
