@@ -1,0 +1,4480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"激活"</Description>
+      <Options moHideChildren="1" moDeactivateChildrenAsWell="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+processName = 'JH-Win64-Shipping.exe'
+MainRec = memrec
+decodeFunction('c-rlJX;:UNd0/s^P0wIJ?B+Yrwn/K8,9J*71n=5XB/nr}1CkaG5ftT@hUo#(B+z{iz%v6LPB!eG0Rf3R6Dz)XMz%ytv^$mde%[7NcI/9_0xVjT[DA,P,4uCaD{j];(Rgg0,ao?.-(fVw02q,:vz[/$=U0SG]s)Pa]o8+)s.{yucaG-z$c;,BOTHt=5-gE8ae#!sb.ng2#%SAVh$U3jQY?7ma#XUKP##]uStLtTl2Qp-txA=cG?=P#ae%oNCH..=#vP4J6P;J8iKM9bwus^ByljGy)}6}(o3Ok@MR[7GSSAfENf2vXu=,ED*gVdLnn/e%C-/f.o[:rI.qm+?gkt:?w2E)XCT.QfnY6;;[os:3?%z(%zR3e:i@m@GJ3Rhi8rlKz2h%FP$wO)2#})@NJpQoa@on,=#A,37/FKT/^Sp3lw+R=@?AwN5-_.CC-{$JB?BB+/_G:lca-ZRE?^*L4FMU=TFMTde7{o#!w2E*=SlZ)8$I:duKb_Hrj6a?M?lDRAEgnCcc6j],)nP]dU![%ilPA(@k3W%ic;D]#636%#)ki}m7t/Dxe@DWKi9Qm*kL1a.![%Jh.!maFFT_fptN148)iV?OOFKONr8H@5[=OZuzRA.Ri@rc%J3Ri3.]DKR#;sx5oel@ST7X[BRPyC4qzyq?FZo,yI}?:vblk{hhgjsC3Sn!17;2y)Anyd)PhD}ygbAI7yg(wY7Sg97ZxDvOvygX(^4J(0br2=0vF_1-wW#f0N2cikLiOv)THBI)=E{)I]orh:,y3EKll1StmbLd2AXhr1L0dI!tNnG(zJWYzL*fza=Xxbv:^KIGtr-7=ZQn;-[eMgccR;6/e:_GzAu:u/Bttbq2Xv%.VrBJ%0.Ut%kS/}RQb@B08qj[1AQ:PLlw?HX?+X5R@$$Ovt$mo-lkXDcrG8;bmW1UKYVDg?^X;M./1B%C^#ew+@AI[bU-rLk;#M?HIn3g*,Nwx/WPtTU8$Uu@fS(]ns^;c4uf^wQeDhmbz2EyL@lkDZyv{KW?ivQZGx2RqTSG*!rSGnWhGZoTzPH93i$kPW]Y(u8-e;fWI^aPxkSpSnlb!si[zsRCgnOm]%6R_u9MlOsMy/IB-#M9@!uPX!E7?6-E?btAupESYYp:}M$Mfu+9GJrQvo*]rG#HkHaIgOQoO04M!g*D)KRfA[t3f$k%%u-V$WNsigzc1O#k*59eG$L;qKIF/n4L5ueKVnNSLU_y2MFJ)AD,VZv)gg(t%AM.;%WwpJPbHGLR_f3%/tijT65vOwKsUZtF51)%GT{/)iHiqkIz?KlSkk=M.-pIz4@8G!n{J5cmP_u(-{z[zHAN_JqOHkC0^DapZ@@GR.jG+h+:H5ge?I5E0x=4Gn3C1N:MlBv)G/x//YNQdB8S}nz=FE?kqXCrr7e=Z,}g[]TO7a^MZ{!-FxNnXIWyn,EXr/${BcKu.(9TF/2.7OrwV;MvtDavi8BS@p48b%;e7z?aEV4diHO:[r^}:w^D+On,HWjP-EmnZ:ApX@0yxTvp-_4nS5oiR4kf/Rkj2gyepS4W:rK@mM9es^1jU.cyh2^W:9JJqcl8^gM7/!LqlG8msuQTO0}4zJi)TXjFyj;]@;;od5E/g(KHM[qxr%R0GLu4DL]YFL%}eBG=FPDFW#B2RGET,J6U_7R4Tw5qr3J(@kmh9cOq9V:T0JEWPfg.V6r8:@L;Nm^7980wLN.?V6ND6f,g/WGw=C(fl=VAG0W_$C%jpF+c:]Jz,NBFS}O2oJzy%xwde5Ridk+H),9MSKqD+pPnzw27:ZQy$ShY,wx94piGh4_I9K[2]zM3iVKjzIyfT*,?bGA%eR*s=LW.Rzv*xxNSQ0?nQ09sDgb!N_SlA7?01H]svlSu0;t,j5Rv{lZ?X)(os##]BA:HPx7YRwkCGRIs+$v)HqFBE%TB),Xz1lFV7hD,x5#RjltwW;3BVKYMU-3Shuk:.RqX25nSF*qU!77kAV?D2]0P$XwBX{89s1+u9mX+V}BFurZ7.(BjKfj{D4*4gYR[w#a@MwM05xlQdFg/YZD3FpDzH8L1R3Y5L;2/[_=kbHIt6o8U@zdN[?}.mKm0^xXPj!evDV0wOD%DT!$h5ck1Am:S8ab(_tL6LvjHt+[X?AyBZhy]Xe8Vr]k=W0?A9=WdbD#O}ckaD;_M#vu]XAu$TaVg5^=2]?/yaMlDPKI(vFV]q;xD5DQ=P$Srl-4q!zOq-JK,t[77Zes4fwOMyPw5HSr,R/O0*v9yStblEDf2I0uLw@O6B(q^iGXUqUOqXSIlz8g!yL/@[=6ZC;1IlZ-2#8X;*{[X;eU%H8:S2@xCe?(d(5(p!Go+p!LbJc=1Rt+cC4%GObVY+M@Oqo!gSB*W}S%XsVn$5d.Uq.9wXW3WJq:2n}Y,BVmRx+d2uK2tr,+VX!L/ZVZE*!r/mGxCMfh)E,SK-HmksuENMjX}fGTLYsrorXaL22z3RapzIxfpxY0Keqd-I2#Fr@*F33r21A2EXdnpjp*H%$BxlBYu3^qn?]wRA:aGb9fSnz0_2H42rGW{=!r^].Xu)[uv26ax)P{]-0gls}yHnkIO1}quxii)-mFn!o^^ooN*,YsZ0DGKUeh#G,asy@z9W-.aT:Zj(Mb./h*q=ahTsnrMl0FEX2dal)+XGXt1[Iz(x/!tzO/A5gIE+8m7GwOeVlJf}[MivL-5WM-=oW5{1XCmgRSf0)z39Qlw*CgrTdKM)ip7uNM_hWzS[:6i#T4LsZXf0i=l!OJy#4}b2z75vib{W5onQ0OG:Jdd4r/5Sk2XWO0m$:s-CTTkW;P1-e[OYvI/u*QTFSV=!,TekkN1WeIK}@Ros0KK)l#F+5!eQ)qCed:7cuj+AnpbMnEJ$V.JB%gYI$y@=tX8Op[XXM7S5E*W@M=EZq6WVxIKOQ]bM/Q(ETUh0:x#KMTe/jbUOZhBT}4qDIWRI)b0Wor8HU_G+O[2$k{A1Iya=m-vVgyP[e{y.@9w15zIZ0D?Rfmu788RVO^2*J@M224;rkgd.hj%P_Y@rG?!?jkC^W,LhcA9YzdC%j$,jWF%3GMXe=I,mVgFS,$#VJsD%mC9Z{m]k{*fsMWMuRyYk#qmmfcW/$KnZZ,?Gt7%lo860)UYT*=ol,-S9:RVtvPfTGtLib;Em8@+kmF{8+hzFqbObljJR%jSG5VV*4huHU*,mV5HWt)$M?JDMLE0V#VcB)WQ:JpPp^[kH+By/flb^PS1tefZ7qJqC)0Xvy*i({!p=@?7T%?iAkq*%;toJ}RwHXNe)DOUk8[pr+nQR=YpG#9DAD%g1ts[U^K0d^0rNwI0U#Ey8}3[W$TLAF3%8Awy#[@caRls838O=adu8wtqqLO0/;s.z+c7J3)h[?AL,Qtu(72%77uWysLD}95##9[Iv#zOEK$+4w%3I?{S(*koubG#^fR3WpDZw#xQY=iXUKqrLq6bFP@^h+f,0y]s/e._N7.#7E5Hj#wSNdhH[lDV#_,JwFt[}9Unf{vs:@e=CDS5IhsR,ud5t23x%E(/^/FCbvGZaR!1t@Zo6$?pmOV]p/x[]TL),Sw@ffK!QQfU@OnsUZ_{aP;z1xtk5-2ZH=LoxJeb,h$E$3(ETKP9^%pix8$2s]G;$:B%ERTB3DqGFSt?lMNTQUSSBW+D,2oAv*{A46pTgz2bE-wq1Wa%uo1/icQU.1;yT67QDEsYidq1CeV6OSrTx7v9]s.w[o$yE]29]5lS*5Q,x)1qumUJELoH^gPfC$U[F$hmXo,pX0nyF35O]1rfE,H3+ZA{wRtp2Djy:ako5O=Op$s}[sH)R)[GAO1wkk4oy*OD6Ha@4Jo/Et;Y=Kl4Nfw#@,$:crh-e*gA@n?2^Fe#ILXaxcpcCo}Pd=k-FJ-#/rGz+*)[m)CDu=n8_?Q^2x^86BjH,h{L1{dspj+VL=i90IEsv1Fj/C0lICAD5lgTd3tkV/G4-aE-.9pB?YPIg,;Si.eHJxj2oH%2._D/Ey1G+19xD},9r3DXxXm(+LXSteKj:D^3^f%?5O#DE/bg+?:U]7D+4G%HPp/Yw.yDr*h[w--p*hJL@9ty(?pn{GVmkdEDB,{N!Mt0I0FdXcL#]8@+DNVLhP+2A,w%oJSs=1fM5[CAH5IO-6qmujS!,R}kxE8*W65$l)yIA+w:bk!N5a5fU}i3MA63p{@.$/Tt6.Sh0v$Q8=m(dvbdUv=adM1G#ctO.n%ghu5FO[SHCM8=VB!:9#u2I.mcA5v9$wL]6OTO%[7pV4fYNESI}Tl7gP1]@9WqyCilDBjS8xqb6^)kKF;jIzlX-vQ72dG8WPh4.gQQ,Y.pD53:z5H7kB7kb$5,S0QCn@lSQG,/;OYGX(h?=rA9k1*A@0{V0z2k]unAQ;e;GN,-ugR?1ocwG_jN0qO+#Pdb4CaXePP;C$_15QJ52{Po9=_;KB%TksCQw2JKu[ZIMBfac8GMxk?xw18)+Q5zai#=!gF#=k1Tnz;s+XUsMd0I]2ozbm2hR?W/7:KS%.w^nB(*7fX2x)n[2^+?217Z{I0E0)aTf;?EY]:M.%2xQWeZT/r6bmQW4L(4N15bEICSMsT/W6dpXgxUXo8WpEJO{td#SqtmlSvk5/ACJn0MkjJ+ra2?quOzx%A^u1-s_C-(#B*]]^,V[U$D+h!1Gb00m[noo1v{4+jA8]NlUbK2B[eo/pyny_CZazmUM2r^K)VEu5DL7]=Uodo]a[ZPm.7?qsJu]DUD3%Y7E}qHI-A{tWGFUn,:p!J5zIOKxy?xyy+_rHa6ggb$g7n1=colO@.oy+^5Ig/B{1)IBB20Ns7d!,V}-BiixtdiKitoFv{NG9ol]V5iU](rMVH%x],0cdWzNZ$wvB39LSaTpByn,OQuw.[T]S?qENzDl-v4[mX2$cKCooXArQVih6{Y!D-DQMrC@Q8UsOWnl-J!%=2N!uMmbEDws_{XnTra%X/SnYaw^3SZ?@;M2*O^9RGT8=GO:P.qGHHfJ6m$Bs-LWy8ZPt)leWV,I9%GEA2K:5EStsja4BPQD,NZ!2WpjjKs_)^T^#rgJtszTz-3E=LT.pD[BUyM1*kIJ#7O%dWP!k,kT,qoDKz(imE/9t(.d[t)tzC[avW+3wcHwmDyLy8u5oON+tInZSdLlKb[C]Ej4+4O;QD_}FpZ{+JxsSHKGmn*NIEqlb._s@m}YxPP#h2yhS1ibjX+hcN,xF_IW{tp@8h{(TX!W{r)}V3Sc.q;d,K(/mr:iWZ5/SydWKlCB_EZ3,A=nJRe3B9O^3ZcMl42?^.^#dP}DQoWoV04:iguBXfl3)r[pnUQ$L9I?p:z_IuyX0bk4Bo(C+Xe-}Bz#PNT-6bdbgRH+_G{,(3:J8=s+j,yhkIE)NyGv1$g+e!f-.lvps@StRW*KP@*l1$h+%lKXoEQopzT5H9C=q$O::oB[CA%C^Sukj4Z(XSsBYp.:Jy6mFD@xShI2MWvg9mMNqqD%W5KaM)ELoTxbCOqhkg:Tt%IF;WkXafW+GR7x;r1ZG@7wNy)(Tt?]-z3[a7D+/g:.Dw)80wnzoq2sF86d.1tz.35e=}#ZMlt9-wj+O{hQYR3Xgs_5%!Jwx#4nr!E;;4GjY7)0T1r3_,r*db,1@fk:$XG8?-K:KOAkSo(2X]rbcvjMb-Bw!%s*aZ)2YD9at0qPMFGH2?v.QZj8WbK)PT=?+@5sh7:*jm1NBJg(H%QW-FzH^1Lj{X/X)Dt^P2;r9p627og%zR@cgNR(vV(B91[Tx7$1wT-5z?}%q!yqnYP@%htoI1s)BS$Kk4nrlPta;*yXA1RLgvMM13s_,B)72_-V.z}3CDYq^5{vIc{lk:(LE*h;pJ0,by]:,yA6wnX]PTkgK,Z?]R-GO#lyBt$,Q6_V-{kQ:CH/c/H)3,rd.-tJQ,vWOU7he8/WUv-J+k%6-VZT!*55m(#l0eRDgNCZdeS/b5Vz,Bm:WzgxCF:A.cfTpf18-Ob#-OTr_eUdoxq/0fvl4v3kd+.@P,#.s9e_F!msb$rwCN4492V..I6wykf.1h^/t[7?$nl.hBPGC{YKY+?ZZ}NpI#td[1E.Jyzn{81@mGvf632fN;^QtF6!gE3w+1TG/Q05SbMpf./!O=P;Tn.9SbUH!XNBApU]m!gu4*0^AXK/3usw,x}ZD@zwjjPr$d}O)xh23I5K(d)0v!Ys@Lmf(00TBP{+]Xa;=_A(s7nk?I7}Enes$GqLH!))xCPv!^WUvkEzP8uX}K*5(Kp^NmKa+fg)]Z/xb4[Kr;Se!iCp*#06-t8Dn-]_e;(4[AhFm#SJp$atx90ozK/u$EEK/A-w9982.oJief)6iUZovc:FoVKH2}Y!Jw7X]qkbMk]y2D%zf,xzDVO7OE[H7$$I*r=gc^JtsgwAIKF)P1bfim#@.67Yd-2fQsQ_k9$+lxu]S=difC7dRp[vd@MjdpgzKPHXAkekSRnL],^9ne[l12N3X#1DxasxZGo.$Ewp_76?o)@ThIUirZW8=aPvojoBy7w)Q!+7)}d=ifpxhIB/;_+Q/MfzdM385O2AfhE/9aJBB0}YX-6k+:xhV_Uh_x!D3!@30d_8nMN;e2^CloU4g,kz:0Y1;KCf_#8o,]FJe6]8(2acqO[Rp847mjPFVPENp%MvM]Z-Vpp7iFWZ8L)FD$,:MD0%#GZ,,c+q(QkAyl)w?FnT}GULZ7)P?=ZG/(p0)r5EWWkh-B?Ujmg46iS01huYW+EYdfeD-=W9pbe6b0=.hu+A%}az)bRezOl0t69Y{4mDl1ePCz.(Ho?sX!1J20W4SG(hATmcR{[[)EMWPN!z3K1Bw*kycGsgCO#2OsFNA/;CvS-lFY]Z*h!h^8S?]gSmMT28xV+MVlvw/Heq$oT85#5dIZYbzBY6Jlx88]/.+Izp?cbXqh!ss5F%FHGa8(xBMXsqatZ8HB]gb(G)?*?eTeNA[uiGZjm:HD%]DS3sUjos4iMV^qqoH%PKE$q{5AiwfCrx@TDvm.b:OY_)kZIDe1QqOpl9qRQt4IUU8Hf!doCfKG(@T-u:%eIi*g:@6rt[dJ.#!,SIrpN62$(pTK2Ez?sL(Fj(G2/M:jW%eyuZ?L+W44mUUM5{Z?_=$:B,da;?DK#67g)l)$)vb3-hkV-r,59rHEyrVzd.xxy!.O$X{k};OVXR:-,L=sFCq6v*%c@0u5%!w,y:4MrkM?aIF@7u0+.RHr:O=CM=/=im;,qx4sHDO96Zx?11g.he%%{2G$0ON8D^djbE7hyw$kSiY9-+YSU;ogyW[I]q4!xu8IE:[gV[6QM$EBE8hq3PTtD,@$WCe0$PVOk1YZnpAM;@^5o%,!sULy2h+w,v:G]zHJkFq*KxZ;-b+73RSUR3]D=1*Qen%wgCDuAf5ZB/5g*Ai^R8]@NpCg,^0:dzSI,5.P)xsHz@q.a*)Xyc,{%OKM,*/2Hjegcm:twk/b;lKv=$[Vc4!a+)5yNBVNII%2Ye_fkS,5]!U^:)FBgdS6u@.qry?k$+rWvpsZH#qdVXXpqh3oK*TD[zz/Wg#,ZJi!8moEJ/f{EU#rIch)uN%XAEL.vmhJMDN+oTN25gYebulwYIM0F2SrM354%=3[Eyx?EG?MCLANA__0rnDT@,#Y:wo,WV)jW),L!5.:5}m!n$tP?02G(Y)9pD[.?8dLNwSZX{Dd%xWcU;qfN#wkyh:pfd#=W.#UDHY2sL?%8(}spbj8E!hMz2xyay_qm,G/s^Fi*Fo#L(i941.9r2I-xeQg#[}3_F3#v;waKxcWq5Ll6h%p^#a)cIp{WlT-eDThSnk7H{+K?iWJ;v2kZ2,+JxUlf;G:e6*r;k*ip{uz)fHXm5kP)RH#3HQ*-*ah_rU%d]Hoo@)Keeht^rL%?wd^E=$pi/Q,l/_K_eTw7EV4FXYYI;oJVH-zDO.+2)lYQL:2z)lt#]jiGj5.z@MCALXZeAP$M0UI?gtOd,0m1@/[C5?$:DQ;D}r3_rk1^gL7tuvCH.uvCxp_iRi,gX$3BhLTgt27/,hsGB)Yp,eVM%,Sw6_UN#gZ@D$8ia.lgGUPD^FLx}Xz*6fZesFH8?z=VCRqCufZr#uwmpKiUJq,on2V?)?TERbTh4.eLmuO,Ixw{!7@JNM$sNv7)2g9do;28MGzR(]ohy-7K{u4PIlF-i+/c8,vlEswsS-[;aqWywOP}_fr{(x}uJHCtb%q%9G3G!XMOMik$b/7s1MDHj,)_{c,2UU6zIVMQ#mKm%/7zRZMvTC8Wp,JA(er5u!ji[uCws[+l#NYKYPe3v(gmAt,5O,A6fH_MTOs2;X.aW^v50SxwHlFwMF-E)djTijWw:EHhW.++)nve,T-ft9,u6T=wFuAGO[4=8B:-hJr*ZYIATR[++{D!dQcIgx3q0K$LV{bI209R9kknvfGN[Fu]!^rTa)CNy!u)S2XVNw%CFgLO]QGboS00$S^MFCDao=9Of68t]X7;a9GlI.t-w;I)4i%)D1!+O$$uUk_=j+5,,{3GvL0)dXybO:L;JjpqG;9!l$jk7@%kapnwg7nn$*T9w/RyFLW%%S)8?rkQ@C]vd0kQ](*D_YC8x_+{/:g{OH$,R/PBpBBf0q.6!W5*HR@3;ThPF1Pp=O5pa@//FFF+J6j!YAR]5eGs/Z0La+drJXhyjVkU,BOk]V1$EP}S*p+M[Htjsppc*WzHK-ehcC*d{);ZjX4Iw[J=[?ytD*kWT?30^(GC2n]qnZgcF]fKW8#TWc%?h*Jt=garh(Ouirp3y3BlEFcgY?@HeMGRPjt6XjdDSAhGlF61GyMYE9SVaS7$$c8,x+6K0TH;M^u#3M2}4tZXIJm).f3k0]nN;)*BYjq$^[]dX-N1+OxjI429h?nZT$e/m94uao*T[:j4u7Kpzpk52:orZdsG3W#2p(5nr%VP?i%PFWA%1JjF-k8gjfT@mWC8X6A@1xJ9p*5_cOq?WQB#6i97^nRnad#;XZLBNVDV0lE7gvs%6.l}e;]a36+T/BETDP.ZPIgX7EIXx/UZbWA7}Y8_i0[:LG1LUI[3dOF.uD4xcc(6$sBYmrCe!i]tW%klDc=z4/J4NXUl[FgEiey0HulR=Pa2-yY3v^}@%rpmP+I@Bvj,BEBT8lmiC??{0GMK5NRYK-7QHBsu]J}8t-q+?+Fg)GEdh7[,/!PlY0{#?O[GM4QlJwXo_m.LiGo{@=/$tZC=t.t7}/ho$-@z,AIMAcaL:]nRfeo@os#3t.([]k^)x6LR(^TzRBx/gIrfbG(!?*iodlN;(QTl[:)mn=(SDyjKkB2dksz.5*=+2$R^Juv[kFcroEmp]5_[3TWSY2fUH48Ho($!)*3im;Y*FG_%uU1jbK5+EDm9lG8CyHW5fJf2G-5paA_zic2DM_kYOc)Z^74L!jmtu=kVY6stw?{z!Ox1[*6m)Mb!?x+*rl+go[Nc8e%%_7Ju(/Ix7R1xdk!w%s)C]y-+Ih{tubVQ+DPV?t.0gT(ECNm[T%r_;p3yS4z=xxao05YhX;!2dym$C%fG[p],Ny4(Xq{j3PM]!C)e:C?xfAYFjr.oUZjtn2v]g]^Oxa9(S(XwKJyoE-uI0i8DArK;$6W;e*xXY[Qt:t_BY^d[RW7ccI8]-G-3BY0Qe98zkcwm:m-2L+zZC:SQ-+XCn@a1!.2@gzlMrApO*VG%:s)d^BBeA.O[zck36m86Te{z#U-A{q6xZTc:3UwpT@}}hro1k!E]yQby!*T9b1/pW^JUByN1pwzIcZ]uI]C/$n!Ad.o?D6h/8214N*%MA/rw2hl{=qCd9kEka)AfVu1LDa$I}vxn+Mp6XH82#J9YF[?0u.AxHPbcMQaL4}TCC#JA#!=.a4{5WgUK.#:Y3dyS;VaB1d^GZ[;6cyUpm7AFEGgLu{lEzHGDVn!qsujpXoUWk,aDHQYa;8!jR#QXOZ6ypx$MR9tB^*ijfH)iC@]Ekczhu*F$HqIgVR(jWeOOQp0f0/v^r,!^:5$ca(KK_FZwn;l[m0v5zPrPnDvH]anm!#kaky_jbkfqjS;il/r_MdSMR$G%oRy*N6tCi:lS]ApO4XoDf]E@,B)p_Zce+s1thtFP;(:w?I=zwz,VJ7Q_X+]_s+mpy_-h@(]4*7MfO{,g6zbm:^=fKg12EHxH@XVqailq#uGr?AXcNRms.?U7.TS6NiyBV{,#Rb,%n}Ub[uEMJL8SH-v)ab-5jm(AD;Uk9@Is3=4Uuouw(/X:_Bd3j)fBd[m4Z4ieh6+?GEBX}[N:DrF+J[@iZHW6t5cf5MxRVhvEKkV}%9%J9#fA^YD1r@)El]K[q^mzANpGDP:qM1,Q1,61A/jj#;_5Y$zK90CbjSkHh:dEO-/_arV)wIoptyzaN*T6ELm[lb.(B[S:}rvAq8Pg1VIX=J.+6oStbv8S%3w-?*W;et^*vmrRlm+UqwZgU23tepfF/z8fkyfZiEkdk(E.L8TWcs28/fRg$2e,2vF]$EO;sr9*!*.]eKUUK%[8Ke#jLFB.0@]%cAf#1ZANotMbb!IqAXt17}W9RE7]1f)q-cio^)s4LegVHHrT^=w1)o+8)rRM,ha$Zp9X%Pi:3JfF1rgIo^4b;[a.v5.sOMz+(cV7:ZOyd](QpC*3O;IhI(:ceF3zx2{;o95pR7A^r6$@(Z;A8P9ra:F26kq@UuI,MR/[U)s+1P.9%B-/BBw[6T%ZjrxU79AF[1nayM=7oOh?-.X*eKVXO;U97i)bY1a@L5E]M,Sid,GoE2CZ,,A?XZyx7I(^iBS4}vtnM^}uY0]AiI$LeA?OzgVhJa[vO,p6LOaV0!(7DFF/mc)gu4C=IiPqSV9yjE.S!wJB7r,S.vUJ-Cnkx(9DOT5DaZJOBcR5X=BvI$uW;?wvL=w@ZJce{tUIZPv4$[;+w;JjMg1?Y!$E1NU_4;Ns_HzKhta*P1383W#jREP3KL_f%oW8tbR9ut5D22KNfBRRZ;CgNKYIiuX98Gi}+sBzk4zmK#DbcGIxHi!z]DFo;uCD7T^Kk5imQc+QAUxj{$/z:8v(=4fhl3%8-06jL80datij6oS[xUI@;1r/P*u{**mmT=0ia]ZZS=L@0hd6x/38(jPdQ$5]Qz_YaX!l#)*njOU!o]s@*OsZ;3P*CoR;e]wT.K.Xnx*)U#-NxDJ-cqTsw.FCyc4%07Q;w;EZ47R:5Z4]SNo6+sZr;c#;Nk4sr#i0Dh34-8foplYlJBOW[,Kl0Bme/Dmg4vb*PgGl]C;kYz28D*WgRVC.8*,rk+*z!+E%4k0kJPzIs[zg9!$$_3YImf0g7ahJ@GY^A_DszUxhz;s}8wa.QUWBflrk)sqy?}@b0Jh+W[o((racWaxO=),!RPy/i2sW2Z$mDrYkUew?1SB4IBnN/1j57!YmKwMqubJ(GYpN7.bx80HX%U0:!q7k#K@*;N!SDJH3HpPMm)9?+@j;5^,hymH[7XeYzHOB+pFJ4i6ZA(.{Js%tKVGq]2+sLt?8rE_jyqa!@LI/76DZkBh:H=hAa3]fZ!HBMbHVTk%j[;ZLDIanNhIm4(*(tpx/(i+yL.!n]QlP$/Tw7ipU$?h$gD,6DQXaKs=I4%?54X%%)2P;1c,fpMB7Gup+4ZbRIS#Az#{^})eMaW?jDOCbHFNIJybNSwAo]lU!Z#N9{oE]^]$Bk2%#BXPP6)q9pATO.H4o@YYx:;X+b.:rj@lMbMOy{(2.?)l_N]%a3Awb#4qGLr5?)#c(SUA-$zSMQ3H[tKq6x*Vt!]?Hh_BIWl+%6sWfB.ARmlRmF{U!.6rq]a5zMADr_I?vGM]F!q)%x4Me;ESRz]yC/eyDxB;*7%cO*{wdwS]}T5-6U!Kr;{6jckU*Vz:+LvV9GY/9o#JyuNOT*.[3nKyHLhC?EpI2bOAUr@AFDxmQl_M.Pc_v54]lF)V=(^s[wEF]hzZ^XJ5aNTHL+WSIDZS8Z:sNbGH*s0Wzj!?t)AKigQFy4jtR)-Dh=q[Y,E]j8fV39C}gQu0yTI%lWG5=TUztt-3lpS=lh-hHotd.BK}LznL4J3-9V:OHlcl2k(Mpc5dHomhRrsH#$%]SwRKq#-[FdzbdWe=rOepXm^]4pq7oDpo3-jDGeXe(03((JBo*)l;oR2vLP[,#is5cxVaM}A-@pxOy1nhR*P?UZRUGR#Upo+,=gNFSA+0oovdAKBt]Fu36r}7TW_,apBa_h,9]ZB]bNybuyI=vS+zGeZvfxk3F5k)H$hQ[v8Y56V5E6[x0i}gatQD4@tR-CPK/.:Xv/D8n_9@$oL,.3JFxnE/tU]xX(y5RSGk8S.#d.7e:c,Zh}7jOY^f.cqzm?}qL/T!YoyU?;ip%b?VdHixgvUTU0[2-Zm^!i$63s5UD=0kU[clBe4S)An_P9!_N0x:H9T]{,ga!mn{%a+z@h^OuY}{]r/+H3v9xDh9a2(0Y2o*Hqu)1{1F:F6O;QAMaSJcs?L=0GXDz9Ug/9%[qfxwIC84VIaiVk0Hm/ouC:_krA=^8RU%@0,N:$E}R2.s9in+@o/@?eRu1$rvpx81m7iha7A8B-{=zr^pxApm;eg_6RIG;kl1NlO{da[T/^*KM$S(#+3ok39VWU,=Hr?[qa8[699]z?G+m3IGz;LzOG9_2Z(am;VTi)/w}E^,+1u]p*P8+wgX?Pq]U._U3[%8{5:TA?1MM4AAs2sI4ipuSGHlQcN21U7JxrpchPO?)Q$NDFM:W;^h=:3,:7g4-_#zdfnhElLZZArqn?*6LfKyVro7fRUTSyOH+n[UEew6J^^p7uEiS.HD)6Oco=VCV%+FesHu/Jy}gY7RS+(fS)f[M:kd;.HaY!M-hCif$=5#t;n1yecNXMC*_(itg!Ib?ELWI(I%ljO?rAGcQtyE+r#!pC@p7+iO(:$%ka;=jfeIv8hD//=DV]+ISl@E6V#A_S1Qa/sAC4:XIy*nhiweg39JXhmt32di:Iyw[ajLBq]VIUlUkl{rzD/,r^J,_lT+=}TALULv(GdIiPthz[%K7/Wkf.W/Vl=cFkng=Rx=7F:D^Wf3}A^4MQJE=m5IK9Bk{e6-a}r{xszrYhz#hdPyqI62-.hr4Su^;I$kh]j,jGuJ:a24X*SPz7i${cT.A1qmDd6^c,I*EYe9m)19@v8fEJrWK=NbJ2}]Foq/o^h3B8[[#RH[eEaI1jd.tB^XS]EVF0dwCGRe9s;9t,1@7a#)+f1T_dYqRZ.Ysoa/5@R-[8P86@.dis7(sYS]5JCMV}bnuk;CFXq^yC=')()
+
+
+[DISABLE]
+decodeFunction('c-nnc(2Jk.6n}peoQ;m,)/BEzq^;1ODgp@ZgIYMv,Kz*mf/hd*R%]FrS-KzAdX[d@I#!XYQUqzkM?6YnFQt40RaLkUsceLh%Kw3#/iwE,2j0eCV{n;{c7E@u-u(LYH=#KB%YjjZC%3iuQ+ojaRlW2M@q/ogsnWL.@*GzKfWk94pAsM/JVq)ZQ2^X[]Gw;UC4VUSL6;y(zMtw45A]cC$UqMHD;%?v#ApV[M5d#efjq]F-}]MGp_o]rG3?WgpAvsxj=paSMHWmUU?]m@V,fd7*Evc^hB@8[oRB#5V..}$0#^*HKBf!GJ^@S)Iwckr1r^6oBg;87M*vnd!E6Ynq}ktAZIDx9eGU=XoGx*RKFBpBPN,lqBrc2%/r_aojSl6LIC@3zpTuFW2lI6{rG1^qobq@NsquKL3V(W!.rAOjZmLk(#u-Q9Q:D-WKFfzocoq{bUr/WXIfhdrPv5^kOFl_OK13fRz?)t$:]!+X4m%iD,Ut5T5}f-QN7_Z^Z:_gqYLbT5Uk8)to{?u1rTr:5cpa5udpOD]#bSTjT9f@JAnjAep]-@%NjoWNC.y_Cq?,D1=O*R9]B!lk?GJ:Y.s8ke-N31;TMqMyYO+?[y-kuRdv3,5w!IUGHh2f}Xgcp0mP@zXe6O*GN#t0*;^}T%c]g{i^UTbsd+oz!vuv_]VB1.GsTpNX.z7,cIEz-OxlSUjV!38@!=MlDJ*K:YynDZOd$.xZgXUKcns*=A*B=X6t=[*5B((=.rs:bKec7sWGK:.Kb3A^u9gx^9/Ys;8^Cv(qbiu/e:;D;iSk=/%KBM$)$Kd4,qP0G^,Whg$gKOV5w.NsS:,?WGPp%W}.QQ,bd$$gM]k=jmR,sx?Z=E}]T^7O/x!2seSICj@!+6aLUV9j!qc85ab^]==#6_[)e$:z;Y#n]fgJ=P5tL40l=r{Y%;,BK-q82!Firgm)882S2Y(+j0nrE^Jj4uY+u4D98fNhM;+osj+4$1[TN)7]%6@#lbu[8Ch7f8ZqhFNeqtKwNsJIu+PN2[!0Tcv/Aq8S1A@m=5,C7aE?Xn3W.fY.)Fe9Tg6^#?!?CY5/LHJ=tUUrMF%ohBy)+Jo8Mg!#oyr^vjW]d/npIb]FV)^0-.6V0ns;WrUXdR.GONg]_5cBg^bG_EW!@Jm-ph;F1*PRrCQ:?-sEN0NgJ$W%UX%hB}LGR]fxO5*D?YpnjJ.V=3;i0:irYPpOgG6v[@/^D!r)ee=$;Us7mc2v^fGq}YrHw=GR$ee8Tx]Hji#;}(B(YVf+UM6uYryWP0z.D6u-;x%1$MDKCv*!P2bOWWo,_Kh4PWB*]')()
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"主角数据"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>0</ByteLength>
+          <Address>[GameEngine]+DE8</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>8</Offset>
+            <Offset>[Stack+130]</Offset>
+            <Offset>[Stack+100]</Offset>
+            <Offset>F0</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2</ID>
+              <Description>"门派ID"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+[Stack+140]</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3</ID>
+              <Description>"额外的心法栏数（最多两个）"</Description>
+              <ShowAsSigned>1</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+[Stack+148]</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4</ID>
+              <Description>"立绘资源"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>8 Bytes</VariableType>
+              <Address>+[Stack+150]</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5</ID>
+              <Description>"门派贡献"</Description>
+              <ShowAsSigned>1</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>[GameEngine]+DE8</Address>
+              <Offsets>
+                <Offset>4</Offset>
+                <Offset>[Stack+178]</Offset>
+                <Offset>0</Offset>
+                <Offset>F0</Offset>
+                <Offset>[Stack+108]</Offset>
+                <Offset>F0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>6</ID>
+              <Description>"金钱"</Description>
+              <ShowAsSigned>1</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>GameEngine</Address>
+              <Offsets>
+                <Offset>30</Offset>
+                <Offset>[Stack+110]</Offset>
+                <Offset>F0</Offset>
+                <Offset>DE8</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>7</ID>
+              <Description>"武学点"</Description>
+              <ShowAsSigned>1</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+[Stack+180]</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>8</ID>
+              <Description>"经脉点"</Description>
+              <Options moAlwaysHideChildren="1"/>
+              <ShowAsSigned>1</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+[Stack+188]</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>9</ID>
+                  <Description>"属性记录【勿删】"</Description>
+                  <Options moAlwaysHideChildren="1"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>10</ID>
+                      <Description>"气血基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+38</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>11</ID>
+                      <Description>"气血"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+3C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>12</ID>
+                      <Description>"气血上限基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+48</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>13</ID>
+                      <Description>"气血上限"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+4C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>14</ID>
+                      <Description>"真气基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+58</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>15</ID>
+                      <Description>"真气"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+5C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>16</ID>
+                      <Description>"真气上限基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+68</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>17</ID>
+                      <Description>"真气上限"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+6C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>18</ID>
+                      <Description>"精力基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+78</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>19</ID>
+                      <Description>"精力"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+7C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>20</ID>
+                      <Description>"精力上限基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+88</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>21</ID>
+                      <Description>"精力上限"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+8C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>22</ID>
+                      <Description>"等级基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+98</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>23</ID>
+                      <Description>"等级"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+9C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>24</ID>
+                      <Description>"力道基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+A8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>25</ID>
+                      <Description>"力道"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+AC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>26</ID>
+                      <Description>"根骨基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+B8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>27</ID>
+                      <Description>"根骨"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+BC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>28</ID>
+                      <Description>"身法基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+C8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>29</ID>
+                      <Description>"身法"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+CC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>30</ID>
+                      <Description>"内功基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+D8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>31</ID>
+                      <Description>"内功"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+DC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>32</ID>
+                      <Description>"攻击基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+E8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>33</ID>
+                      <Description>"攻击"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+EC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>34</ID>
+                      <Description>"暴击基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+F8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>35</ID>
+                      <Description>"暴击"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+FC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>36</ID>
+                      <Description>"暴击抵抗基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+108</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>37</ID>
+                      <Description>"暴击抵抗"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+10C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>38</ID>
+                      <Description>"防御基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+118</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>39</ID>
+                      <Description>"防御"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+11C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>40</ID>
+                      <Description>"闪避基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+128</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>41</ID>
+                      <Description>"闪避"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+12C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>42</ID>
+                      <Description>"命中基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+138</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>43</ID>
+                      <Description>"命中"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+13C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>44</ID>
+                      <Description>"移动基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+148</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>45</ID>
+                      <Description>"移动"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+14C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>46</ID>
+                      <Description>"集气速率基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+158</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>47</ID>
+                      <Description>"集气速率"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+15C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>48</ID>
+                      <Description>"气血恢复速率基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+168</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>49</ID>
+                      <Description>"气血恢复速率"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+16C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>50</ID>
+                      <Description>"真气恢复速率基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+178</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>51</ID>
+                      <Description>"真气恢复速率"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+17C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>52</ID>
+                      <Description>"气血回复速率基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+188</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>53</ID>
+                      <Description>"气血回复速率"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+18C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>54</ID>
+                      <Description>"真气回复速率基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+198</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>55</ID>
+                      <Description>"真气回复速率"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+19C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>56</ID>
+                      <Description>"可用移动基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+1A8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>57</ID>
+                      <Description>"可用移动"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+1AC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>58</ID>
+                      <Description>"集气量表基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+1B8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>59</ID>
+                      <Description>"集气量表"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+1BC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>60</ID>
+                      <Description>"可用集气量表基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+1C8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>61</ID>
+                      <Description>"可用集气量表"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+1CC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>62</ID>
+                      <Description>"伤害基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+1D8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>63</ID>
+                      <Description>"伤害"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+1DC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>64</ID>
+                      <Description>"目标伤害基础值"</Description>
+                      <VariableType>Float</VariableType>
+                      <Address>+1E8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>65</ID>
+                      <Description>"目标伤害"</Description>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+1EC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>66</ID>
+                      <Description>"目标伤害类型基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+1F8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>67</ID>
+                      <Description>"目标伤害类型"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+1FC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>68</ID>
+                      <Description>"目标真气伤害基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+208</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>69</ID>
+                      <Description>"目标真气伤害"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+20C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>70</ID>
+                      <Description>"伤害倍率基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+218</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>71</ID>
+                      <Description>"伤害倍率"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+21C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>72</ID>
+                      <Description>"被伤害倍率基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+228</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>73</ID>
+                      <Description>"被伤害倍率"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+22C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>74</ID>
+                      <Description>"伤害类型基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+238</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>75</ID>
+                      <Description>"伤害类型"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+23C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>76</ID>
+                      <Description>"真气伤害基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+248</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>77</ID>
+                      <Description>"真气伤害"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+24C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>78</ID>
+                      <Description>"移动格数基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+258</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>79</ID>
+                      <Description>"移动格数"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+25C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>80</ID>
+                      <Description>"真实防御基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+268</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>81</ID>
+                      <Description>"真实防御"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+26C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>82</ID>
+                      <Description>"拳掌精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+278</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>83</ID>
+                      <Description>"拳掌精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+27C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>84</ID>
+                      <Description>"拳掌经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+288</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>85</ID>
+                      <Description>"拳掌经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+28C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>86</ID>
+                      <Description>"剑法精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+298</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>87</ID>
+                      <Description>"剑法精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+29C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>88</ID>
+                      <Description>"剑法经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+2A8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>89</ID>
+                      <Description>"剑法经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+2AC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>90</ID>
+                      <Description>"刀法精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+2B8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>91</ID>
+                      <Description>"刀法精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+2BC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>92</ID>
+                      <Description>"刀法经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+2C8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>93</ID>
+                      <Description>"刀法经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+2CC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>94</ID>
+                      <Description>"枪棍精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+2D8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>95</ID>
+                      <Description>"枪棍精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+2DC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>96</ID>
+                      <Description>"枪棍经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+2E8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>97</ID>
+                      <Description>"枪棍经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+2EC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>98</ID>
+                      <Description>"暗器精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+2F8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>99</ID>
+                      <Description>"暗器精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+2FC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>100</ID>
+                      <Description>"暗器经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+308</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>101</ID>
+                      <Description>"暗器经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+30C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>102</ID>
+                      <Description>"其他武器精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+318</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>103</ID>
+                      <Description>"其他武器精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+31C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>104</ID>
+                      <Description>"其他武器经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+328</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>105</ID>
+                      <Description>"其他武器经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+32C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>106</ID>
+                      <Description>"锻造精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+338</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>107</ID>
+                      <Description>"锻造精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+33C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>108</ID>
+                      <Description>"锻造经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+348</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>109</ID>
+                      <Description>"锻造经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+34C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>110</ID>
+                      <Description>"医术精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+358</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>111</ID>
+                      <Description>"医术精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+35C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>112</ID>
+                      <Description>"医术经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+368</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>113</ID>
+                      <Description>"医术经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+36C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>114</ID>
+                      <Description>"饮酒精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+378</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>115</ID>
+                      <Description>"饮酒精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+37C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>116</ID>
+                      <Description>"饮酒经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+388</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>117</ID>
+                      <Description>"饮酒经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+38C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>118</ID>
+                      <Description>"口才精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+398</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>119</ID>
+                      <Description>"口才精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+39C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>120</ID>
+                      <Description>"口才经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+3A8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>121</ID>
+                      <Description>"口才经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+3AC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>122</ID>
+                      <Description>"书法精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+3B8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>123</ID>
+                      <Description>"书法精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+3BC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>124</ID>
+                      <Description>"书法经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+3C8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>125</ID>
+                      <Description>"书法经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+3CC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>126</ID>
+                      <Description>"茶道精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+3D8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>127</ID>
+                      <Description>"茶道精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+3DC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>128</ID>
+                      <Description>"茶道经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+3E8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>129</ID>
+                      <Description>"茶道经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+3EC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>130</ID>
+                      <Description>"制衣精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+3F8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>131</ID>
+                      <Description>"制衣精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+3FC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>132</ID>
+                      <Description>"制衣经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+408</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>133</ID>
+                      <Description>"制衣经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+40C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>134</ID>
+                      <Description>"钓鱼精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+418</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>135</ID>
+                      <Description>"钓鱼精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+41C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>136</ID>
+                      <Description>"钓鱼经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+428</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>137</ID>
+                      <Description>"钓鱼经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+42C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>138</ID>
+                      <Description>"烹饪精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+438</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>139</ID>
+                      <Description>"烹饪精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+43C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>140</ID>
+                      <Description>"烹饪经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+448</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>141</ID>
+                      <Description>"烹饪经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+44C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>142</ID>
+                      <Description>"炼丹精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+458</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>143</ID>
+                      <Description>"炼丹精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+45C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>144</ID>
+                      <Description>"炼丹经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+468</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>145</ID>
+                      <Description>"炼丹经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+46C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>146</ID>
+                      <Description>"采集精通基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+478</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>147</ID>
+                      <Description>"采集精通"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+47C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>148</ID>
+                      <Description>"采集经验基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+488</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>149</ID>
+                      <Description>"采集经验"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+48C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>150</ID>
+                      <Description>"真气护盾基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+498</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>151</ID>
+                      <Description>"真气护盾"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+49C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>152</ID>
+                      <Description>"名声基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+4A8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>153</ID>
+                      <Description>"名声"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+4AC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>154</ID>
+                      <Description>"气血护盾1基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+4B8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>155</ID>
+                      <Description>"气血护盾1"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+4BC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>156</ID>
+                      <Description>"逃跑成功率基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+4C8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>157</ID>
+                      <Description>"逃跑成功率"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+4CC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>158</ID>
+                      <Description>"金钱倍率基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+4D8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>159</ID>
+                      <Description>"金钱倍率"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+4DC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>160</ID>
+                      <Description>"武学点倍率基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+4E8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>161</ID>
+                      <Description>"武学点倍率"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+4EC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>162</ID>
+                      <Description>"世界移动速度基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+4F8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>163</ID>
+                      <Description>"世界移动速度"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+4FC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>164</ID>
+                      <Description>"场景移动速度基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+508</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>165</ID>
+                      <Description>"场景移动速度"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+50C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>166</ID>
+                      <Description>"暴击伤害百分率基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+518</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>167</ID>
+                      <Description>"暴击伤害百分率"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+51C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>168</ID>
+                      <Description>"真气消耗倍率基础值"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>+528</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>169</ID>
+                      <Description>"真气消耗倍率"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>FF0000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>+52C</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>170</ID>
+              <Description>"继承点"</Description>
+              <ShowAsSigned>1</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>[GameEngine]+DE8</Address>
+              <Offsets>
+                <Offset>[Stack+128]+20</Offset>
+                <Offset>[Stack+120]</Offset>
+                <Offset>[Stack+118]</Offset>
+                <Offset>F0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>171</ID>
+              <Description>"钓鱼等级"</Description>
+              <ShowAsSigned>1</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+[Stack+190]</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>172</ID>
+              <Description>"属性【非战斗中】"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Array of byte</VariableType>
+              <ByteLength>0</ByteLength>
+              <Address>+[Stack+158]</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>173</ID>
+              <Description>"战斗属性【战斗中获取】"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Array of byte</VariableType>
+              <ByteLength>0</ByteLength>
+              <Address>FightAttribute</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>174</ID>
+              <Description>"获取当前背包物品【开关以刷新】"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{$lua}
+if syntaxcheck then return end
+BackpackRec = memrec
+purgeRecord(BackpackRec)
+[ENABLE]
+decodeFunction('c-nQ,KX21O6aesd:NCIvp#z!PN)G=@A!VrqLr0)OI1Nfw*FKwkgH:0G1c?uh^lmmLtpZFLD#TQY0SVan2u;meiGgpxg3:(90VBLLjVgwobe7,{yWhRDZ;75L=ZDFM(4uL!%wjfs@c1ez^X=ByMJ*e;o,^^I;pGNW3Iz$wPIX9tK{xx@6qrwAU0qNt.RC(Ym4f{$0ahi+Q7Yh@#wRp*M2=mSHl^f$Ge8Iql6LDS9DqyavJNj0d^?v}pj4m3=bP6[DU(ucp)^,9tAIK%K?2$fiR6!j[4+$9BEgx{#_ujg5M0sW2@rs6i8G#oPl,bG,:P*}0y8sUAD18+W+{80S5b#89AV*En6OkhGf@8Vbe._/qmB*rK+k;0Fg7F]kui.hqCuC8J^f=L,hp^{?X1Il4SpP-XbMUglksg)=tSe4c^#214t*z$/8UK5!dp$R//*}_t5$0VakbHoF._I$:H[e_b5Y;:kHbbQreMi(oU,#pO09aM6{UyKwC*z_HMfXZuZ6g1c*QQ]s84{5szDTmmqLZsPq{61S_Z}X+Ngf2pGVd6^mpI6(CTs#7gcBS=!AlJL2SH.16-]M%Tc)$w=P^O5o5UGT,b[RF,aaqc.nZb(+!H{#lq{CY#oM=kKD..:V;bCfq7AZRmJS_G(@yG,T]t+-;-Vp=87xw(G2}]QN4d;H{$gr-}IuT9Jpc')()
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>175</ID>
+              <Description>"获取当前武学【开关以刷新】（修改武学ID时最好把等级改为1）"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{$lua}
+if syntaxcheck then return end
+SkillRec = memrec
+purgeRecord(SkillRec)
+[ENABLE]
+decodeFunction('c-p0tJ8#oa6oAit*NxCx5T1Cns8WQGyaXYkjJD$?ElMeBB$mj7Tf1%4G;#ni!NhefB0+I@VqijIh_1JIz}m%SHpDMrgO-8,0LN*UN?3$lwtVin-+:CX=!8gmwo7pB(E/+f6I_x9y!RMJ/Ib*_MiIGE!=y$*/TVWnB8Id8l8-eAfk2$B(/VT*LL8i5)Ew%ugf0l(5@b1=iD/=.@uWM%6!M[}VMw4Q1bqSBXSYE;sIfCo$oif)vQzCY:xqkyK?q+S4iYs$ryQDw2^8pCF%6a=lcggdUuZPOn1HV#FsWmLMg=oqIY:9VNFBW(hsGH6kOhXdBl].3!-yR=$WP})ltVtf4^U/:4n}ahFXr$srgM(:Dd[DR7ntbfMJB(r06}Fwseq)+#^imm@5[xhX=Ic{MFwDNNE1Du)etUxUboO:MUfOG40?XAiK+a.BXPIT@8h]k,K.D6Z*dTuTnfB-caLA*vTOFb;o2XXHQb/BX$1Vz!$-NrvspgrySB4X3+02QS=-U5z2)l.*,.sFQq8%nrRFo1%4aRLTng.fP4)]+jAf}r;{cXXerJ^8.o+_*IE%{CytG-VR,rsXE_pK-zPEU4CorA[E{vRx6nt.HK9765J_TR%^2x18sxmyeeEj72:-ctpg30Bbz{*qGN6DP8${A45Dg^1IogP0w^rExQzgOhEs@^Z;^2atfKGvtmgS.ZJxBY}i,i,JmT{PQ5qNx=ntD.?j;-A}^GgHHxG/g0TzW_Od*-n')()
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>176</ID>
+              <Description>"主角对NPC的好感值【开关以刷新】"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{$lua}
+if syntaxcheck then return end
+FriendlinessRec = memrec
+purgeRecord(FriendlinessRec)
+[ENABLE]
+decodeFunction('c-o};(1){u9DTDhUDv3!m^ZkOgdoCRA_A^_+xhWB22v^tcnN!0yVDX)cV(0].mO%X16oATgD260.?z^tZVUM?yxE#R!JAGJYwXz^%*ooR[jvPhsj:y^F#q}o=qZH/Ow*GmVLI2h4KhXK^B60bFi/rN*I@Gc0I8-15*h.#g-P%hgm^v[ZvcycFa@OCkzp_/qMw::z;,!z*x/*Q5PT3qd5)jp+C3D;bdr/MaZV/@v*KX6jAEFoVvw0o6$[?q)6=-*3W!P#tn[SJ:z*AwdNY(=d^02teH)?%XkV$IU/sn]n]4_/GZ@ez0F}XP[oei^:,Qk-]WMPnElYo47c^2}[I],.k4L?cWhbV[!4ltL7dBkqUFYG-,FHcpMkk8dnLBsO%M,HJ4Y{+p^g^uy/?R]L=gp;.;m8pvx=L$bdbQ}2=5d-.Td{,PK*-Rb:s0=?G$n3HK]DQH?l16,Z?J0ls$qxwURMT1QIoGSwSDyFy}9pz#nz+kv*Ou73xmyvOR?qF31JKE_0v,-]QyiDr-z=j4WE6k,f3Vv=d;4,?@k-_vl}on23[8YLzX-I]1R/=yF;9M(.Dx4K^p8HfqqSX)w{v5egl}vo)c')()
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>177</ID>
+          <Description>"获取队伍数据【开关以刷新】(数据越多获取时间越久)"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+TeammateRec = memrec
+purgeRecord(TeammateRec)
+[ENABLE]
+decodeFunction('c-qxh_8EoL8Gqip+XP8/5SC06P=$GGYgpVVjFcLF@4VwS%lJ}rwEkdu*y2Lf2HR)y(opS7dS?HA1k_w77F0EDg{l.jVq5o36xbS+.7OBK[7C*jt%+aVN(RvAt$W[P#C9Brh6Ixq$=@NX(,}kq$IpG9yU+:9oRddk$0fIGr.E1HwzjDsK.y6XB_mBG$k)d*UjRRZ^eBoU:Ag#[5{xye2=XZQHaiC-j%Ovmh/gLdxc.+tl7ILC[84GP:R^b-@BVeA5yxqYWD$M5n57L!)JQiVv+/Og^aK,B0Fm%upuHmU0GvU?JP%PZ(-Gx@Z:)MmKy!tMuY/)xnIlG6l%QlvP@nN5xDbeUc!-,?H*7tM^ubsID}_Pe0UOUmj8BQg5st!#.vS:PCjb;r0N?QS91O!up-STgAm,RPpXCdVavsQwb3w-+W0z6o20/uD5DpH*U=DG/ya00.CrDv9R./#VA]r3YgxMf/F6My}f*e/7!)q-lp}=;dk:h[g4d@KVA1){m!GlnpAA*$$AYt?1)6[=3gCGrqSZs#@]eH4734Jk-AS=[,8GTFWi,cy5E)p@hFeMkvqi-2}tLO[9oZ.dKETV4{eSsPdalr+8@sUe;z(i{Iq3?ba,G5+@53nt*,GxiE.yPC2nr!@wYFr1H*D3eK]xC/coW:f{#r{lcFe@FQ7Yo;+.t{vu!]UMN5hRJN9p-]=s]My.!?zzToU8chJ1%-{HjH*y=G/So2#%xRM_(LYBWNEf-kU9/9dkLz-E9y=yMgvH,NaSzP5)A}jr^%P67sAfc0w6Bb)L_-.Ea.[JaVWLgaGn1?26!E]%8_a-+zaA$Z[,yWoK*}EBtjp1zjCdrs!8va$25Hv{5DrSw%mb$m,D=]-,?8Vjt5EO[AfztBJIZn.nrzWKd2iq4Y!_twj5zkT2R7=vM6SIx))N7YiItkE;ZKD4M2fbo,#(2jtkP41R]nC6%S@crtn[kxbG}T!poSl8z?4ESt4c4PzpfcW30Gxp=.J@L4Ead*M0FQ$dc$kDRc7KuXq=6H1JBL}57cU%B$$)#-iNb*MD)XLN.b9nKDFYA!Q]85NBXx-0VVd_YI.SzT;wiMB?jBBMI}sJ=yseF!@-pqSWwLQN]15ya^v7p3j?uf2Z%,.4@?,ICu)UQ*F/b,3zL6-$R^8w)uOHR?je#rfr1SMLA5Si5/V1s!h+dbU4Gw:i$/w5-b-ZC_/kVeNN,!VC=c0rY7f%q5a;2HCrEb#_%z+7DoMrB4dA-?aLUf2Q^4ufMqcYV93ksr;fhjq;7,pMP:tTr(Vx:Bi!*VCnh=%lVI,3[e75E#I2CUp(]hzzFxs;z7tOy1jh.-15z9O{2v:v{5U]cWcJA(y9.Kv,veky.6JY@5Tu[pBq1,d=Z4+HQM;CFB,v@4XT,lqONO,v7B]ku=Jb_zF*Yobm8psxt{dvGHK@(UCimKn9VAwu[Q94=N}-nsOfBXFp@S-5@+Isi5/_Cv@S,niX77u+s:Pdn0-M;CeegM((kQqR7Ot6gK9D/XR-:j)b1Te$mreUKk7.5/R7}d/DTr9v?TD?CY9JJk3OlSJ)^BDw6q5a=8?Y^iPbuLQ%XuxVtZYY(]}jPI23iY(OpOM8XmP:x)DoL/3)Bg/d=NKKDM^RQtk2_+j4*JA8XUoc3.uBc.n[iyk6Zud[1+T*3}uF]jkC1OTWT_w}*t-Kv,oey)QyzxAJ($H[!hAN@sjG4@GPI359OclnI/GMH?Yn8dH/B%f4s5+nGQk%T1i/^[-qu53I*^t7F-ioKC6nTvF,6#]TU2J?Y}$ePH03)aA)6lSof_N10N+zJO:I:NTCA=BDN@zUvA3[PP*ynN)xFnA8UF[U!BL?Ao#NF_VXNrX,insf6Cx+-c@ldh^XOcs!Y0cG9Eyn$]!K+8BRcO-enDKHkRt$vTatGVD}#W}{YWwCrI=n/FBcFZu_,*=M#W^P70*DDE4t+nbzU#HZ_ZtJOVX1yicVTIsdh;GvOMfE:[y)D3ahXeGwd9qilR*C}Jfo}j=7R6PE1Yn4dH7/^{?2X4Grv,XA/jY;_U*j!r,gwM*0Fwm(L%7h1Aiy16?l]U$fP6{(%u)9.D*Ndoy8@C(4uZb0DF%q{U@gUEJ+J,9.w)B8lWshLi8o{OH:C[#Z7_ceu:hEvZm[4?%SR+R1:eV]q^yqE)qvC!AmAj=T4L=+,vO5SWVnX070aC$lAt1uBd/A,=-HLYzeCE#,rsA+qZKZ7jhe_s?n9^EL0{LBPlLJdZ5e@m(gZqm:SYnE)f--h/eBQz+7/ZIN#3U4YO^XCQ0@sKW%m9UI9wp#BWojAKtqAuD6({=r3VsLdp67*iZ!j!A90-BI0j:gk5D%bgMhv#E,.LdSTtp01)WrVw+jB9Ys4]KY2oU9qLIE-2h%u6^UU/6lua^ZvyO/!@f.Uq!jt?4{QEh9Bb%N?tNMv)K*v9qi8xQ3J:,n=!Ycfk/%4!o$wL7v_%JuNkzJ]ixx1aFMq6sCKBigq:Sl3JJLCVC96Q#[]D;KYG(]$,=fU6o7]lW=r-}91%@3eL%(0ZO8zMc7h.T!4Nz(Cv3!=!LGX66?o[Qtn6+u+n#m1lt#p5/,x*p=4sf1NL!XIzaI3Js10!WSAb!UJOX!iJbTO*.Dkg!w;gp4VDqO8G(U._$8/p4DCs0LO4jh%/+c1m8Tvh+O]5g$3SC:_wgdv-7-jp2Z,e6;.#AI}WGTUPPQ{#Ccl$r!@/v[#e!P?5#:IZ}dICsl?u6boDo/#yM%X#GN%LwtVcOb(vJ4LWN?+meXZmr;uQjkSRJP-qo:d.T%*dBpW[4lSwAfvUSz6$)-%Q(jEYRh9BdcEg.s}tO,7:44Y!(tW_N:2++K;iErJaJ!^0_A%r/h#J-C.2uC1^Ic6^i?^gD{Yr9R36LHpF!($4}tW8z}W0l8H!CAAp51h=oiEiL9(Kl#e5DX!Ik=$6F4N3{+Rqg[3a}I#!Xz[e2cc+dICd[_ZJl+-@dHURwy]MkVazEej65Q3/!qfWuudDuw?ld92!nUTr^^X-Ws(?')()
+[DISABLE]
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>178</ID>
+          <Description>"当前操纵角色战斗属性【战斗中获取】"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+decodeFunction('c-oWpDNPJ!ketlRCB=/U!NS2(5ypT38s!d+2p%H}H.4pcHwOoX1_Xf%z](T}z]!7PfT5wS!GYo60S1PpKqbq7a%w.oEI=Z1e-6{*#Qdb//ixz)^FKt1RE@-(oYdr!*D-88#G+tXqew?kpeR2%wYXTvz*-:!O}Jxcp#lm]EEFt@6]Y+F90LOw0.){VR%2$Y$)5Lslb?[nfMU9iilKplfewa@np]:FNvSy,MX4pFMR{TBT(UWtxD+tMQWH}hQ+$w0t8K1hp$Sxwn[s37jjB*E$iN[0rzoicD4msCpa3zRiwlbxR!{9V1@?-}?)UD/xga^NfOL9hF.GKsWo{Y[4!ZBK[:_-%v9u*LvA8%jHz[BTg*OzHD8GnB[/85fr}4Y8FKB$aWaG1]9q.!vGD2e%6#xLLZJCk')()
+memrec.Address = '[[[[[pSelectedChara+200]+[Stack+198]]+[Stack+1A0]]+[Stack+1A8]]+00]'
+
+[DISABLE]
+decodeFunction('c-oWpDNPJ!ketlRCB=/U!NS2(5ypT38s!d+2p%Jo5RhbJaA0tBU_;+bU_;]N@5qUNHLx]R#SQ=*92gkc7#tz.AhrV/yMYnRR%2+jU/c{D.VDW?O!3SsNli}JV(N_cPR(V8E:f(s(PXguWZ[LLEy.H+E;6u(%1IS5Mv),EinPtGxD/c?WJYdkt[G?h9Scnsj,9i#oSgh+7QxcIqSW-vVxX=z%G^+/92OxA/3K)_?,{kq03tL#?c')()
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>179</ID>
+          <Description>"Ctrl键跳跃"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+local keycode = 0x11---Ctrl键
+hk_jump = createHotkey(jump,keycode)
+
+--[=[
+keycode键值表：
+0x08 Backspace键
+0x09 Tab键
+0x0C Clear键 Num Lock关闭时的数字键盘5
+0x0D Enter键
+0x10 Shift键
+0x11 Ctrl键
+0x12 Alt键
+0x13 Pause键
+0x14 Caps Lock键
+0x1B Esc键
+0x20 Spacebar键
+0x21 Page Up键
+0x22 Page Down键
+0x23 End键
+0x24 Home键
+0x25 LEFT ARROW键
+0x26 UP ARROW键
+0x27 RIGHT ARROW键
+0x28 DOWN ARROW键
+0x29 Select键
+0x2A Print键
+0x2B Execute键
+0x2D Insert键 Num Lock关闭时的数字键盘0
+0x2E Delete键 Num Lock关闭时的数字键盘.
+0x2F Help键
+0x30 0键
+0x31 1键
+0x32 2键
+0x33 3键
+0x34 4键
+0x35 5键
+0x36 6键
+0x37 7键
+0x38 8键
+0x39 9键
+0x41 A键
+0x42 B键
+0x43 C键
+0x44 D键
+0x45 E键
+0x46 F键
+0x47 G键
+0x48 H键
+0x49 I键
+0x4A J键
+0x4B K键
+0x4C L键
+0x4D M键
+0x4E N键
+0x4F O键
+0x50 P键
+0x51 Q键
+0x52 R键
+0x53 S键
+0x54 T键
+0x55 U键
+0x56 V键
+0x57 W键
+0x58 X键
+0x59 Y键
+0x5A Z键
+0x60 数字键0键
+0x61 数字键1键
+0x62 数字键2键
+0x63 数字键3键
+0x64 数字键4键
+0x65 数字键5键
+0x66 数字键6键
+0x67 数字键7键
+0x68 数字键8键
+0x69 数字键9键
+0x6A 数字键盘上的*键
+0x6B 数字键盘上的+键
+0x6C Separator键
+0x6D 数字键盘上的-键
+0x6E 数字键盘上的.键
+0x6F 数字键盘上的/键
+0x70 F1键
+0x71 F2键
+0x72 F3键
+0x73 F4键
+0x74 F5键
+0x75 F6键
+0x76 F7键
+0x77 F8键
+0x78 F9键
+0x79 F10键
+0x7A F11键
+0x7B F12键
+0x90 Num Lock键
+0x91 Scroll Lock键
+0x5B 左win键
+0x5C 右win键
+0x5D 右Ctrl左边键 相当于鼠标右键
+0xBA ;（分号）键
+0xBB =键
+0xBC ,（逗号）键
+0xBD -（减号）键
+0xBE .（句号）键
+0xBF /键
+0xC0 `键（Esc下面）
+0xDB [键
+0xDC \键
+0xDD ]键
+0xDE ‘（引号）键
+--]=]
+
+[DISABLE]
+hk_jump.destroy()
+hk_jump = nil
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>180</ID>
+              <Description>"跳跃速度"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>[GameEngine]+DE8</Address>
+              <Offsets>
+                <Offset>[Stack+1C8]</Offset>
+                <Offset>[Stack+1C0]</Offset>
+                <Offset>[Stack+1B8]</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>38</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>181</ID>
+              <Description>"无限跳跃"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+aobscanmodule(jumpCount,$process,8B 87 x x 00 00 39 87 x x 00 00 0F 9C C0)
+jumpCount+C:
+  db 83 C8 01
+registersymbol(jumpCount)
+
+[DISABLE]
+jumpCount+C:
+  db 0F 9C C0
+unregistersymbol(jumpCount)
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>183</ID>
+          <Description>"设置队友跟随数量"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(setFollower,$process,44 3B BE x 05 00 00 0F 8C)
+alloc(duiyoushuliang,$1000,setFollower)
+label(return)
+
+duiyoushuliang:
+  readmem(setFollower,7)
+  push rax
+  mov eax,[duiyoushuliang+200]
+  inc eax
+  cmp r15d,eax
+  pop rax
+  jmp return
+duiyoushuliang+200:
+  dd #99
+setFollower:
+  jmp duiyoushuliang
+  nop 2
+return:
+registersymbol(setFollower,duiyoushuliang)
+
+
+[DISABLE]
+setFollower:
+  readmem(duiyoushuliang,7)
+dealloc(duiyoushuliang)
+unregistersymbol(*)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>182</ID>
+              <Description>"队友跟随数量"</Description>
+              <ShowAsSigned>1</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>duiyoushuliang+200</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>184</ID>
+          <Description>"一周目可选极难难度"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(difficulty3,$process,48 8B C8 E8 x x x x 83 F8 64 7F)
+difficulty3+B:
+  db eb
+registersymbol(difficulty3)
+
+[DISABLE]
+difficulty3+B:
+  db 7f
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>185</ID>
+          <Description>"一周目可以选传承（图标不会变化，只能选一个）"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(chuancheng1,$process,48 8D 55 D0 48 8B x FF 90 70 03 00 00 84 C0 0F 85 x x x x x x x 48 8D 45)
+chuancheng1+D:
+  db 24 00
+registersymbol(chuancheng1)
+
+[DISABLE]
+chuancheng1+D:
+  db 84 C0
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>186</ID>
+          <Description>"承君传承包括所有传承（图标未改变）"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+decodeFunction('c-oCrOHbQC5T3QyPDpr)T-x%wpsG=-DH0XrXvf3;6,}O4UP2D0UP9C*mK.}WiA[k-L#6i6GdF%n-j@Qu1-,%EhyH:8myQz$5),IVt#@06Z*U#PUGMDXJ7WhPex3,C3Q#{w].T73b$fECkn0th].K236wnm}61*aW9Ee[1pa:wNE/,]7285Vs-%_h/0JzEtlo4Cxby)oQJ2e%*0S7l$9Rzd(P+nlGDn(wZ^v5ksA)j4E=2R9:cZdcgCW2nlpx6,;6o7P9+S;}!iuN[MQ;Y1=5K*3NL6k.0)kSP2lv6Jfm}6B]ZAkD#4e;81Ehqx$O^{kpJ_ZVFRbZRy)oz^qU6bKVqdv0/q:OvNqM%Sts;r!O(N+]GWf_sM*ZaypS_.$Z*t2im2?YBk+V]DkEkjMhxH86-F;V!kvJa{bzR)kab6lTQ/e+srvdC3w0SK;F67asA2zDwlJPaN/k7G^HhOvZ!EnWU}.@p-HKd1kGIor481aUa$CHZ-;3tSl4PeOSowhrXf54xzpCoLhFr$FX4QQm6CrG$1WbYq-!8psjH^@F:j30)YA^e99qOFTmb(#*+,Fkcd:9?}IoZ0Js=;)]vpSdW8q:.CD?!5X93E]WHeZZU9(Zc*6[tp*C^yELS]6u4b=BXGBFAvl6P#^cOl^!dhPtaWxoXL3f}NHcqTf4^)-%{l_eGaLB;W?nsNtgzJw;A1{db0hCCcQKoETf*e)cs]xUvs8F39!-VyNGeRnQsHGBm!qM/Q$S@A,m:n_lK+g/@xUvVqG38:Z8$9F$*J/g(f82jJ6KNHER8amy;pz}v$8a33{HC8-WU$sVmZq]4#Bi1B6x?{dwFQtW^;1Kgrkv2zql7x2FtUlkfbuISc%-AMSJGeNNDiNg(qtFl#m^EzpGIyCX;_Xx}IY,_J4pS#$J_DUnXB+w(UWfZqXAxO?mz;A4:!R*w7m=/qrYR5K1#gHBFlp3Vo%0Wh*w.9wtU2.Ts0?of;8IOY$ny,]?+QaIgIVjgow^')()
+
+[DISABLE]
+decodeFunction('c-nPR%SyvQ6ur{4YiVu8E)BjY5h0s@V6(X+)=Z2Z!A.2]nrRK?0clF;ZnE)Q-1.%.reETRI8B0Si)Z({XXc!H4j1l8e]+Zi:)AEfE?2Ui#rYFtaXF)Tdy!oxa^)xHD21,w.9LM/5rB}Y3m}9J0zN2%FG+es24q2i5(/E{!I={Q*[@d}fk{XTQ-EdESmWel4vjHEHZZn?iKg?rn.wgN:0Wgp4}GAHgxgpP2-yLtL6*?rd%uv:9=E(K5O[Cyjy1/^jWPG^MxzN2]qm]CTF-suz7.)3$!!AS:]fD2.qbOQwp@_(t,u8s9aUGbsw-D(a#T(hiq^LclWJgjCNqDSdA@CcAr;U+TE#t_8_J-dxq%elH+7nlE1IfeC2r_SY-JsHXh}@e*f;E7zx4RGu5KwL/a%0}STs4aZSMuk84VAnuFuDET/#CvooCNpZOYoVr11mfkCLJ')()
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>187</ID>
+          <Description>"强制显示NPC互动功能（会覆盖驿站互动）"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+decodeFunction('c-obgKS(!/9LL_YS54KJ:t+l@5Rp/W4owk=/DD@ye-e#GqfkVnxuyY4/Z=mXUMQ4}LKjDeQaU/1/])Jb:.,_!)81BMFM8k0yWiFW$;.lh-)S4%(v5Z_x=ae!mp^VYue!C67788aS@FA0FnC,;t[i6,nZZnhu^VP8QRxmFTyzT0GZ@n_D$GpD^4p!NVa5a)oF%2-XmVDR^/i0v)%%#(8x^$%DO}9##5Xp?T%(^il)]Er#kk3sd@]S=3wC3$j+I3L3-dV7m}nn%2$[kqup8$l+O.%)X,:+/Ezey:@8_0TY?fHZXzNCTn,?L9uGF$wJD(^BH/H15HyNDgDQ:owN/I}wcT;T6J]/cbTRNoVXM+#5HaKt22Im]6yU(#T9O+wt]p:R6Qu7]qKTrD4lm7Fhe[HnMRq_:lKTY}*NdHXm?7c)Z]3#v}AoDHVr^ovN^uasp7Rmmkb_XqYOZJx}]@%F3NzMC{^1VyU64}Dp,269/-,,:_CjFO5^}YPx)z:q+k@U;B^_f0ZwL7TfS4sa;)tnlomzqCU?[EufPx_Lc_25hFg[2)+^ntqUb$?:=V4]6Rv0w6G[Ld2?EuUXnq,}f{v1nVhTCVWf)xS/FWydL3D;:)=%9WB9Dq805ZgofNuUBlVRIWLeojcmwuI[5RwpA!+tL2Kc2H$@ryi$cdD@V$xE7rz%^9_lmd{7l3ksOn,iHBDm().4M^1DS3h1Ts994lk)RqZ34MIYZti.(w3AJ{Eb@6pQ,[I^tvyob7XJ{Xa4@86O)QNUjhw4R6H)m}ZO;i9.]LmYX*5MTt+i_]nn7,=}B=-.!U.Tbqtz(c/H?C4y6aP_R+009Ug^2k6Q-}?0Ac#80EIA=%!Kog*L^0Gh?.0kaJxCPt,=g7jzuZR8h!ifTg03)1tf4y+GfJuM;i1[P.lLf2.wg3bEdg1H=4gmt7]_E^s3@*Ot0^Z;,!Z]z,1DbwQf4y*n0at**z$n7EaP9#29r)x;YBkGt#vHqDy:yIB]3J_l^s9Hv(65')()
+{$asm}
+aobscanmodule(NpcFunc,$process,49 8B x E0 00 00 00 x 63 x E8 00 00 00 48 C1 E6 05 48 03 F3)
+alloc(npcFunctions,$1000,NpcFunc)
+label(return)
+npcFunctions:
+  mov rbx,FunctionSetting+E0
+  movsxd rsi,[rbx+8]
+  jmp return
+npcFunctions+50:
+  readmem(NpcFunc+7,7)
+NpcFunc+7:
+  jmp npcFunctions
+  nop 2
+return:
+registersymbol(NpcFunc,npcFunctions)
+
+aobscanmodule(NpcFunc1,$process,48 8B x E0 00 00 00 x 63 x E8 00 00 00 49 C1 E0 05 4C 03 C0)
+label(return1)
+npcFunctions+100:
+  mov rax,FunctionSetting+E0
+  movsxd r8,[rax+8]
+  jmp return1
+npcFunctions+150:
+  readmem(NpcFunc1+7,7)
+NpcFunc1+7:
+  jmp npcFunctions+100
+  nop 2
+return1:
+registersymbol(NpcFunc1)
+
+aobscanmodule(NpcFunc2,$process,48 8B x E0 00 00 00 x 63 x E8 00 00 00 48 C1 E6 05 48 03 F7)
+label(return2)
+npcFunctions+200:
+  mov rdi,FunctionSetting+E0
+  movsxd rsi,[rdi+8]
+  jmp return2
+npcFunctions+250:
+  readmem(NpcFunc2+7,7)
+NpcFunc2+7:
+  jmp npcFunctions+200
+  nop 2
+return2:
+registersymbol(NpcFunc2)
+
+aobscanmodule(NpcFunc3,$process,48 8B x E0 00 00 00 x 63 x E8 00 00 00 48 C1 E6 05 48 03 F3)
+label(return3)
+npcFunctions+300:
+  mov rbx,FunctionSetting+E0
+  movsxd rsi,[rbx+8]
+  jmp return3
+npcFunctions+350:
+  readmem(NpcFunc3+7,7)
+NpcFunc3+7:
+  jmp npcFunctions+300
+  nop 2
+return3:
+registersymbol(NpcFunc3)
+
+
+[DISABLE]
+NpcFunc+7:
+  readmem(npcFunctions+50,7)
+NpcFunc1+7:
+  readmem(npcFunctions+150,7)
+NpcFunc2+7:
+  readmem(npcFunctions+250,7)
+NpcFunc3+7:
+  readmem(npcFunctions+350,7)
+dealloc(npcFunctions)
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>766</ID>
+          <Description>"家园随时收获"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(Homeland,$process,41 8B 4F x 41 3B 4F x 74)
+Homeland+8:
+  db EB
+registersymbol(Homeland)
+
+[DISABLE]
+Homeland+8:
+  db 74
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>188</ID>
+          <Description>"邀请无视条件"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(CanInvite1,$process,48 8D x x x 00 00 48 8D 54 24 x E8 x x x x 84 C0)
+aobscanmodule(CanInvite2,$process,48 8B x E8 x x x x 83 F8 3C 7D x 48)
+CanInvite1+11:
+  db 0C 01
+CanInvite2+8:
+  db 39 C0 90
+registersymbol(CanInvite1)
+registersymbol(CanInvite2)
+
+[DISABLE]
+CanInvite1+11:
+  db 84 C0
+CanInvite2+8:
+  db 83 F8 3C
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>189</ID>
+          <Description>"切磋无视好感"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+decodeFunction('c-n1J)P_Sx6ulFtOIQhgupn9}LyaN9P[]kqF.BAzrYaSYh[ABQorIOynJ}Mn;*Z6jAMh7izoVhxhlu{CXLmws#etc7(zy7a9WJwbng;(O?V))aba5Tm;%_ASS=w/r-5{)(%.@Ay38m1}fc7cC9tG]agQ+7R)sC!Ts]v??.Y:gAs[X!7Rz5@p+JcLp:^x!xj9@7.hSM-M]/z1UOxNJ(/+3x7-:?Z_vWG[6L1TDgG%ZwOFy1j-fQBEYR=EbOiFiw{BEyY(F2XF9.xtY)yuDzV(-rA1hwqj,iWEyz^OI,_gZC@+UWvIpIAPgD#Y^vz7A5KWZ%5NG5HAXRfAE{mN2EU;gAqCIlU_/]2Hk?#I}u(L+upepYWg+qNsf2k#cZ6+kAD}3xxQXcGT;Z;Z7b/E4=WN8HkV3/M$}Z$.lYgYwqjYXM2W3%Xfi@:WJy=1bRYM.3V(KKLg!VQ$j]SaBdsXwfBMX]B?[#ygeC3(Jh6M,+.sA:js2ExxKUZMf/i7y(n0W*u+(RE)rPH^h8@4p?:W=@%90sp+kMXZh3pUcXZ-/e!KhX')()
+
+
+[DISABLE]
+decodeFunction('c-oWpDNPJ!ketlRCB=/U!NS2(5ypT38s!d+2p%JoIFMvxaA0tBU_;+bU_;]N@5qy/8rT_uVh51K4lp(aF+pL%F+2w*Ffg).I6}w;;.q[Q2MAk?p?D$_sF#I5J,.I!C8a2{xHvd5EtN$iFf-M.G)X/0C@I!LB[{fvD8a(0l$x00nOBmUo=67h4pG6vn@./s=@s-%nwyl9Dx!x*pB0w@5P/aNrsiru6lj_o:$LD:aHOO/:H%ojvj};v6^V)U7MG,J1y_-K/;!Ec04W%t0085]L{(')()
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>190</ID>
+          <Description>"请教无视要求"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(VigorIsMet,$process,84 C0 74 08 F3 0F 10 x x x x x 0F 2F x 73)
+VigorIsMet+F:
+  db EB
+registersymbol(VigorIsMet)
+
+aobscanmodule(PlayerFriendlinessIsMet,$process,7E x 0F 2F x 73 x 48 8D)
+PlayerFriendlinessIsMet+5:
+  db EB
+registersymbol(PlayerFriendlinessIsMet)
+
+aobscanmodule(ConsultRequirementsIsMet,$process,41 8B F8 8B F2 48 8B D9 E8 x x x x 84 C0 74)
+ConsultRequirementsIsMet+D:
+  db 0C 01
+registersymbol(ConsultRequirementsIsMet)
+
+aobscanmodule(aobConsultCanSelect1,$process,x 8B x x 8B x E8 x x x x 44 0F B6 x x 8D x 24 x 48 8D)
+alloc(ConsultCanSelect1,$1000,aobConsultCanSelect1)
+ConsultCanSelect1:
+  db 0C 01
+  readmem(aobConsultCanSelect1+B,9)
+  jmp aobConsultCanSelect1+14
+aobConsultCanSelect1+B:
+  jmp ConsultCanSelect1
+  nop 4
+registersymbol(aobConsultCanSelect1)
+registersymbol(ConsultCanSelect1)
+
+aobscanmodule(aobConsultCanSelect2,$process,FF 90 x x 00 00 83 F8 01 74 05)
+aobConsultCanSelect2+9:
+  db EB
+registersymbol(aobConsultCanSelect2)
+
+aobscanmodule(aobConsultCanSelect3,$process,FF 90 x x 00 00 83 F8 01 74 x 48 8D)
+aobConsultCanSelect3+9:
+  db EB
+registersymbol(aobConsultCanSelect3)
+
+[DISABLE]
+VigorIsMet+F:
+  db 73
+PlayerFriendlinessIsMet+5:
+  db 73
+ConsultRequirementsIsMet+D:
+  db 84 C0
+aobConsultCanSelect1+B:
+  readmem(ConsultCanSelect1+2,9)
+aobConsultCanSelect2+9:
+  db 74
+aobConsultCanSelect3+9:
+  db 74
+dealloc(ConsultCanSelect1)
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>191</ID>
+          <Description>"采集一秒冷却"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(gatherCooldownTime,$process,0F 2F x x 72 x FF 15)
+gatherCooldownTime:
+  db eb 04
+registersymbol(gatherCooldownTime)
+
+[DISABLE]
+gatherCooldownTime:
+  db 0F 2F
+unregistersymbol(gatherCooldownTime)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>192</ID>
+          <Description>"无视物品使用次数上限"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(usageCount1,$process,E8 x x x x 48 8B x x 8B x x x 00 00 x x 7C x 48)
+aobscanmodule(usageCount2,$process,7C x 48 8D 85 x x x x 48 89 44 24 x 4C 8D)
+alloc(clearUsageTimes,$1000,usageCount1)
+label(return)
+
+clearUsageTimes:
+  readmem(usageCount1+9,6)
+  xor eax,eax
+  jmp return
+usageCount1+9:
+  jmp clearUsageTimes
+  nop
+return:
+registersymbol(usageCount1,usageCount2)
+registersymbol(clearUsageTimes)
+
+usageCount2:
+db eb
+
+
+[DISABLE]
+usageCount1+9:
+  readmem(clearUsageTimes,6)
+usageCount2:
+  db 7C
+dealloc(clearUsageTimes)
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>193</ID>
+          <Description>"无视物品使用要求"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(useRequirements,$process,x 8D x x x 8D x x 48 x x 74 x 33 ED)
+useRequirements+B:
+  db eb
+registersymbol(useRequirements)
+
+[DISABLE]
+useRequirements+B:
+  db 74
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>194</ID>
+          <Description>"物品不减"</Description>
+          <Options moHideChildren="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+decodeFunction('c-oWpDNPJ!ketlRCB=/U!NS2(5ypT38s!d+2p%Jw7=5ORaA0tBU_;+bU_;]N@5qzq8^8Tk7#e]:g9m]B7#SH-8W?/8z.a9tZ4QnM2OEIKFg7qa1Mw0E1{3:%h6c9-jtr=lU1;mdYCxI.NV9M]]a1/DC,4_Uuqc]sDmYmvxVa(aiKT+ti-M]Sf^{%Ss_5;BdTNPNVsWZtN:lJ1H]I}B^7=o9e@F_BW@qYsQE,8$QhpALfM-c,u3vsoYD#HxNoIZ=3tMVYQGOA}gGio*0suz_Fy8')()
+{$asm}
+alloc(NoReduction,$1000,ItemNoReduction)
+label(return)
+
+NoReduction:
+  cmp r8d,0
+  jge @f
+  xor r8d,r8d
+  jmp @f
+NoReduction+100:
+  readmem(ItemNoReduction,5)
+  jmp return
+ItemNoReduction:
+  jmp NoReduction
+return:
+registersymbol(NoReduction)
+
+[DISABLE]
+ItemNoReduction:
+  readmem(NoReduction+100,5)
+dealloc(NoReduction)
+unregistersymbol(ItemNoReduction,NoReduction)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>195</ID>
+          <Description>"所有物品可出售"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(canSell,$process,80 x x 3C 75 x 32 C0 C3 80 x 83 00 00 00 00 0F 94 C0 C3)
+canSell+10:
+  db c 1 90
+registersymbol(canSell)
+
+[DISABLE]
+canSell+10:
+  db 0F 94 C0
+unregistersymbol(*)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>196</ID>
+              <Description>"包括任务物品"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+aobscanmodule(canSell2,$process,48 8B x 70 80 78 40 3C)
+canSell+6:
+  db c 1
+canSell2+7:
+  db FF
+registersymbol(canSell2)
+
+[DISABLE]
+canSell+6:
+  db 32 C0
+canSell2+7:
+  db 3C
+unregistersymbol(*)
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>197</ID>
+          <Description>"物品获得加倍"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(aobItemMul,$process,0B 50 30 0B 50 2C 0B 50 28)
+alloc(ItemMul,$1000,aobItemMul)
+label(return)
+
+ItemMul:
+  or edx,[rax+30]
+  or edx,[rax+2C]
+  push r8
+  mov r8,[rax+70]
+  cmp byte ptr [r8+84],0
+  je @f
+  mov ebp,[ItemMul+200]
+  mov [rax+40],ebp
+@@:
+  pop r8
+  jmp return
+ItemMul+200:
+  dd 2
+aobItemMul:
+  jmp ItemMul
+  nop
+return:
+registersymbol(ItemMul,aobItemMul)
+
+
+[DISABLE]
+aobItemMul:
+  db 0B 50 30 0B 50 2C
+dealloc(ItemMul)
+unregistersymbol(*)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>198</ID>
+              <Description>"倍数"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>ItemMul+200</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>199</ID>
+          <Description>"送礼必定喜欢"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(INJECT_songli1,$process,E8 x x x x C1 E8 1F 34 01)
+INJECT_songli1+8:
+  db 0C 01
+registersymbol(INJECT_songli1)
+
+aobscanmodule(INJECT_songli2,$process,0F 10 x x 02 00 00 4C 8D x 24 x x 00 00 49 8B x x x 0F 28)
+alloc(StrongEnough,$1000,INJECT_songli2)
+label(returnhere)
+StrongEnough:
+  readmem(INJECT_songli2+7,8)
+  cmp [StrongEnough+200],1
+  jne @f
+  cmp [rsi+38],0
+  jne @f
+  mov [StrongEnough+200],0
+  push (float)99999
+  movss xmm0,[rsp]
+  add rsp,8
+@@:
+  jmp returnhere
+INJECT_songli2+7:
+  jmp StrongEnough
+  nop 3
+returnhere:
+registersymbol(INJECT_songli2)
+registersymbol(StrongEnough)
+
+aobscanmodule(songli_quality,$process,88 87 80 00 00 00 0F B6 83)
+alloc(newmem,$1000,songli_quality)
+label(GiftQuality)
+label(return)
+newmem:
+  mov [StrongEnough+200],1
+  cmp al,byte ptr [GiftQuality]
+  jge @f
+  mov al,byte ptr [GiftQuality]
+@@:
+  mov [rdi+00000080],al
+  jmp return
+  align 10
+GiftQuality:
+  db 5
+registersymbol(GiftQuality)
+songli_quality:
+  jmp newmem
+  nop
+return:
+registersymbol(songli_quality)
+
+[DISABLE]
+INJECT_songli1+8:
+  db 34 01
+INJECT_songli2+7:
+  readmem(StrongEnough,8)
+songli_quality:
+  db 88 87 80 00 00 00
+dealloc(StrongEnough)
+dealloc(songli_quality)
+unregistersymbol(*)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>200</ID>
+              <Description>"物品质量"</Description>
+              <ShowAsSigned>1</ShowAsSigned>
+              <VariableType>Byte</VariableType>
+              <Address>GiftQuality</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>201</ID>
+          <Description>"鼠标悬停在【上锁】的装备时获取装备属性"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+decodeFunction('c-q_.U27cI[0H}SwVqfGRBl33;Ow0?L4oeKb{tlmG[xzo*!OQ:QV_;BUhiD+4w^^r%!fXnI[s4cS0$t,X)@;PX%IATq2wWLW2h9[D!8:$1$}ng42ArJ@xU}K)n_e$%1Z;Rd%o[u:bU?anRCB7=}?k#%3EX7OOlut*9Ljepwqu@uT[OpOh{Bt_8%t*q/5=Rml:%E-EW{*F{nC1X=wb5E@gTL??H:+]JN2EW_;sVVr9.wJt;cs2H,b}0V{fSIZ[eJ*Bc?1QVBQ1bqdRiq$8DalPwjjOow9G43:9fx=xD!EI[q(Tgv7?l#-s51+Nafs#2EeGz;0Z1O+_pgq0azH=,E:Q(Tf@le)@yor/WlmT7?;8Ov97v)q5Dl(ze:3zlwrQZ9oV#Po@LBCAv-9,7fcJWGk.b.A;Kxd@,qph(qqmYcM#,f;RGu/U!+;8?gQrj#q.tA5X{nc58LfnaP+gZ6Gy:ZvAbGF}Jrl+O+?SiSHF2uhcj9m-ChGc}#^/ug2rOS.!;d8EA{/snK/Vro3-5UFdH)/8/y3G7rXYXuyQ%+{)jveE9,-bPGecSAhSpo-/2UU*tE67!E3i,Yc8!W35JPRF4g!Y-dHFJooVcg%+Rffk6Trqy2ab:#8*U={+(Z=cfZ%}K=Yn._6Iwy@/DcvLFD#e#rBOmCh-80!Y4M4?m)oHJK-k5h^otbE[6uGjLYEfqm=h*JakUZe*KEyt6lGWfbp(3Wp1*R8Kc?Df7#Yz89KU][%Ehw{SmiL@kSHVw(e=6l$2v(16vt*aUv#1X7FmwXj(1^kGtj0QD3H?ZG;Ai:Luea137@LkHbN,9]Ou^#dYXl:c1[@!T6mng9/6L:N.ifLHw6;9QG0S!u[uCHe,/$MN@=74#$SnBG]2B=o)(-ONkb4R:c[vz?jeUI]oeNjADrrdQY2RXkU!FiVd1S%FtAymZkbd=%Vvn_g7$3O.B+fL#D[k5NGP],_UH+^_UDi_UL8M$Ds)XfmahdG[aD!oHZm$EWeEv-XY8Ovb/.bjNa%yOv75(@1t,FA#%[[/Ki91YvR6s{XVeabAyc+w2b7P.,E(Vy18F})s/tZN!Id92,=B6pS:O6GCPro?RP3LFbLMSR]sQs:CS)ivhX2Sq__5GxWWb1dXkaD!?kn.4u2l@o%W3stN-y15eZavTded0aEB+L=6a?)t=ugc3=XyCH[5Lt?$8jYy[6Obex@pgxE}9on/ZSgJfs3#BTUH%h2qo*k=eF3X_e=LZx}v@Yb]VMy_Mos{=a7x867?v]2@7*6#(F.Y5FJ45-E7p5YmK!_jf?r_zjs=LopR5-?WEAp%Y19aCT.6G}sa:Yz2q]e@)A#9^aI/).%o@BgD/Y6)7r_G^[S(Db]cB]vXXw$[auDNYu*0W=EJIsV*35Q;:.XPBBeT^{GWxQlL)9Nw=3YkJd5hNir40:i[af]VHaXTqxp_IWVNhX)aG0vPUL0^qxJK]2%Jmf,r.;_namSQ}QPT=8Ca]JR^]IHh$RKjp8mg@0/B3_-s4IJln;9SEkK.b{eAAWy/Ujn]GWgu+!D%z[8w}x=HH4wITtLOm9NRS1z69mEm.3,^ya$i7*fTuvX4tRf0Kok8ys0-650M#07.czenqeKYH*98*/$4KkLF=$L0xBhNIxQozx^VxSu2=gyYkRT^Y*EMlFUsIB*ox6ds^ju].[OyEc0Qe{0M(yBrw*R!DmmEPUwT7.5J]pE2k=?b=:IG)wAd%Xyp:vT1+-F.YgaURd)?0iQXiKS}zYm@;I_C#v4,g0TSib:)uOKjQKY]#[bStQ+uIviItzB5Fu%a2jQE.mYYZV1w4]2m)B@jWtB-jh}2#-fm^jrMrVj3NQJ/s2JA_8T04/3sbb[PLWdw;6?w=Q{4@XI_rXiA)zPm]NJyAnjW%JBoxheYsi@8)s;Jcsr}38iY[ALyI72mXooE+yfsr-P=(_90:6KiYy:^(nvv,JRWYgqQr!?eDqncqX6wV#ZVc-v5awN[.Ny9DMQO$:)#-VQ-4DHE5G](h%*9I@y$ujAS#_WImG[kKZQZ+d5*{lrGHBFuRIrnB7eVyzs35+3rEWkAHsu[}EaQ-{{w,gFhVwk1l[An0*l@!*LF+]RSwkN89fl^)k%D^XZQ2?$FB3wRs_b@u]CrzkL5V[z2*nAN@Pyd-m;wqn%(y-Qq;tcRCafvm8yl:uo0X#+U^W/HqCXlb9kfsx](YXzQgpcgC?N8$Nv,bp%07U$=[Pds)@JvtSINp,[*bz1+]?%3fEi)2QfE;?HEm02Y6pKo@JMUa/@:+e,cbM=d-9M?J8TBBob8b(VM)PG%.;lxNM-[3=_tCaLqoPdD-M(6]7E(SlEW%ah_Hu]^U^xDo@3jDd,+X;v{5),ZQ}ORDbL2HB8Z*v.^VS}KV23)W;nacr0)jx5r3PfW8H1(oyErc[aiZYp;rURd;7?X0bL98d.#z,cOO2!F.,Scpw^?thNx/.g-B^P@Mj5GaDc({.X/^QV0URHS)')()
+{$asm}
+[ENABLE]
+aobscanmodule(aobEquiptAttr,$process,48 8B 06 41 B0 01 48 8D 54 24 x 48 8B CE FF 90 x x 00 00 48 8B D6)
+alloc(EquiptAttr,$1000,aobEquiptAttr)
+label(return,exit)
+
+EquiptAttr:
+  push r8
+  cmp byte ptr [rbx+45],1
+  jne exit
+  cmp [EquiptAttr+300],1
+  jne @f
+  cmp [EquiptAttr+200],rbx
+  je exit
+@@:
+  mov [EquiptAttr+200],rbx
+  mov r8,[rbx+70]
+  lea r8,[r8+A0]
+  mov [EquiptAttr+208],r8
+  cmp [EquiptAttr+400],1
+  je exit
+  mov [EquiptAttr+400],1
+{$luacode _ItemInfoSpec=RBX _ItemInfoSetting=R8}
+  synchronize(updateActions(_ItemInfoSpec,_ItemInfoSetting))
+{$asm}
+  mov [EquiptAttr+400],0
+exit:
+  pop r8
+  mov rax,[rsi]
+  mov r8l,01
+  jmp return
+aobEquiptAttr:
+  jmp EquiptAttr
+  nop
+return:
+registersymbol(aobEquiptAttr,EquiptAttr)
+
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+purgeRecord(findChildRec(MainRec,'道具效果模板值'))
+purgeRecord(findChildRec(MainRec,'道具效果增量（加上对应的模板值即是总值）'))
+purgeRecord(findChildRec(MainRec,'额外效果'))
+{$asm}
+aobEquiptAttr:
+  db 48 8B 06 41 B0 01
+dealloc(EquiptAttr)
+unregistersymbol(*)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>202</ID>
+              <Description>"装备共享数据（会影响所有同ID装备，不建议修改）"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>203</ID>
+                  <Description>"ID"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>204</ID>
+                  <Description>"装备品级"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1:九品·下
+2:九品·中
+3:九品·上
+4:八品·下
+5:八品·中
+6:八品·上
+7:七品·下
+8:七品·中
+9:七品·上
+10:六品·下
+11:六品·中
+12:六品·上
+13:五品·下
+14:五品·中
+15:五品·上
+16:四品·下
+17:四品·中
+18:四品·上
+19:三品·下
+20:三品·中
+21:三品·上
+22:二品·下
+23:二品·中
+24:二品·上
+25:一品·下
+26:一品·中
+27:一品·上
+28:极品·下
+29:极品·中
+30:极品·上
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+C</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>205</ID>
+                  <Description>"名称"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>0000FF</Color>
+                  <VariableType>String</VariableType>
+                  <Length>128</Length>
+                  <Unicode>1</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>-A0+10</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>206</ID>
+                  <Description>"购买价格"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+78</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>207</ID>
+                  <Description>"出售价格"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+7C</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>208</ID>
+                  <Description>"品质"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:无
+1:白
+2:绿
+3:蓝
+4:金
+5:暗金
+6:红
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Byte</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+80</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>209</ID>
+                  <Description>"不能送礼"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:否
+1:是
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Byte</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+81</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>210</ID>
+                  <Description>"不能使用"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:否
+1:是
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Byte</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+82</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>211</ID>
+                  <Description>"不能出售"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:否
+1:是
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Byte</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+83</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>212</ID>
+                  <Description>"不能堆叠"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:否
+1:是
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Byte</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+84</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>213</ID>
+                  <Description>"不能脱掉"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:否
+1:是
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Byte</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+85</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>214</ID>
+                  <Description>"bDontCheckHPMP"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:否
+1:是
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Byte</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+86</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>215</ID>
+                  <Description>"bCantTakeFromCompare"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:否
+1:是
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Byte</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+87</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>216</ID>
+                  <Description>"bOpenForPlayer"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:否
+1:是
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Byte</VariableType>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>-A0+88</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>217</ID>
+                  <Description>"道具效果模板值"</Description>
+                  <Options moHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Array of byte</VariableType>
+                  <ByteLength>0</ByteLength>
+                  <Address>EquiptAttr+208</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>218</ID>
+              <Description>"装备独有数据"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>219</ID>
+                  <Description>"ItemDefId"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>EquiptAttr+200</Address>
+                  <Offsets>
+                    <Offset>3C</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>220</ID>
+                  <Description>"数量"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>EquiptAttr+200</Address>
+                  <Offsets>
+                    <Offset>40</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>221</ID>
+                  <Description>"道具效果增量（加上对应的模板值即是总值）"</Description>
+                  <Options moHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Array of byte</VariableType>
+                  <ByteLength>0</ByteLength>
+                  <Address>EquiptAttr+200</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                    <Offset>+48</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>222</ID>
+                  <Description>"额外效果"</Description>
+                  <Options moHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Array of byte</VariableType>
+                  <ByteLength>0</ByteLength>
+                  <Address>EquiptAttr+200</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                    <Offset>+58</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>223</ID>
+          <Description>"锻造和制衣效果加倍"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(InForging,$process,0F 10 00 0F 11 46 28 44 89)
+aobscanmodule(ForgeEffect,$process,E8 x x x x F2 0F 10 x 44 8B 78 08 F2 0F 11 x 24)
+aobscanmodule(ForgeRandEffect,$process,0F 29 x 24 x 0F 28 x 0F 29 x 24 x F2 0F 10)
+alloc(Forge,$1000,InForging)
+registersymbol(InForging,ForgeEffect,ForgeRandEffect,Forge)
+label(return,return1,return2)
+
+Forge:
+  movups xmm0,[rax]
+  movups [rsi+28],xmm0
+  mov [Forge+A0],r15d
+  jmp return
+InForging:
+  jmp Forge
+  nop 2
+return:
+
+Forge+100:
+  dd (float)2 (float)2
+
+Forge+1F0:
+  readmem(ForgeEffect+5,8)
+Forge+200:
+  cmp [Forge+A0],2
+  jne @f
+  fld [rax+8]
+  fmul [Forge+100]
+  fstp [rax+8]
+@@:
+  readmem(ForgeEffect+5,8)
+  jmp return1
+ForgeEffect+5:
+  jmp Forge+200
+  nop 3
+return1:
+
+Forge+300:
+  readmem(ForgeRandEffect,5)
+  cmp [Forge+A0],2
+  jne @f
+  cmp [rcx],5
+  je @f
+  cmp [rcx],6
+  je @f
+  movss xmm2,[Forge+104]
+@@:
+  jmp return2
+ForgeRandEffect:
+  jmp Forge+300
+return2:
+
+
+[DISABLE]
+InForging:
+  db 0F 10 00 0F 11 46 28
+ForgeEffect+5:
+  readmem(Forge+1F0,8)
+ForgeRandEffect:
+  readmem(Forge+300,5)
+dealloc(Forge)
+unregistersymbol(*)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>224</ID>
+              <Description>"道具【增量】效果倍率"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>Forge+100</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>225</ID>
+              <Description>"额外效果倍率"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>Forge+104</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>228</ID>
+          <Description>"锻造、制衣、炼丹、烹饪无视要求"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local scan = AOBScan('83 x FE 0F 85 x x x x 4C 8D 0D','+X-C')
+if scan then
+  for i=0,scan.count-1 do writeBytes(scan[i]..'+3',0x90,0xE9) end
+  scan.destroy()
+  scan = nil
+end
+local scan = AOBScan('x 8B x 49 8B x E8 x x x x 84 C0 0F 85 x x 00 00 4C 8D 0D','+X-C')
+if scan then
+  for i=0,scan.count-1 do writeBytes(scan[i]..'+B',0x0C,0x01) end
+  scan.destroy()
+  scan = nil
+end
+{$asm}
+aobscanmodule(IgnoreForgeLevel,$process,x 89 x x 48 8D 55 x 48 8B x E8 x x x x 84 C0 0F 85)
+aobscanmodule(forgeMaterialEnough,$process,48 8D 55 x 48 8B x E8 x x x x 84 C0 0F 85 x x x x 84 DB 0F 85)
+IgnoreForgeLevel+10:
+  db 0C 01
+forgeMaterialEnough+C:
+  db 0C 01
+registersymbol(IgnoreForgeLevel,forgeMaterialEnough)
+
+aobscanmodule(fusionType,$process,48 8B 79 08 85 D2 0F 8E)
+alloc(setFusionType,$1000,fusionType)
+label(return)
+setFusionType:
+  mov edx,2
+  mov rdi,[rcx+08]
+  test edx,edx
+  jmp return
+fusionType:
+  jmp setFusionType
+  nop
+return:
+registersymbol(fusionType,setFusionType)
+
+aobscanmodule(AlchemyMonneyIsEnough,$process,39 x 30 0F 8D x x 00 00 4C 8D)
+aobscanmodule(CookingMonneyIsEnough,$process,39 x 30 7D x 4C 8D)
+aobscanmodule(AlchemyLvIsEnough,$process,8B x 6C 49 8B x E8 x x x x 84 C0)
+aobscanmodule(CookingLvIsEnough,$process,8B x x 49 8B x E8 x x x x 84 C0 75 x 4C 8D)
+AlchemyMonneyIsEnough+3:
+  db 90 E9
+CookingMonneyIsEnough+3:
+  db EB
+AlchemyLvIsEnough+B:
+  db 0C 01
+CookingLvIsEnough+B:
+  db 0C 01
+registersymbol(AlchemyMonneyIsEnough,CookingMonneyIsEnough,AlchemyLvIsEnough,CookingLvIsEnough)
+
+aobscanmodule(FusionAlertCont,$process,8B 81 04 03 00 00 89 44 24)
+alloc(setFusionAlertCont,$1000,FusionAlertCont)
+label(returnhere)
+setFusionAlertCont+204:
+  dd 2
+setFusionAlertCont:
+  mov eax,[rcx+304]
+  cmp [setFusionAlertCont+200],1
+  jne @f
+  mov eax,[setFusionAlertCont+204]
+@@:
+  cmp eax,0
+  jg @f
+  mov eax,1
+@@:
+  mov [rcx+304],eax
+  jmp returnhere
+FusionAlertCont:
+  jmp setFusionAlertCont
+  nop
+returnhere:
+registersymbol(FusionAlertCont,setFusionAlertCont)
+
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+local scan = AOBScan('83 x FE 90 E9 x x x x 4C 8D 0D','+X-C')
+if scan then
+  for i=0,scan.count-1 do writeBytes(scan[i]..'+3',0x0F,0x85) end
+  scan.destroy()
+  scan = nil
+end
+local scan = AOBScan('x 8B x 49 8B x E8 x x x x 0C 01 0F 85 x x 00 00 4C 8D 0D','+X-C')
+if scan then
+  for i=0,scan.count-1 do writeBytes(scan[i]..'+B',0x84,0xC0) end
+  scan.destroy()
+  scan = nil
+end
+{$asm}
+IgnoreForgeLevel+10:
+  db 84 C0
+forgeMaterialEnough+C:
+  db 84 C0
+fusionType:
+  db 48 8B 79 08 85 D2
+dealloc(setFusionType)
+
+AlchemyMonneyIsEnough+3:
+  db 0F 8D
+CookingMonneyIsEnough+3:
+  db 7D
+AlchemyLvIsEnough+B:
+  db 84 C0
+CookingLvIsEnough+B:
+  db 84 C0
+
+FusionAlertCont:
+  db 8B 81 04 03 00 00
+dealloc(setFusionAlertCont)
+unregistersymbol(*)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>230</ID>
+              <Description>"设置产出数量"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+setFusionAlertCont+200:
+dd 1
+
+[DISABLE]
+setFusionAlertCont+200:
+dd 0
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26236</ID>
+                  <Description>"产出数量"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>setFusionAlertCont+204</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>229</ID>
+          <Description>"锻造和制衣最大额外效果词条数"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(aobRandActionMax,$process,x x 04 x x x x 8D x 01 F3 0F 10)
+alloc(randActionMax,$1000,aobRandActionMax)
+label(return)
+randActionMax:
+  readmem(aobRandActionMax,6)
+  mov rdi,-1
+  mov r8d,9
+  jmp return
+aobRandActionMax:
+  jmp randActionMax
+  nop
+return:
+registersymbol(aobRandActionMax,randActionMax)
+
+
+aobscanmodule(aobQualityResults,$process,48 03 F6 4D 8B 3F)
+alloc(newmem,$1000,aobQualityResults)
+label(exit)
+newmem:
+  mov esi,[r15+8]
+  dec esi
+  add esi,esi
+  movsxd rsi,esi
+  mov r15,[r15]
+  jmp exit
+aobQualityResults:
+  jmp newmem
+  nop
+exit:
+registersymbol(aobQualityResults)
+
+
+[DISABLE]
+aobRandActionMax:
+  readmem(randActionMax,6)
+dealloc(randActionMax)
+
+aobQualityResults:
+  db 48 03 F6 4D 8B 3F
+dealloc(newmem)
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>231</ID>
+          <Description>"切磋获得对手所有背包物品"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(aobAllLoot1,$process,0F 4E D9 FF C3)
+aobscanmodule(aobAllLoot2,$process,03 00 00 00 EB x 85 DB)
+aobAllLoot1:
+  db BB 9F 86 01 00
+aobAllLoot2:
+  db 9F 86 01 00
+registersymbol(aobAllLoot1,aobAllLoot2)
+
+[DISABLE]
+aobAllLoot1:
+  db 0F 4E D9 FF C3
+aobAllLoot2:
+  db 03 00 00 00
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>232</ID>
+          <Description>"掉落率100%"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(DropItem,$process,F3 0F 2C x 04 E8 x x x x 84 C0 74 x 48)
+DropItem+A:
+  db 90 90
+registersymbol(DropItem)
+
+[DISABLE]
+DropItem+A:
+  db 84 C0
+unregistersymbol(DropItem)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>233</ID>
+          <Description>"钓鱼只钓稀有物（前提是鱼池有稀有物）"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(SpecialProductions,$process,F3 0F 59 0D x x x x F3 0F 2C x 3B x 0F 4E x 33 DB) // should be unique
+alloc(FishingSP,$1000,SpecialProductions)
+label(return)
+
+FishingSP:
+  readmem(SpecialProductions+C,5)
+  cmp rbp,rsp
+  jna @f
+  cmp [rbp+28],rsp
+  jna @f
+  cmp [rbp+30],0
+  jna @f
+  mov eax,7FFFFFFF
+  mov ecx,7FFFFFFF
+@@:
+  jmp return
+SpecialProductions+C:
+  jmp FishingSP
+return:
+registersymbol(SpecialProductions)
+registersymbol(FishingSP)
+
+
+[DISABLE]
+SpecialProductions+C:
+  readmem(FishingSP,5)
+dealloc(FishingSP)
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>234</ID>
+          <Description>"钓鱼收杆必有收获"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(FishingShouGanFlag,$process,48 8B 89 x x 00 00 48 8B 01 B2 03)
+aobscanmodule(ShouGan,$process,48 8B FA x 63 30)
+alloc(ShouGanFlag,$1000,FishingShouGanFlag)
+label(return)
+label(returnhere)
+
+ShouGanFlag:
+  readmem(FishingShouGanFlag,7)
+  mov [ShouGanFlag+100],1
+  jmp return
+FishingShouGanFlag:
+  jmp ShouGanFlag
+  nop 2
+return:
+registersymbol(FishingShouGanFlag)
+registersymbol(ShouGanFlag)
+
+ShouGanFlag+200:
+  cmp [ShouGanFlag+100],1
+  jne ShouGanFlag+400
+  mov [ShouGanFlag+100],0
+  cmp rcx,rsp
+  jna ShouGanFlag+400
+  mov byte ptr [rcx+279],1
+  jmp ShouGanFlag+400
+ShouGanFlag+400:
+  readmem(ShouGan,6)
+  jmp returnhere
+ShouGan:
+  jmp ShouGanFlag+200
+  nop
+returnhere:
+registersymbol(ShouGan)
+
+[DISABLE]
+FishingShouGanFlag:
+  readmem(ShouGanFlag,7)
+ShouGan:
+  readmem(ShouGanFlag+400,6)
+dealloc(ShouGanFlag)
+dealloc(newmem)
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>235</ID>
+          <Description>"NPC装备可脱"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(NpcEquipCanRemove1,$process,80 B9 x x 00 00 00 0F 85 x x 00 00 48 8D 45)
+aobscanmodule(NpcEquipCanRemove2,$process,0F B6 83 85 00 00 00 88 87 85 00 00 00)
+NpcEquipCanRemove1:
+  db C6 81
+NpcEquipCanRemove1+7:
+  db EB 04
+NpcEquipCanRemove2:
+  db 31 C0 90 90 90 90 90
+registersymbol(NpcEquipCanRemove1)
+registersymbol(NpcEquipCanRemove2)
+
+[DISABLE]
+NpcEquipCanRemove1:
+  db 80 B9
+NpcEquipCanRemove1+7:
+  db 0F 85
+NpcEquipCanRemove2:
+  db 0F B6 83 85 00 00 00
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>236</ID>
+          <Description>"NPC无视武器和功法限制"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ignoreWeaponLimits,$process,0F 44 x x FF x 48 x x 75 x 40 84 x 75 x)
+aobscanmodule(ignoreSkillLimits,$process,49 8B 4F 70 E8 x x x x 3C 04 75 75)
+aobscanmodule(protagonistSkillUI,$process,B2 01 49 8B 86 x x 00 00)
+alloc(skillUI,$1000,protagonistSkillUI)
+label(return)
+registersymbol(ignoreWeaponLimits,ignoreSkillLimits,protagonistSkillUI,skillUI)
+
+ignoreWeaponLimits+E:
+  db eb
+ignoreSkillLimits+B:
+  db eb
+skillUI:
+  push r8
+  mov r8,GameEngine
+  mov r8,[r8]
+  cmp r8,rsp
+  jna @f
+  mov r8,[r8+C60]
+  cmp r8,rsp
+  jna @f
+  mov r8,[r8+38]
+  cmp r8,rsp
+  jna @f
+  mov r8,[r8+38]
+  cmp r8,rsp
+  jna @f
+  mov r8,[r8+30]
+  cmp r8,rsp
+  jna @f
+  mov r8,[r8+8]
+  mov r14,r8
+@@:
+  pop r8
+  jmp skillUI+100
+skillUI+100:
+  readmem(protagonistSkillUI+2,7)
+  jmp return
+protagonistSkillUI+2:
+  jmp skillUI
+  nop 2
+return:
+
+
+[DISABLE]
+ignoreWeaponLimits+E:
+  db 75
+ignoreSkillLimits+B:
+  db 75
+protagonistSkillUI+2:
+  readmem(skillUI+100,7)
+dealloc(skillUI)
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>237</ID>
+          <Description>"不遇敌"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(BuYuDi,$process,x 8B EA 4C 8B F1 48 85 D2 0F 84 x x 00 00 E8)
+BuYuDi+9:
+  db 90 e9
+registersymbol(BuYuDi)
+
+[DISABLE]
+BuYuDi+9:
+  db 0F 84
+unregistersymbol(BuYuDi)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>238</ID>
+          <Description>"战斗前自动恢复气血和真气"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+decodeFunction('c-nPRO;5gg5S]U-RMkyFh*!]oPNog0hxQQgp?*=$D,zT!Af+)94kBI})@vvqZF1];2H$$;xtHP{)L*ZB4ZfBBhvGy3K/{NkExQ!Fpy9nYZ*Qis-fesc(+0$8PN]gC1}ZJSx3E5kmz:B[)J02p[!$85AxKb3w%rrw?kh}nBf[o^$XuR;^dwKqa_{9g?HmHKnL!0By@KSOrVMjmGayaWhNxxOc7+sF;JPGAIpp=An?Sr/PCyNn5*Gz:!!5?lGi-D{C*x{;zc_,6c*8Soq#C?.$0W?*ILvQLeaykepTHF44h5a!JT-=?20-i?g)32vg9#lW(nFau?qksXaaPTR(yLHQh:,*OT*S,9csh1rht=UVlFb}s.I.qwKylbw?kyQ8REM=STk%KfpHFJ7Wwlm4iBH58,wX:@+cQE4tyW)ojZQyd,iKG/7P8uY+nAy#q6Eo-?B7DLSJb0,ClZ0;*}kW#Jqawv,O2ruJw;M}Ec,YHTY+*zSV;*T8nxoSS-b$Vcn$2H=^BWBfn@$nb2qU3vm]u!Z#[M#2CSrJ?GjyoF(jnKi@6.7ve!w)B3mu8(kFFa0N/Bmn7]:},$?!UUh9VQ7u;+}s^')()
+{$asm}
+[ENABLE]
+aobscanmodule(recoverHPMP,$process,48 8B x 80 x x x 00 00 03 75)
+alloc(recover,$1000,recoverHPMP)
+label(return)
+
+recover:
+  readmem(recoverHPMP+3,7)
+{$luacode}
+  recoverTeam()
+{$asm}
+  jmp return
+recoverHPMP+3:
+  jmp recover
+  nop 2
+return:
+registersymbol(recoverHPMP,recover)
+
+
+[DISABLE]
+recoverHPMP+3:
+  readmem(recover,7)
+dealloc(recover)
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>239</ID>
+          <Description>"全队友参战 (位置会重叠)"</Description>
+          <Options moAlwaysHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(allInFight1,$process,49 63 85 08 01 00 00 48 8D)
+aobscanmodule(allInFight2,$process,49 8D B7 00 01 00 00 48 89 75)
+aobscanmodule(allInFight3,$process,83 E8 01 49 8B 3A)
+aobscanmodule(allInFight4,$process,49 8B 0C 04 83 79 38 00)
+alloc(allInFight,$1000,allInFight1)
+label(exit,exit1)
+label(return1,return2,return3,return4)
+registersymbol(allInFight,allInFight1,allInFight2,allInFight3,allInFight4)
+
+allInFight:
+  mov rcx,[r13+F0]
+  movsxd  rax,dword ptr [r13+F8]
+  jmp return1
+allInFight1:
+  jmp allInFight
+  nop 2
+return1:
+
+allInFight+200:
+  mov esi,[r15+F8]
+  dec esi
+  mov [rsp+58],esi
+  mov [rsp+5C],esi
+  lea rsi,[r15+F0]
+  jmp return2
+allInFight2:
+  jmp allInFight+200
+  nop 2
+return2:
+
+allInFight+400:
+  push rax
+  push rdx
+  push rbx
+  mov rdx,[rsi]
+  mov rbx,[rdx+r12]
+  cmp [rbx+90],0
+  je exit1
+  mov eax,r14d
+  xor rdx,rdx
+  mov rbx,4
+  div ebx
+  mov rax,rdx
+  lea r10,[r9+rax*8]
+exit:
+  pop rbx
+  pop rdx
+  pop rax
+  sub eax,01
+  mov rdi,[r10]
+  jmp return3
+exit1:
+  sub eax,01
+  xor rdi,rdi
+  jmp exit
+allInFight3:
+  jmp allInFight+400
+  nop
+return3:
+
+allInFight+600:
+  mov rcx,[r12+rax]
+  cmp [rsp+50],0
+  jne @f
+  cmp esp,esp
+  jmp return4
+@@:
+  cmp dword ptr [rcx+38],00
+  jmp return4
+allInFight4:
+  jmp allInFight+600
+  nop 3
+return4:
+
+
+[DISABLE]
+allInFight1:
+  db 49 63 85 08 01 00 00
+allInFight2:
+  db 49 8D B7 00 01 00 00
+allInFight3:
+  db 83 E8 01 49 8B 3A
+allInFight4:
+  db 49 8B 0C 04 83 79 38 00
+dealloc(allInFight)
+unregistersymbol(*)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>240</ID>
+              <Description>""</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+aobscanregion(allInFight5,allInFight4,allInFight4+50,80 BD x x 00 00 05)
+label(return)
+allInFight+800:
+  readmem(allInFight5,7)
+  cmp [rsp+50],0
+  jne @f
+  cmp esp,esp
+  jmp return
+@@:
+  readmem(allInFight5,7)
+  jmp return
+allInFight5:
+  jmp allInFight+800
+  nop 2
+return:
+registersymbol(allInFight5)
+
+[DISABLE]
+allInFight5:
+  readmem(allInFight+800,7)
+unregistersymbol(allInFight5)
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>241</ID>
+          <Description>"未交互过的驿站也可以使用"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(prohibition_reason,$process,x 8B x 48 8D 54 24 x x 8B x FF 90 x x 00 00 85 C0 0F 85)
+prohibition_reason+13:
+  db eb 04
+registersymbol(prohibition_reason)
+
+[DISABLE]
+prohibition_reason+13:
+  db 0F 85
+unregistersymbol(prohibition_reason)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>242</ID>
+          <Description>"招式无视冷却"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+decodeFunction('c-nPRQESss6h1e)=Lt^MSoh,FGmIfZP?*s5Z{%o!I%P7UBEl#mn!6Hg6G$VgPo5O1Pd?qVi{+v5KJ.JsR=y$zlc%Y5L*b{fPR[}sPR^q.yM6r5Z@Ml+[1adA8^9C4FX7VeTnKg/F{@]hLkO(+0GR]1z,exN=NWXxXXptDpHM:PGx)YV3lNwg09*WdAP^.b9zWg(gc]l]dVGF9Q0dvzBiVKv#@(Nj,;j=u].8y+-G?!H;6p%Ab4ZtMm$zp,k4+1?S$@Xc;)yPCuO]Y5o/ynYs-(=TnCsR*Hv%/CllVQaMREIW+z36mb50COW-GMT%dmcroCgBNLcnJPm:FJ25HSFh6rW+EBn:$r0ty0Dr35dN(=+XTkCc#1gC8Pe-wF5aFD?foL2FGqOiB%YA.(2bz)yK*j*d]u1e=f8FanlMG=-FuU3c^v#WyD!pHbgi0])nWIF(BpbdZh*Gl@[2.=Ml_hq/3qSZMG)4oQXNKV_/Za#bh3bxPLq]_2=2hLP%62Zzm$/:GvJSJU]N4f#gjk9.aUDVrUKgOsnnP:5c{BF!sQ-fS$-2.V-vzT=WmH.iR+^UQldwVY,G,#9dwcdh%jedW_$V{Ag@r/Q;')()
+{$asm}
+aobscanmodule(UseSkill,$process,48 8B x 48 8B x 8B 12 E8 x x x x 48 85 C0)
+aobscanmodule(SkillNoCD,$process,8B 80 DC 01 00 00 FF C8 83 F8 05 77 x 48 8D 15)
+alloc(SkillFlag,$1000,UseSkill)
+label(return,returnhere)
+
+SkillFlag:
+  readmem(UseSkill,6)
+  mov [SkillFlag+100],0
+{$luacode JHASC=rcx}
+  noSkillCD(JHASC)
+{$asm}
+  jmp return
+UseSkill:
+  jmp SkillFlag
+  nop
+return:
+registersymbol(UseSkill,SkillFlag)
+
+SkillFlag+200:
+  mov eax,[rax+000001DC]
+  cmp [SkillFlag+100],1
+  jne @f
+  mov eax,1
+@@:
+  jmp returnhere
+SkillNoCD:
+  jmp SkillFlag+200
+  nop
+returnhere:
+registersymbol(SkillNoCD)
+
+[DISABLE]
+UseSkill:
+  readmem(SkillFlag,6)
+SkillNoCD:
+  db 8B 80 DC 01 00 00
+dealloc(SkillFlag)
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>243</ID>
+          <Description>"战斗失败也被视为胜利"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(HandleFightEnd,$process,41 55 41 56 41 57 48 83 EC 50 44 0F B6 x 48 8B)
+alloc(newmem,$1000,HandleFightEnd)
+label(code)
+label(return)
+
+newmem:
+  mov dl,0//0:win 1:lose
+code:
+  push r13
+  push r14
+  push r15
+  jmp return
+HandleFightEnd:
+  jmp newmem
+  nop
+return:
+registersymbol(HandleFightEnd)
+
+
+[DISABLE]
+HandleFightEnd:
+  db 41 55 41 56 41 57
+unregistersymbol(HandleFightEnd)
+dealloc(newmem)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1250</ID>
+          <Description>"所有心法都可以填装在最后一格（额外心法栏数大于心法数能防止读档还原，战斗时只能显示6个心法）"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+decodeFunction('c-l:,!AiqG5Pe)M5UN!$ClzAQB7%5ObI^vvQYu2xLqWV(vxb0eV3VRfIR(vNPyRwbB-L{jDQ:}uzQdb(Z/v93yRCkwjqR@mb+IX0ZriVSSmNkKu%%-5fnf@+QUF5(;O@eccrGkz76KzkL/BYx5?SK(X7*i6)[)[L?jb%33)%)s+pvuU]exQpLNH=WA:q9aD:sQzO#):@0y6#(Bh*1-E]gdNgaYBo,(wgP!(Gj_,o1i{;G3W9*Vm10u.KZ;cYf*eHTdfB^Yl8zVwKA%)kjcG#WUQFRF;.;z{L0vMAyAs#Y#KYeC)8E]S#b$$cWOZE.cu^ijyo=x.@MVq_dx_qmrw%7q@mbl5/OGo$6U@_Dv1Y7Zk8d?B')()
+{$asm}
+aobscanmodule(xinfazhuangtian,$process,49 FF C0 48 83 C0 18)
+alloc(newmem,$1000,xinfazhuangtian)
+label(return)
+
+newmem:
+  inc r8
+  add rax,18
+  push rdx
+  mov edx,r8d
+  inc edx
+  cmp edx,ecx
+  pop rdx
+  jne @f
+  mov [rax],1
+  mov [rax+18],1
+  mov [rax+1C],ecx
+  inc ecx
+@@:
+  jmp return
+xinfazhuangtian:
+  jmp newmem
+  nop 2
+return:
+registersymbol(xinfazhuangtian)
+
+aobscanmodule(AddNeiGongNoLimit,$process,41 83 F8 02 7E x 41 B8 02 00 00 00)
+AddNeiGongNoLimit+8:
+  db 3
+NeiGongLimit:
+  db 7
+registersymbol(AddNeiGongNoLimit)
+
+
+[DISABLE]
+xinfazhuangtian:
+  db 49 FF C0 48 83 C0 18
+AddNeiGongNoLimit+8:
+  db 2
+NeiGongLimit:
+  db 6
+dealloc(newmem)
+unregistersymbol(*)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>244</ID>
+          <Description>"总移动速度加倍"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(MaxWalkSpeed,$process,74xxF30F10xxxxxxxxxx4883C4xxxxC3F30F10xxxxxxxxxx4883C4xxxxC3F30F10)
+alloc(WalkSpeed,$1000,MaxWalkSpeed)
+label(exit)
+WalkSpeed:
+  readmem(MaxWalkSpeed+10,8)
+  push r8
+  cmp [WalkSpeed+200],1
+  jne @f
+  mov r8,[rbx+130]
+  cmp r8,rsp
+  jna exit
+  cmp [r8+4C0],0
+  jne exit
+@@:
+  mulss xmm0,[WalkSpeed+100]
+exit:
+  pop r8
+  jmp MaxWalkSpeed+18
+WalkSpeed+100:
+  dd (float)2
+WalkSpeed+200:
+  dd 1
+MaxWalkSpeed+10:
+  jmp WalkSpeed
+  nop 3
+registersymbol(MaxWalkSpeed)
+registersymbol(WalkSpeed)
+
+[DISABLE]
+MaxWalkSpeed+10:
+  readmem(WalkSpeed,8)
+dealloc(newmem)
+unregistersymbol(*)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>245</ID>
+              <Description>"倍率"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>WalkSpeed+100</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>246</ID>
+              <Description>"只对本方生效"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:否
+1:是
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>WalkSpeed+200</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>247</ID>
+          <Description>"奔跑或骑马加速"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+decodeFunction('c-m!BPfNov6i-:@5!lU)3X.Q,mgW#QmC.ib=8%*5Ud9gTlFB4$O491Q@+i^9^A8NYv6:1V((zx7[j}V!/m#oR3vls0f_oEHhQs0Z6(xh]%z{dz44}WX%Cih}R/jNSMFzli2fDn:0Jq-K]fscrSbhHcv+S{$m@H1WVy*njwdSg:nnley!^b]3H8%$5Q$%ufKSNve?8__0ZazQ7kP4yJk:)QAt-#{3LJ0Pf#!%3Li%9dP*fHA^X=PREr3Xr8s{%O36nZIBh;,%#NiO_nlRG=%eQaW?J3M13Dutp:JUIePdVo_P#-Oc}1TVGOBz?)Ti=m]NImzt,l)8Q0fE})u-eryY%fX]t)[QqW2kWm=ji#^YrB:UfOvAPLl7$jSuj0_.a75ciJsQJhA$WMkwN@UVeFtCu06wLvG5')()
+{$asm}
+aobscanmodule(aobMountSpeed2,$process,F3 0F 58 x F3 0F 58 x x x 00 00 EB) // should be unique
+label(return,offset)
+[aobMountSpeed2+8]:
+offset:
+mountSpeedMul+50:
+  readmem(aobMountSpeed2+4,8)
+mountSpeedMul+300:
+  movss xmm0,[rsi+offset]
+  mulss xmm0,[mountSpeedMul+100]
+  addss xmm6,xmm0
+  jmp return
+aobMountSpeed2+4:
+  jmp mountSpeedMul+300
+  nop 3
+return:
+registersymbol(aobMountSpeed2)
+
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+decodeFunction('c-oWpDNPJ!ketlRCB=/U!NS2(5ypT38s!d+2p%Jo0FY#3aA0tBU_;+jU_=ix0J0B2+$j?TY?k+,y8+(hV]yMt2b#gcn@./s=@s-%nwyl9DiV^JpX8fgnpYBBkeZsJZDPfxpiq;Wn39^CtC0(A[btuQvC!l}QEP-pv9[rJP)2GrN}(W^PJS^AABrrCU{.]aYI/gINorAWWo{Y[4htWO)JcI@Hh{@HDKMY[0Qe/Jiv')()
+{$asm}
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>248</ID>
+              <Description>"倍率"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>mountSpeedMul+100</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>249</ID>
+          <Description>"切换到奔跑或骑马时替换为指定坐骑"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+luacall(addDropDownList('指定坐骑', MountStr, false, false, true))
+aobscanmodule(aobChangeMount,$process,83 B9 x x 00 00 00 7E x 48 89 x 24 x E8) // should be unique
+alloc(changeMount,$1000,aobChangeMount)
+label(return,offset)
+
+[aobChangeMount+2]:
+offset:
+changeMount+200:
+  dd 9
+changeMount:
+  readmem(aobChangeMount,7)
+  push rax
+  mov eax,[changeMount+200]
+  mov [rcx+offset],eax
+  pop rax
+  readmem(aobChangeMount,7)
+  jmp return
+aobChangeMount:
+  jmp changeMount
+  nop 2
+return:
+registersymbol(aobChangeMount,changeMount)
+
+
+[DISABLE]
+aobChangeMount:
+  readmem(changeMount,7)
+dealloc(changeMount)
+unregistersymbol(*)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>250</ID>
+              <Description>"指定坐骑"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>changeMount+200</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>251</ID>
+          <Description>"战斗加速"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+decodeFunction('c-nPR(2G}]5S}p_u3H;M$h_-%bBPdAE@y/xc2l:h^7FG?sH)[}mk^B@)Rxek,gJr(fHy!Kc=h=Myal(B0uR8f/1^T(SGIS4zM1iSGdnL(qdq,N)b^@r#cgie:kH.Co{3A]**=QWuLS}p0nkBUAqpr.0D2%6$U@Wd^gT2ez4ReQ1Y5vGh(}+O.H$ZR6aEn4,hahuM;20mNs/mDEnmq:s(W[Vvb=S2Xq.*O]uXG{O{G/8S_[qUlQQP5Gd0%o#Z:3YRBjViF=ujl:{;0b66Oq+q{1:m6RG(7fvYc3.^ILLu-^B8pV8T{vPJJs/:yb;o/kw3o)I(kSGLe9i3dVgJdlir1CmeZ[Rzsl[{8{Y*bnM?z,wUH](ZB?fc:4j^UYB[.=e]a0vqtC447APoKro/ny=[h#i*,otYQWf/CPZ9aTgfbLh::ai_Mx*lxJS/LWL):r=z:zbD7Uy/^RJ?@RRK9!!H]Jpjnw%#yH79en3m}U.{(55eQ}ZuA#}yCgYlL=$j+5jwZ5py-ml4UVi@+pNxCc)ReD4yS:@VoR2:HeA8fpTuZ*v@grUb%PpNA$aCKQkg6o@YcsQaCf)KkttWhI3*)l7=z5-2w{QKwv44t(p9h*L706_GZHgVsOsh1%vGjMGf1p0RsQ')()
+
+[DISABLE]
+if t_processSpeed then t_processSpeed.destroy() end
+speedhack_setSpeed(1)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>252</ID>
+              <Description>"倍数"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>BattleSpeed</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>253</ID>
+          <Description>"伤害加倍（对队友也生效）"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+decodeFunction('c-nPRU279T6g^)/Y{e2zbbYafx_E:WMGRVGeVf@_n/{jlA_jMfwq[a??:-P$8lRj@B_iD(voF#gvRg%eg?42,XLpS*LhpRsxp)H:x%bSh=M=hP=tHFRRx8w=hB1AOOW8bS/kBK@Ma;3dQkM*o0b(r.q$C@4zn(23F@-RtBTWdtBp[W0Vlc:iTy(X4KgY]t[aISGYg!#0ACE/J[/WbQ8;Vr*xQH6O/,k7YL%Ol$SdMGCPpzqH@=Ket%Y9.bkF0!.mhCqW8gw{ne*rih5/L-]i-c+)eoT$77*Rmg9jy!_^cV5X[e53]L0.LC8n/%u:0l{CFw7alCkbT9A2C%JAi1(,Wun$M/UC/W6,q]4Ud,*/Q;}[$.6%eO7L#+?]{!9bE8O:id/=wcE^VB?(6rAEQv{X5%w3KjGmf7ZY59Bxl3r-g8yv0Dw@Hp4q?$hDn*2Uepz9z}cN,;/LhNd(xsqf:-cNtO(vaHs!Nbc?pqL2%WA]5]SGl6A2TGd$K/o@A!BBMU=H#9Md-aY?@:Py!rgUZC4.5**D-X68j3c]IO8A5Q!cEKSxMME/30+t5KH@fLO:EGmdKw0iSma[B($B:2N5M%y5TWf^]F[^PAA5L{*(')()
+{$asm}
+aobscanmodule(SkillSetting,$process,F3 0F 10 80 D0 01 00 00 41 0F 2F C2)
+alloc(newmem,$1000,SkillSetting)
+label(DamageMultiplier)
+label(return)
+
+newmem:
+  movss xmm0,[rax+000001D0]
+  mov [DamageMultiplier+8],0
+  cmp r15,rsp
+  jna @f
+{$luacode JHASC=r15}
+  mulDamage(JHASC)
+{$asm}
+@@:
+  cmp [DamageMultiplier+8],1
+  jne @f
+  movss xmm0,[DamageMultiplier]
+@@:
+  jmp return
+  ALIGN 10
+DamageMultiplier:
+  dd (float)2
+registersymbol(DamageMultiplier)
+
+SkillSetting:
+  jmp newmem
+  nop 3
+return:
+registersymbol(SkillSetting)
+
+[DISABLE]
+SkillSetting:
+  db F3 0F 10 80 D0 01 00 00
+dealloc(newmem)
+unregistersymbol(*)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>254</ID>
+              <Description>"倍率"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>DamageMultiplier</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>255</ID>
+          <Description>"添加物品到背包"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+return decodeFunction('c-mc2-AV#M7)Jt3n@[]c5fzw)gh5z?7hcY,X,IQQ2.Ih)qX[E=vm?Evcw-OHD@$.,@(H+y9L:tR)Z=[_:V#70%/Ntdye76@GwGc*r6]pe-eFOtC)ag#ImdQ)z[H9Z[6$d!!;_c)5Qz^F*.[lS3,JrJ4Ree?V/J#AVEY]g-,;FO!QpPKotw^CZ%kZ[ki:Kq3b,w9w2VnSSeQrBj7/#[SmQJa!3b^#i76+IqchmHtT,M[Q@GeNu@+d_H!x$:?ovw2AiAT$rd=@h:LKFzs?rxul:]_GYFfM0vUfA1K@ZR$rP3v;2J):yN[MPAs@*X:q3:]fkN19-K{(%gYRa=,!K3c;gE%wWky]kEW6sfPgj,2o!.rSFF3Nvm%9f8HrNyn:eDs3*kh0Zkp.9TF,Hq2-S94gJeFCl79M:nFl$D#4$gRvbw9%67ZXioF(-drCN95?Kg(b1ikQ{L0U$NN{_Epg_Gj%5')()
+{$asm}
+alloc(addItem,$1000,$process)
+label(exit)
+registersymbol(addItem)
+addItem:
+  readmem(Stack+200,31)
+  mov rcx,GameEngine
+  mov rcx,[rcx]
+  cmp rcx,rsp
+  jna exit
+  mov rcx,[rcx+DE8]
+  cmp rcx,rsp
+  jna exit
+  mov rcx,[rcx+F0]
+  cmp rcx,rsp
+  jna exit
+  mov rcx,[rcx+ItemManager_Offset]
+  cmp rcx,rsp
+  jna exit
+  mov r9,2
+  movsxd rdx,[addItem+200]
+  movsxd r8,[addItem+204]
+  sub rsp,8
+  call CallAddItem
+  add rsp,8
+exit:
+  readmem(Stack+21F,32)
+addItem+200:
+dd #1 #1
+
+
+[DISABLE]
+dealloc(addItem)
+unregistersymbol(*)
+unregisterSymbol(ItemManager_Offset)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>256</ID>
+              <Description>"设置要添加数量"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>addItem+204</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>257</ID>
+              <Description>"&lt;&lt;==单击这里添加"</Description>
+              <Color>FF00FF</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+decodeFunction('c-mc%PfNov6u?7*XDywBO.0L[!VqDX;d9le!eB5DGVxy4FblPXG{0Z?%V2n%7w:QpX/xuY])gaElV8C@CleoeA?98)Ka%YC=*+ONPHXm[jTTzg:o.2;l2Nj+h/T*T6DTyLgpQ/OQz/)Ig(YW!8db_v8Axed$Px{!9uy$Qg$pGZ?T7:m/rvd8l,pmRY^RAt#+9ib22VLEVCEjUWd*i9$c!ph[W@/A1T:RH5+o@ZjR9xAV12;Eco;DLz;O/55?;Y:yH#D;PH(Q_(muMuVG^Q:QCrH%,x]4}GJl:sNOpc-hbH4Z.aLBfFCQL17K[i99BUa51=$Fw4H=HRKM1tFb;:u_;r+!l+a*lN*Mb_N0PCI}MQ#vqmZq(!:Nzj.CRR0CE5U!t)HHsi*vNddr(nu3')()
+closeScript(memrec,500)
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>258</ID>
+          <Description>"添加队友"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+decodeFunction('c-m!B(r1S96n;kNEDIu]mx@qN2t_W6S20if!xSM1GNNN@juNapu*C7pW@Z,l=j1UG=HEMZslUWL[AfN,5B$,E%*Ix#=_sAfnC.W9S%:NXh[odk5s6}(66Py.rwa2-Ks*;lg9?4o.4@?I#*LhNB}-,!0}L1R3lc2EDyjxel_hAR.12{(20h4ys.W/Mo#Sgf2B8ARm:nZ[0q_a*vk)yeV2f*X0D}yMk+J.N@(8WUUn?miEaQTKj{,X*L6+fQ1]m5!mV,HYI,pWes5jx^a?bJDm1C=-Dslzug^4SQcq3X+UmY4Kd[%jo7n:/LNp0etQ.XEfDC(@+t=Ln_-tRQ1g]y@HXwBvYF+]N8MPsvxA,bqZ(!K%3F{ohsT$gkj7Ky*dzRRryGSp6T.f3zZve.o;UO[U3G4,uTMv#($vq7w,VOrJ#D/v)/rn4n!g.J7cKHRa7e-db.Yp,-h6UU)rij5xLhoAoF+(n^V^XE[Oe*z$l7Jkcg^Q*t{pF0')()
+{$asm}
+alloc(addTeammate,$1000,CallAddTeamInfo)
+registersymbol(addTeammate)
+
+addTeammate:
+  readmem(Stack+200,31)
+  mov rcx,[addTeammate+200]
+  cmp rcx,rsp
+  jna @f
+  mov edx,[addTeammate+208]
+  mov r8,1
+  mov r9,1
+  mov byte ptr [rsp+18],1
+  sub rsp,8
+  call CallAddTeamInfo
+  add rsp,8
+@@:
+  readmem(Stack+21F,32)
+addTeammate+200:
+  dq 0 #30
+
+[DISABLE]
+dealloc(addTeammate)
+unregistersymbol(addTeammate)
+unregistersymbol(CallAddTeamInfo)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>259</ID>
+              <Description>"&lt;&lt;==单击这里添加"</Description>
+              <Color>FF00FF</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+decodeFunction('c-mc3(ubGw6#iy=i6KoOwil}VJQNZ3vU:*qwn=?YTKtjXCFHPlrg34j3$r81arRP;9)t$.Jqe/Mr}U(TvIzYzys6le_AMpIl$H,j2HyL:=_r/Pxxe!!9ANdN-MrVN1}nS9SGZb[rkq]6=6zmmIylyiL0}wV,=Zg[k%OTqsdjg52xFXGQ^aJ)wK;e.,)!WiUo7LR=QzIAQ5XmHViN*DV$1+GtlK6)k,aVR;:Osp0F#=rIGcCD7^Rt?zqny%ya$#Of{(?2#.Ix+r-s1qBhPCP6(DxUq6R-[D0vTIaM$_NoqZ*kEeBdf$vBQOO_=Ba*6^sG#${b3v*Ac#AY-_(qcqtm8SQiP[RrC]@Y/TrA0H80xx5+wOQljpody2x!^5];f8TRzSr73%jS=+ttqzC7t#Bgy$v8@n$nEtvMsDDZT(nBzshrXBBuv7wRL;3$GN}*a*{9O{yBFn@%U7VKsfx6GF-=]APAEi4n%H67C!R.]3f#7qR(x^Hpk[JWb_S1[ryItxFNBg::03LA)pc)6POWRgn?q19^MxrztpB=hp9c')()
+closeScript(memrec,500)
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>260</ID>
+          <Description>"移除队友时更换成指定队友"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+getRoleID()
+memrec.Child[0].DisplayAsDropDownListItem = true
+memrec.Child[0].DropDownList.Text = RoleStr
+{$asm}
+aobscanmodule(RemoveTeammate,$process,48 33 C4 48 89 45 x 44 88 44 24 x)
+alloc(ExitTeam,$1000,RemoveTeammate)
+label(return)
+ExitTeam+200:
+  dd #30
+ExitTeam:
+  readmem(RemoveTeammate,7)
+  mov edx,[ExitTeam+200]
+  jmp return
+RemoveTeammate:
+  jmp ExitTeam
+  nop 2
+return:
+registersymbol(RemoveTeammate)
+registersymbol(ExitTeam)
+
+[DISABLE]
+{$lua}
+memrec.Child[0].DropDownList.Text = ''
+{$asm}
+RemoveTeammate:
+  readmem(ExitTeam,7)
+dealloc(ExitTeam)
+unregistersymbol(*)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>261</ID>
+              <Description>"指定队友"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>ExitTeam+200</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>262</ID>
+          <Description>"立刻接到或完成未做过的任务"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+QuestRec = memrec
+decodeFunction('c-mc2O-sW-5Pe)6HdKpHy^Mpzid3p#ON1Ubi601-A[eg#)QJ!QD/moE$t^BZ0MFk1At^QU^0aV,I///$In2)R[ulR-Gk=)W;zIAaW#[VFk!4+U.V%kTO8g.[S=8RFf{=:00alC:OI$AiMkK(VqPQM6yKwNpb(u@(2{EEZq^7]mS511jhl[XSg[FW3y5gDn4}FTk3#XUj%ZylYjK}NNd{2YtIBE/H9%9#c+h@lph{VC87hOeoWBxsP5rHyd6$W^pnJlN}+3bMlE!!pOmgJ?[ZCh4c;6N8jk)F)@Wy]WHujNjK#+4:r-t[OUX*?G*u-{e#Q-=HG@rrj$^[TMImN4kkL^rC35QI94h;E36nhJIEJc?N#zqvTQY+E)pTdl+6j$+O](f)/@/?[kpVO*sAj$Whuh2Qr1g/7K#;G+*nl;0VRhkek?C[EYJ2HP3g(]+2.ht[T#')()
+{$asm}
+alloc(executeQuest,$1000,$process)
+label(exit)
+registersymbol(executeQuest)
+executeQuest:
+  readmem(Stack+200,31)
+  mov rcx,GameEngine
+  mov rcx,[rcx]
+  cmp rcx,rsp
+  jna exit
+  mov rcx,[rcx+DE8]
+  cmp rcx,rsp
+  jna exit
+  mov rcx,[rcx+F0]
+  cmp rcx,rsp
+  jna exit
+  mov rcx,[rcx+QuestManager_Offset]
+  cmp rcx,rsp
+  jna exit
+  lea rdx,[rsp+20]
+  mov r8d,[executeQuest+200]
+  mov r9l,[executeQuest+204]
+  sub rsp,8
+  call CallQuest
+  add rsp,8
+exit:
+  readmem(Stack+21F,32)
+executeQuest+200:
+dd #6150
+db #1
+
+[DISABLE]
+dealloc(executeQuest)
+unregistersymbol(*)
+unregistersymbol(CallQuest)
+unregisterSymbol(QuestManager_Offset)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>263</ID>
+              <Description>"执行类型"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1:接取任务
+4:完成任务
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Byte</VariableType>
+              <Address>executeQuest+204</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>264</ID>
+              <Description>"&lt;&lt;==单击这里执行"</Description>
+              <Color>FF00FF</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+decodeFunction('c-mc%!AiqG5Qb.dG1itqt0xsip?]5,@yD#VpiroXQt?7zp$0,%n:Q$4b1A4ty=7L:.HeK#56!!%+psi_rdC:Uc7}mqkAHV(zdh]AVfWrB=Uk@I#bR.:D=5oTw#t{)q?oTM*TD%[w4h^3+[;IB0*s3@*p3-(Qfe16gG1#9GmxX14H./gtcVw-F_rzvNe%R?0h:}xV?t9TI7+]cdg[3k6].m_jV.CIbwFS#gPc1C300,m*jp?5pswIvFz}%d.Kn5-0:GItii9fTc61%aUGk_fyfA3zh%uKppLehC*9J[U6SAGZ?lYquLync-^]{$bYclzMOVNnAC#V$(8W6]SCDb1ZT0BudGfgZnuC2hO1j]Gy6NlWziqrFb,jTibQT@0B$MS(0GDl-w:09rYe[C7n)tZF2zHvt')()
+closeScript(memrec,500)
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>265</ID>
+          <Description>"激活GM命令行"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+decodeFunction('c-mD])P_Sx6g^)hO[$Ut8WB]X2N9[RAu$]s/Lqustwj3{6yIdqorHkdh20G^Pn]]=pM3Hc0^R)Ar1s4{?Xep[DbCu*;YZV?:bn2Hhs*gQj^P2PeJT{i7s);aI)(tT+nTJ21!AS9ehUzA1du7/zEbR-(MSaobKuQfprS0+*[s{Ar+QCHEEsbbzM!CvGY6,SXG={3Y--LjFs_79eEy@3n%@:P8!m(hG.r57:%=mO*6DD]9,UxExF$;!2(OQ$*K^v@p@ldx76xI%W0/+$eHOotK8QAELZKp^97X7B@PPDcJ2:6XIQg(s017v=U$UG%w_C%(H-uf_%=7tyyw%]OJbuXSI)J+VR[C=a]OV2TuQxS$cFqd6#}/5tsrvenS6.7.3J1_ROv}#^)(bqC!ETt!fsDzlcFL;O;L[RajA+c.(4EmvAc$p;5LN39,RSHqX+;*EWwjP6=mYLR)Z}-2x+E(DFiB/Hn}e6Ow^,z%*g6YCtUxAd98IX=Cy9+H=KB=Chjd+x[{ax?zn^pos_D!Vv!@d*@m4a1-cKf4aD=3VKfmBSegkXRf]0')()
+{$asm}
+alloc(ShowGMCommandLine,$1000,$process)
+label(exit)
+registersymbol(ShowGMCommandLine)
+ShowGMCommandLine:
+  readmem(Stack+200,31)
+  sub rsp,8
+  call GMCommandLine
+  add rsp,8
+exit:
+  readmem(Stack+21F,32)
+
+[DISABLE]
+dealloc(ShowGMCommandLine)
+unregistersymbol(*)
+unregistersymbol(GMCommandLine)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>266</ID>
+              <Description>"&lt;&lt;==单击这里激活（快捷键 “~”）"</Description>
+              <Color>FF00FF</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+CallAddress+100:
+  dq 1 ShowGMCommandLine
+{$lua}
+if syntaxcheck then return end
+closeScript(memrec)
+[DISABLE]
+</AssemblerScript>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Activate</Action>
+                  <Keys>
+                    <Key>192</Key>
+                  </Keys>
+                  <ID>0</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>267</ID>
+              <Description>"说明（有些命令可能无效）"</Description>
+              <Color>808080</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$LUA}
+getMainForm().CommentButton.doClick()
+return 'assert(true)'
+{$ASM}
+
+ 
+ 
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>268</ID>
+              <Description>"打印物品ID"</Description>
+              <Color>C0C0C0</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$LUA}
+if syntaxcheck then return end
+GetLuaEngine().MenuItem5.doClick()
+print(ItemStr)
+return 'assert(true)'
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>269</ID>
+              <Description>"打印角色ID"</Description>
+              <Color>C0C0C0</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$LUA}
+if syntaxcheck then return end
+GetLuaEngine().MenuItem5.doClick()
+RoleStr=''
+getRoleID()
+print(RoleStr)
+return 'assert(true)'
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>270</ID>
+              <Description>"打印技能ID"</Description>
+              <Color>C0C0C0</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$LUA}
+if syntaxcheck then return end
+GetLuaEngine().MenuItem5.doClick()
+print(SkillStr)
+return 'assert(true)'
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>271</ID>
+              <Description>"打印任务ID"</Description>
+              <Color>C0C0C0</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$LUA}
+if syntaxcheck then return end
+GetLuaEngine().MenuItem5.doClick()
+print(QuestStr)
+return 'assert(true)'
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>272</ID>
+              <Description>"打印地图ID"</Description>
+              <Color>C0C0C0</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$LUA}
+if syntaxcheck then return end
+GetLuaEngine().MenuItem5.doClick()
+print(MapStr)
+return 'assert(true)'
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>273</ID>
+          <Description>"屏幕设置"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>274</ID>
+              <Description>"分辨率X"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>GameEngine</Address>
+              <Offsets>
+                <Offset>80</Offset>
+                <Offset>228</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>275</ID>
+              <Description>"分辨率Y"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>GameEngine</Address>
+              <Offsets>
+                <Offset>84</Offset>
+                <Offset>228</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>276</ID>
+              <Description>"首选屏幕模式"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1:全屏
+2:窗口
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>GameEngine</Address>
+              <Offsets>
+                <Offset>A0</Offset>
+                <Offset>228</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>277</ID>
+              <Description>"使用垂直同步"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1:是
+0:否
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Byte</VariableType>
+              <Address>GameEngine</Address>
+              <Offsets>
+                <Offset>28</Offset>
+                <Offset>228</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>278</ID>
+              <Description>"使用动态分辨率"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1:是
+0:否
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Byte</VariableType>
+              <Address>GameEngine</Address>
+              <Offsets>
+                <Offset>29</Offset>
+                <Offset>228</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>279</ID>
+              <Description>"显示调试信息"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:否
+1:是
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Binary</VariableType>
+              <BitStart>2</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>[GameEngine]+DE8</Address>
+              <Offsets>
+                <Offset>228</Offset>
+                <Offset>2B0</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>38</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>26719</ID>
+          <Description>"开档难度系数"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>0</ByteLength>
+          <Address>GameEngine</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>[Stack+1F0]</Offset>
+            <Offset>[Stack+1D0]</Offset>
+            <Offset>DE8</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>26734</ID>
+              <Description>"简单"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26720</ID>
+                  <Description>"JingMaiPoint"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26721</ID>
+                  <Description>"Strength"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26722</ID>
+                  <Description>"Constitution"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26723</ID>
+                  <Description>"Agility"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26724</ID>
+                  <Description>"BaseNeiLi"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+14</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26725</ID>
+                  <Description>"JingTongLi"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+18</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26726</ID>
+                  <Description>"JingMaiPoint_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+1C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26727</ID>
+                  <Description>"Strength_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+20</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26728</ID>
+                  <Description>"Constitution_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+24</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26729</ID>
+                  <Description>"Agility_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+28</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26730</ID>
+                  <Description>"BaseNeiLi_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+2C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26731</ID>
+                  <Description>"JingTongLi_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+30</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26732</ID>
+                  <Description>"ExpMultiplier"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+34</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26733</ID>
+                  <Description>"MoneyMultiplier"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+38</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26737</ID>
+              <Description>"普通"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26738</ID>
+                  <Description>"JingMaiPoint"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+48</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26739</ID>
+                  <Description>"Strength"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+4C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26740</ID>
+                  <Description>"Constitution"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+50</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26741</ID>
+                  <Description>"Agility"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+54</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26742</ID>
+                  <Description>"BaseNeiLi"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+58</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26743</ID>
+                  <Description>"JingTongLi"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+5C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26744</ID>
+                  <Description>"JingMaiPoint_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+60</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26745</ID>
+                  <Description>"Strength_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+64</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26746</ID>
+                  <Description>"Constitution_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+68</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26747</ID>
+                  <Description>"Agility_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+6C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26748</ID>
+                  <Description>"BaseNeiLi_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+70</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26749</ID>
+                  <Description>"JingTongLi_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+74</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26750</ID>
+                  <Description>"ExpMultiplier"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+78</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26751</ID>
+                  <Description>"MoneyMultiplier"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+7C</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26736</ID>
+              <Description>"困难"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26752</ID>
+                  <Description>"JingMaiPoint"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+8C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26753</ID>
+                  <Description>"Strength"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+90</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26754</ID>
+                  <Description>"Constitution"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+94</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26755</ID>
+                  <Description>"Agility"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+98</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26756</ID>
+                  <Description>"BaseNeiLi"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+9C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26757</ID>
+                  <Description>"JingTongLi"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+A0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26758</ID>
+                  <Description>"JingMaiPoint_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+A4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26759</ID>
+                  <Description>"Strength_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+A8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26760</ID>
+                  <Description>"Constitution_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+AC</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26761</ID>
+                  <Description>"Agility_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+B0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26762</ID>
+                  <Description>"BaseNeiLi_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+B4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26763</ID>
+                  <Description>"JingTongLi_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+B8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26764</ID>
+                  <Description>"ExpMultiplier"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+BC</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26765</ID>
+                  <Description>"MoneyMultiplier"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+C0</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26735</ID>
+              <Description>"极难"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26766</ID>
+                  <Description>"JingMaiPoint"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+D0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26767</ID>
+                  <Description>"Strength"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+D4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26768</ID>
+                  <Description>"Constitution"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+D8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26769</ID>
+                  <Description>"Agility"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+DC</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26770</ID>
+                  <Description>"BaseNeiLi"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+E0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26771</ID>
+                  <Description>"JingTongLi"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+E4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26772</ID>
+                  <Description>"JingMaiPoint_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+E8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26773</ID>
+                  <Description>"Strength_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+EC</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26774</ID>
+                  <Description>"Constitution_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+F0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26775</ID>
+                  <Description>"Agility_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+F4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26776</ID>
+                  <Description>"BaseNeiLi_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+F8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26777</ID>
+                  <Description>"JingTongLi_Elite"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+FC</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26778</ID>
+                  <Description>"ExpMultiplier"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+100</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26779</ID>
+                  <Description>"MoneyMultiplier"</Description>
+                  <VariableType>Float</VariableType>
+                  <Address>+104</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>345</ID>
+          <Description>"称号战力门槛"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1" moDeactivateChildrenAsWell="1"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>0</ByteLength>
+          <Address>[GameEngine]+DE8</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>[Stack+1D8]</Offset>
+            <Offset>[Stack+1D0]</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>346</ID>
+              <Description>"初学乍练"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>347</ID>
+              <Description>"初窥门径"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+20</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>348</ID>
+              <Description>"粗通皮毛"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+40</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>349</ID>
+              <Description>"驾轻就熟"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+60</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>350</ID>
+              <Description>"略有小成"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+80</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>351</ID>
+              <Description>"融会贯通"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+A0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>352</ID>
+              <Description>"炉火纯青"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+C0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>353</ID>
+              <Description>"出类拔萃"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+E0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>354</ID>
+              <Description>"所向披靡"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+100</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>355</ID>
+              <Description>"傲视群雄"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+120</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>356</ID>
+              <Description>"一代宗师"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+140</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>280</ID>
+          <Description>"解锁全成就"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+decodeFunction('c-oDV(u-H_5XQf=H=AoJqFO;gp-2cJq,BA)AxGP35*iF]g1AHxa,[[jl-OXqq}!p10vrOIkhpQH1dkCXB_R0MfD0.IcnLO,t*vn{tTgt^;}Chj^Wrh7W!%Hr[vzVlvs9,Cy!]./cD1RJu{3n]]B#F9lB%NYcX8PVDRor?Am_PWjo;2*sqy%l3M;G:/]cZ,V.B7p3qJfoSHn.E[^C!)1fB$Fnt//WKq(9u.wG!*RVmaF5D[)A^Iym/m-qr^iP,??hyFp;7l:S)e,dV^o/MpdKL]lEhI/)Lp995z!;1YOMUZw1s;pd!#kc,!y4wZ]MF_*BqIB2-]Js/Ahb?9mPv^JK;fdwP/D5;f[4c2fI5Ww.8_Y;1xAs#}TjwlNhq[M(z4BCDJT63;UYM#y;r,hSMEO6tk!GzRN8G3I[lqn1ye^$cqLOFdVB2*AVOYi^b8c@JxXfENU5{pD*+qSdDQhsxTV=Lb2%sk%X4Gz49veFIm0;Fz4OX-@O@a2tOT}OOTgp_l@jI}!$p4FZCAn?=Vvb]w@n7JX,Q}SLTQ1M57,gi9:af.e,v_qMR#=M!b]*gds[CX/dMuWtq}ggGnsh!S).tt)Qr$K?MNUSO:Rnh_=8%ntMC*{(%e-ToysATmigG5wQq{CW9G#nlAG,o/77gTSW?6Xw=;vse+K;TEjkP,XGp6M-$BUKRZQ4#P${1;h?,4zB,Wr6)?b]2')()
+
+
+[DISABLE]
+decodeFunction('c-oDU%{T;S5XWaXle8,WVnO]qv51gMP!Bz36Rir0SjCG333k.SnrafQdU4x_K7eQ6C9R=--$Ky4FW^!Nv:[mF9d=%gZ$5T,Zu7$3g[,09:/Fz[F]d5Jhk-5BO*]i]mPxOH2[?5nH4#HW0AVqJkmqe6.KTy%lD*+V27@2Snr$:6,62DhG4bAJibgG976m}Cyiya!TbA/C1VWxEIJAZLO$HAgqCQYtEm)qRGEQ^{rYsvvO(c1LjU{roCTvT#)2[koEAV6}YD?tulKE4o.Qw?XPxmTozjYewTk{Ot@q:DUc3w]KlQW[g*z/kHPF7vtJ;kLj?o}tbO*rdaiXEML^E{C;AC-By*e}U.plfSxm9P3Ip3fb9Wwq$(CBxA%;+z}HZy7}B+S}Wdab;O}Yp)wiI93n5i0^.EK=UhSZn{T2I^Ko4nKD1W?Pcmf5GRMD![d3onCaphe#Dce5}$eqcH*-{oEYkU?A]{/b%%bzul*eqpM-4')()
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>281</ID>
+          <Description>"解锁全图鉴"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+decodeFunction('c-nna!EVz*5PfTJ,*zlVY7Ri5y(#0-OQdoLH]^F-5UnUh.u1y3ZMKzBV#C@13K#4II0SA.,[,VO(xn)fo)f.U1r@SG0[))9ii9%KdiTw_nKvHoF0Sv{k8tHfVfN{Q(C]7T.4vn4tEH0)BJ*qhSAh.o+HH/3xDkR[JslAUdI]fI[yj]g!oRHpOF)FZ1g{MGIgGIsA^[P%^6dJ_!WTmlNq{KU[?PIHit}N3?.Z5A#U;(mqb]cSHCE9hp,wp.4n?HPpTq-,NHoQ3IEjuV)jVg{BKQ@]A.Djwx$vEk8JcB}P7b.)[[B]ggRk[k0{^($t]B78v/;pp9QPcz3A%l$JM8QK(+?BZy8ZV1Vc*^BbevN/rr.uXYKCNJR.KC,zcl8pPSr356w]S#_L^J=e[q]b@IaD6rApx4We0SjX{k6w.{3RseHN?cen2m6Iy-@K9lNo]^Ecy#Uf_5G-+W=(fW;NJ6{!pG=w.eanzmLh*ikSE*9AUHwj%bGlA2u)sxZzyPOnv]q_K#iViijQKFfL-wRF+LG]t-/U;mII?fRxQ*6#[(cLJ97rRGvam1c+JSr6w(M62Q1ftt@v+$t,JE%toh.jGErz#sqXrss(NoJv+oaz?M5v@yobaF,bUcV4n2U:,nj=d:AmGmh(s9.A^FTOO}E2*7ftGmj;/zxT-67y')()
+
+
+[DISABLE]
+decodeFunction('c-nQ5(r1SP5Xa{e9ak}jNIUeyqeQS5p#r/?uBiovWzZ#-Sn==gxz[HA)xs/H^sEo*Usi:}^TD(}1*Y0pi+^);4KwrRGw.j1=Q,_=fX$agd?GJIjK#W[u(}^ZMiv:S4uqFMgQBKEi3gD3K:c5Bi}0x%m.r}UX*G_gr$d=mRYp41M,Clt7:It;l1vTI4GNrcc%vGu4h-p_4{=r8m}=;8eI15l5+gBbBx7)Qi#$3e7(Y:)=B{5.+g(wdq)McnnSszSk;J(kA@]:g3FhBE3IFtc@6$qTp=+zhM%iy2vo0o@mSZ*TTdCJQ:9g^H$MrM(#(5Z^bz5cL;HHegS2HVFO.(Ikw!:+IsE^,(V%AhqG1a}7^A6:#D%;C^cj2Vz.8eI:T/N(B()1q7w{$j8wGq{Mrh1seM3vpQZI=Bf/9nD}(aOTCfnj2XpEy37Die@No%#Lg14{;nYd]d+ae4')()
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <Comments>additem id 添加道具 id 数量
+addsexp 添加武学点 数值
+addmoney 添加金钱 数值
+openlevel 切换场景“LV_03_P”
+moveto 瞬移 “X Y Z”
+addskill id lv 添加技能 id 等级
+setmode 切换战斗方式0回合 1即时
+addtask 添加任务 id 状态0接前 1同意 2完成 3失败
+setspeed 改变移动速度
+addnpc 添加队友 ID
+removenpc 删除队友 ID
+movetonpc 瞬移到NPC身前
+sethide 隐身
+addjm 设置经脉点
+setshow 取消隐身
+hideui 隐藏ui
+showui 显示ui
+hidep 隐藏立绘
+showp 显示立绘
+hidehero 隐藏队伍
+showhero 显示队伍
+hidenpc 隐藏所有角色
+shownpc 取消隐藏所有角色
+hide2ui 隐藏ui
+show2ui 显示ui
+tomap 传送map表id场景
+gettask 检查任务状态
+deltask 重置任务
+addfriendship 添加好感度
+addranditem
+cgrate cg加速
+addaffinity 添加指定npc好感
+npctalk 检查npc特殊对话
+trigger
+startscore 重置多周目
+unlocktoken 解锁图鉴
+reseta 重置成就
+tomapbox
+boxnum
+CTask
+sleep 回复状态
+towerextrabuff
+anpcskill
+</Comments>
+</CheatTable>

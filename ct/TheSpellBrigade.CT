@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>104290</ID>
+      <Description>"[ Activate ] - {Click here to add process automatically} - [ v0.7.0.2023 ]"</Description>
+      <Options moHideChildren="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+
+{$lua}
+OpenProcess("TheSpellBrigade.exe")
+if (LaunchMonoDataCollector())==0
+then error ('Failure To Launch')
+end
+
+if getCEVersion() &lt; 7.4 then showMessage("If you are getting this message means your Cheat Engine software is outdated. Please update to the latest Cheat Engine version! Latest official public release version can be found at https://cheatengine.org/\nYour Cheat Engine Version : "..getCEVersion().."\nLatest Public Cheat Engine Version : 7.4") --[[MainForm.close()]]
+return end
+
+{$asm}
+
+luacall(function cycleFullCompact(sender,force); local state = not(compactmenuitem.Caption == 'Compact View Mode'); if force~=nil then state = not force end; compactmenuitem.Caption = state and 'Compact View Mode' or 'Full view Mode'; getMainForm().Splitter1.Visible = state; getMainForm().Panel4.Visible = state; getMainForm().Panel5.Visible = state; end; function addCompactMenu(); if compactmenualreadyexists then return end; local parent = getMainForm().Menu.Items; compactmenuitem = createMenuItem(parent); parent.add(compactmenuitem); compactmenuitem.Caption = 'Compact View Mode'; compactmenuitem.OnClick = cycleFullCompact; compactmenualreadyexists = 'yes'; end; addCompactMenu(); cycleFullCompact(nil,true))
+
+[DISABLE]
+
+luacall(cycleFullCompact(nil,false))
+
+
+
+
+
+
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>105298</ID>
+          <Description>"+++ SCRIPT +++ "</Description>
+          <Options moHideChildren="1"/>
+          <Color>FF0000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>105351</ID>
+              <Description>"Local Database"</Description>
+              <Color>FF0000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : TheSpellBrigade.exe
+  Version:
+  Date   : 2024-09-16
+  Author : BabyGroot
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(pData_LocalDatabase,GameAssembly.dll,3B 7A 38 4C 8B CD) // should be unique
+alloc(newmem,$1000,pData_LocalDatabase)
+
+alloc(pBase_LocalDatabase,8)
+registersymbol(pBase_LocalDatabase)
+
+label(code)
+label(return)
+
+pBase_LocalDatabase:
+dd
+
+newmem:
+
+code:
+  mov [pBase_LocalDatabase],rdx
+  db 3B 7A 38 4C 8B CD
+  mov r9,rbp
+  jmp return
+
+pData_LocalDatabase:
+  jmp newmem
+  nop
+return:
+registersymbol(pData_LocalDatabase pBase_LocalDatabase)
+
+[DISABLE]
+
+pData_LocalDatabase:
+  db 3B 7A 38 4C 8B CD
+
+unregistersymbol(*)
+dealloc(*)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>105303</ID>
+              <Description>"Player Health Database"</Description>
+              <Color>FF0000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : TheSpellBrigade.exe
+  Version:
+  Date   : 2024-09-16
+  Author : BabyGroot
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(pData_PlayerHealthDatabase,GameAssembly.dll,F3 0F 10 8B 30 01 00 00) // should be unique
+alloc(newmem,$1000,pData_PlayerHealthDatabase)
+
+alloc(pBase_PlayerHealthDatabase,8)
+registersymbol(pBase_PlayerHealthDatabase)
+
+label(code)
+label(return)
+
+pBase_PlayerHealthDatabase:
+dd
+
+newmem:
+
+code:
+  mov [pBase_PlayerHealthDatabase],rbx
+  db F3 0F 10 8B 30 01 00 00
+  jmp return
+
+pData_PlayerHealthDatabase:
+  jmp newmem
+  nop 3
+return:
+registersymbol(pData_PlayerHealthDatabase pBase_PlayerHealthDatabase)
+
+[DISABLE]
+
+pData_PlayerHealthDatabase:
+  db F3 0F 10 8B 30 01 00 00
+
+unregistersymbol(*)
+dealloc(*)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>105339</ID>
+              <Description>"Add Stats Database"</Description>
+              <Color>FF0000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : TheSpellBrigade.exe
+  Version:
+  Date   : 2024-09-16
+  Author : BabyGroot
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(pData_AddStats,GameAssembly.dll,48 8B 4F 20 48 85 C9 74 5A) // should be unique
+alloc(newmem,$1000,pData_AddStats)
+
+alloc(pBase_AddStats,8)
+registersymbol(pBase_AddStats)
+
+label(code)
+label(return)
+
+pBase_AddStats:
+dd
+
+newmem:
+
+code:
+  mov [pBase_AddStats],rdi
+  db 48 8B 4F 20 48 85 C9
+  test rcx,rcx
+  jmp return
+
+pData_AddStats:
+  jmp newmem
+  nop 2
+return:
+registersymbol(pData_AddStats pBase_AddStats)
+
+[DISABLE]
+
+pData_AddStats:
+  db 48 8B 4F 20 48 85 C9
+
+unregistersymbol(*)
+dealloc(*)
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>105299</ID>
+          <Description>"+++ POINTER +++"</Description>
+          <Options moHideChildren="1"/>
+          <Color>FF8000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>105352</ID>
+              <Description>"Local Database"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1"/>
+              <Color>FF8000</Color>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>105353</ID>
+                  <Description>"pBase - [ Color Silver Don't Chance ]"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>C0C0C0</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>[pBase_LocalDatabase]</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105354</ID>
+                  <Description>""</Description>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105361</ID>
+                  <Description>"++ Active Script In Main Menu  ++"</Description>
+                  <Color>408080</Color>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105362</ID>
+                  <Description>""</Description>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105355</ID>
+                  <Description>"Gold"</Description>
+                  <Color>0000FF</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>[pBase_LocalDatabase]+38</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105356</ID>
+                  <Description>"Play Time In Minutes"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>0000FF</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>[pBase_LocalDatabase]+3C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105357</ID>
+                  <Description>"Number Of Attempted Runs"</Description>
+                  <Color>0000FF</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>[pBase_LocalDatabase]+50</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>105363</ID>
+              <Description>""</Description>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>105304</ID>
+              <Description>"Player Health Database"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1"/>
+              <Color>FF8000</Color>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>105305</ID>
+                  <Description>"pBase - [ Color Silver Don't Chance ]"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>C0C0C0</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>[pBase_PlayerHealthDatabase]</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105349</ID>
+                  <Description>""</Description>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105358</ID>
+                  <Description>"++ Active Script In Main Menu  ++"</Description>
+                  <Color>408080</Color>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105359</ID>
+                  <Description>""</Description>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105306</ID>
+                  <Description>"Synced Max Health Value"</Description>
+                  <Color>0000FF</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>[pBase_PlayerHealthDatabase]+A0</Address>
+                  <Offsets>
+                    <Offset>58</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105307</ID>
+                  <Description>"Synced Current Health Value"</Description>
+                  <Color>0000FF</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>[pBase_PlayerHealthDatabase]+A8</Address>
+                  <Offsets>
+                    <Offset>58</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105308</ID>
+                  <Description>"Invulnerable Duration At Start - [ Set Value High, Like 3000 ]"</Description>
+                  <Color>0000FF</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>[pBase_PlayerHealthDatabase]+B0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105309</ID>
+                  <Description>"Spawn Time"</Description>
+                  <Color>0000FF</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>[pBase_PlayerHealthDatabase]+B4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105310</ID>
+                  <Description>"Remove Health Cooldown"</Description>
+                  <Color>0000FF</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>[pBase_PlayerHealthDatabase]+B8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105312</ID>
+                  <Description>"Damage Resistance - [ Set Value 100 ]"</Description>
+                  <Color>0000FF</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>[pBase_PlayerHealthDatabase]+108</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105311</ID>
+                  <Description>"Ignore Lava Damage?"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:No/Off/Disabled
+1:Yes/On/Enabled
+</DropDownList>
+                  <Color>808000</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>[pBase_PlayerHealthDatabase]+BC</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>105364</ID>
+              <Description>""</Description>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>105340</ID>
+              <Description>"Add Stats Database"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1"/>
+              <Color>FF8000</Color>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>105341</ID>
+                  <Description>"pBase - [ Color Silver Don't Chance ]"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>C0C0C0</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>[pBase_AddStats]</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105347</ID>
+                  <Description>""</Description>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105360</ID>
+                  <Description>"++ Active Script In Main Menu ++"</Description>
+                  <Color>408080</Color>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105342</ID>
+                  <Description>"++ Stats When Leveling Up And Choosing Skills  ++"</Description>
+                  <Color>408080</Color>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105346</ID>
+                  <Description>"++ Doesn't Count With Spells ++"</Description>
+                  <Color>408080</Color>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105343</ID>
+                  <Description>""</Description>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105344</ID>
+                  <Description>"Stat Type"</Description>
+                  <DropDownList DisplayValueAsItem="1">0:Increase Spell Damage
+2:Decrease Spell Cooldown
+4:Increase Spell Range
+6:Spell Size
+7:Move Speed
+8:Increase Max Health
+9:Luck
+10:Increase Exp Gain
+11:Pickup Distance
+12:Critical Chance
+13:Increase Critical Damage
+15:Dodge
+16:health Regeneration
+</DropDownList>
+                  <Color>8080FF</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>[pBase_AddStats]+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105345</ID>
+                  <Description>"Base Value"</Description>
+                  <Color>0000FF</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>[pBase_AddStats]+18</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>105274</ID>
+      <Description>"============================"</Description>
+      <GroupHeader>1</GroupHeader>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>104596</ID>
+      <Description>"[&lt;--CHECKBOX] NOTES"</Description>
+      <Options moHideChildren="1" moManualExpandCollapse="1"/>
+      <Color>0080FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>104601</ID>
+          <Description>"[&lt;--CHECKBOX] If You Like This Table, Don't Forget To Give A Thumbs Up On This Link"</Description>
+          <Options moHideChildren="1"/>
+          <Color>0080FF</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$LUA}
+if syntaxcheck then return end
+[ENABLE]
+ShellExecute('https://fearlessrevolution.com/viewtopic.php?p=384068#p384068')
+{$asm}
+nop
+[DISABLE]
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>104602</ID>
+              <Description>"https://www.cheatengine.org/"</Description>
+              <Color>008000</Color>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>105295</ID>
+          <Description>"====================="</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>105271</ID>
+          <Description>"[&lt;--CHECKBOX] Link Game"</Description>
+          <Options moHideChildren="1"/>
+          <Color>0080FF</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$LUA}
+if syntaxcheck then return end
+[ENABLE]
+ShellExecute('https://store.steampowered.com/app/2904000/The_Spell_Brigade/')
+{$asm}
+nop
+[DISABLE]
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>105272</ID>
+              <Description>"https://www.cheatengine.org/"</Description>
+              <Color>008000</Color>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>105270</ID>
+          <Description>"====================="</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>105268</ID>
+          <Description>"[&lt;--CHECKBOX] Check build Id / Date Patches Game"</Description>
+          <Options moHideChildren="1"/>
+          <Color>0080FF</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$LUA}
+if syntaxcheck then return end
+[ENABLE]
+ShellExecute('https://steamdb.info/app/2904000/patchnotes/')
+{$asm}
+nop
+[DISABLE]
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>105269</ID>
+              <Description>"https://www.cheatengine.org/"</Description>
+              <Color>008000</Color>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>105273</ID>
+          <Description>"====================="</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>104151</ID>
+          <Description>"[&lt;--CHECKBOX] Download Cheat Engine"</Description>
+          <Options moHideChildren="1"/>
+          <Color>0080FF</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$LUA}
+if syntaxcheck then return end
+[ENABLE]
+ShellExecute('https://www.cheatengine.org/')
+{$asm}
+nop
+[DISABLE]
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>104154</ID>
+              <Description>"https://www.cheatengine.org/"</Description>
+              <Color>008000</Color>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>105275</ID>
+          <Description>"====================="</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>105294</ID>
+          <Description>"Date / Pacth Title / Build ID : 30 November 2024 / Have you done your part? / 16580407"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <LuaScript>
+</LuaScript>
+</CheatTable>

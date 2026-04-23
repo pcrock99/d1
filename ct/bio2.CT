@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="18">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"生化危机2典藏版（bio2.exe）-先激活"</Description>
+      <Options moHideChildren="1" moAllowManualCollapseAndExpand="1"/>
+      <LastState Value="" Activated="0" RealAddress="00000000"/>
+      <Color>FF0000</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>0</ID>
+          <Description>"生命"</Description>
+          <LastState Value="??" Activated="0" RealAddress="00000000"/>
+          <Color>0000FF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>bio2.exe+589FE6</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>81</Key>
+              </Keys>
+              <Value>200</Value>
+              <Description>生命无限</Description>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9</ID>
+          <Description>"弹药"</Description>
+          <LastState Value="??" Activated="0" RealAddress="00000000"/>
+          <Color>0000FF</Color>
+          <VariableType>2 Bytes</VariableType>
+          <Address>bio2.exe+58E966</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys/>
+              <Value>65535</Value>
+              <Description>弹药无限</Description>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"随身仓库"</Description>
+          <LastState Value="??" Activated="0" RealAddress="00000000"/>
+          <ShowAsHex>1</ShowAsHex>
+          <Color>FF8000</Color>
+          <VariableType>Byte</VariableType>
+          <Address>bio2.exe+291F10</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>87</Key>
+              </Keys>
+              <Value>01</Value>
+              <Description>随身仓库</Description>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>13</ID>
+          <Description>"全档案"</Description>
+          <DropDownList ReadOnly="1" DescriptionOnly="1">00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00:正常
+00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15 16:全档案
+</DropDownList>
+          <LastState Value="??" Activated="0" RealAddress="00000000"/>
+          <ShowAsHex>1</ShowAsHex>
+          <Color>80000008</Color>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>23</ByteLength>
+          <Address>bio2.exe+58EE00</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5</ID>
+          <Description>"仓库栏"</Description>
+          <DropDownList ReadOnly="1" DescriptionOnly="1">01:小刀-通用
+02:手枪-男
+03:手枪-女
+04:手枪改-男
+05:沙鹰-男
+06:沙鹰改-男
+07:M1100-P-男
+08:M1100-男
+09:M79(榴弹)-女
+0A:M79(火焰)-女
+0B:M79(硫酸)-女
+0C:弓弩(女)-女
+0D:科尔特-女
+0E:高压电击枪-女
+0F:M-11冲锋枪-通用
+10:火焰喷射器-男
+11:火箭筒-通用
+12:转轮机枪-通用
+13:贝雷塔-女
+14:手枪子弹
+15:霰弹枪子弹
+16:沙漠之鹰子弹
+17:火焰喷射器燃料
+18:榴弹
+19:火焰弹
+1A:硫酸弹
+1B:冲锋枪弹夹
+1C:高压电击枪电棒
+1D:箭
+1E:色带
+1F:小钥匙
+20:手枪改装组件
+21:沙漠之鹰改装组件
+22:霰弹枪改装组件
+23:急救喷雾剂
+24:对病毒Z_h_a.D_a_n
+25:药品AC-W24
+26:绿色药草
+27:红色药草
+28:蓝色药草
+29:合成药粉（绿+绿）
+2A:合成药粉（红+绿）
+2B:合成药粉（绿+蓝）
+2C:合成药粉（绿+绿+绿）
+2D:合成药粉（绿+绿+蓝）
+2E:合成药粉（绿+蓝+红）
+2F:打火机
+30:别针
+31:雪莉的照片
+32:活门转盘
+33:红色宝石
+34:武器库磁卡
+35:大厅电子锁磁卡
+36:海蜥之石
+37:豹之石
+38:蓝色石头（左半）
+39:蓝色石头（右半）
+3A:鹰之石
+3B:主教插拴
+3C:城堡插拴
+3D:骑士插拴
+3E:国王插拴
+3F:武器柜钥匙
+40:引爆器
+41:塑胶炸药
+42:塑胶炸弹
+43:手摇把
+44:底片A
+45:底片B
+46:底片C
+47:独角兽硬币
+48:鹰之硬币
+49:狼之硬币
+4A:金色齿轮
+4B:铁钩
+4C:主保险丝
+4D:保险丝盒
+4E:疫苗
+4F:疫苗盒
+50:底片D
+51:疫苗基体
+52:G病毒
+53:特殊钥匙
+54:连携型S插头（蓝色）
+55:连携型S插头（红色）
+56:电气线
+57:艾达的照片
+58:小屋的钥匙
+59:黑桃钥匙
+5A:方片钥匙
+5B:红桃钥匙
+5C:草花钥匙
+5D:升降机下降钥匙
+5E:升降机上升钥匙
+5F:动力室钥匙
+60:MO磁片
+61:研究室磁卡
+62:重要钥匙
+63:回家的钥匙（列车钥匙）
+</DropDownList>
+          <LastState Value="??" Activated="0" RealAddress="00000000"/>
+          <ShowAsHex>1</ShowAsHex>
+          <Color>80000008</Color>
+          <VariableType>Byte</VariableType>
+          <Address>bio2.exe+58ED04</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys/>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10</ID>
+          <Description>"存档次数"</Description>
+          <LastState Value="??" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <VariableType>2 Bytes</VariableType>
+          <Address>bio2.exe+58E95C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>11</ID>
+          <Description>"十格背包"</Description>
+          <DropDownList DescriptionOnly="1">8:八格
+10:十格
+</DropDownList>
+          <LastState Value="??" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <VariableType>2 Bytes</VariableType>
+          <Address>bio2.exe+58E944</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>69</Key>
+              </Keys>
+              <Value>10</Value>
+              <Description>十格背包</Description>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>12</ID>
+          <Description>"穿墙"</Description>
+          <DropDownList DescriptionOnly="1">1:正常
+0:穿墙
+</DropDownList>
+          <LastState Value="??" Activated="0" RealAddress="00000000"/>
+          <Color>FF00FF</Color>
+          <VariableType>2 Bytes</VariableType>
+          <Address>bio2.exe+58A078</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Toggle Activation</Action>
+              <Keys>
+                <Key>82</Key>
+              </Keys>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <Comments>物品栏：bio2.exe+58ecd4
+</Comments>
+  <LuaScript>
+</LuaScript>
+</CheatTable>
