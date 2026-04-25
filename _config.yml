@@ -1,0 +1,16 @@
+# 站点设置
+title: 我的博客
+description: 基于 Jekyll 的个人站点
+baseurl: "/bg"  # 对应你的仓库名
+url: "https://pcrock99.github.io"
+
+# 主题设置
+theme: minima
+
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 文章链接格式
+permalink: /:year/:month/:day/:title/
