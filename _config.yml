@@ -7,7 +7,7 @@ url: ""      # 留空即可 
 theme: jekyll-theme-hacker
 
 # 分页配置
-paginate: 5
+paginate: 2
 paginate_path: "/page:num/"
 
 # 插件
