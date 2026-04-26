@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
-</head>
-<body>
-    {{ content }}
-</body>
-</html>
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+<p>{{ page.date | date: "%Y-%m-%d" }}</p>
+
+{{ content }}
+
+<hr>
+<p>
+    <a href="{{ site.baseurl }}/">← 返回首页</a>
+    {% if page.previous.url %}
+        | <a href="{{ site.baseurl }}{{ page.previous.url }}">上一篇: {{ page.previous.title }}</a>
+    {% endif %}
+    {% if page.next.url %}
+        | <a href="{{ site.baseurl }}{{ page.next.url }}">下一篇: {{ page.next.title }}</a>
+    {% endif %}
+</p>
