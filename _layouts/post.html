@@ -2,17 +2,18 @@
 layout: default
 ---
 
-<div class="post">
-  <h1>{{ page.title }}</h1>
-  <p class="post-date">{{ page.date | date: "%Y-%m-%d" }}</p>
-  
-  <div class="post-content">
+<!-- 这里是文章专属的内容，会被注入到主题布局的 {{ content }} 位置 -->
+<h1>{{ page.title }}</h1>
+<p class="post-date">{{ page.date | date: "%Y-%m-%d" }}</p>
+
+<div class="post-content">
     {{ content }}
-  </div>
-  
-  <hr>
-  
-  <div class="post-navigation">
+</div>
+
+<hr>
+
+<!-- 底部导航代码 -->
+<div class="post-navigation">
     <p><a href="{{ site.baseurl | default: '' }}/">← 返回首页</a></p>
     
     <p>
@@ -28,5 +29,4 @@ layout: default
         <a href="{{ page.next.url | relative_url }}">下一篇：{{ page.next.title }} →</a>
       {% endif %}
     </p>
-  </div>
 </div>
