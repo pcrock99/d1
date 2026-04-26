@@ -3,19 +3,25 @@ layout: default
 title: 首页
 ---
 
-{% for post in paginator.posts %}
-    <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-    <p>{{ post.excerpt }}</p>
-{% endfor %}
+<div class="container">
+  {% for post in paginator.posts %}
+    <div class="post-item">
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
+      <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+    </div>
+  {% endfor %}
 
-<div>
+  <!-- 分页导航 -->
+  <div class="pagination">
     {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">上一页</a>
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="prev">← 上一页</a>
     {% endif %}
     
-    <span>第 {{ paginator.page }} / {{ paginator.total_pages }} 页</span>
+    <span class="page-number">第 {{ paginator.page }} / {{ paginator.total_pages }} 页</span>
     
     {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">下一页</a>
+      <a href="{{ paginator.next_page_path | relative_url }}" class="next">下一页 →</a>
     {% endif %}
+  </div>
 </div>
