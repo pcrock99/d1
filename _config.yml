@@ -1,3 +1,14 @@
-permalink: /:year/:month/:title/
+# 站点信息
+title: 我的极简博客
+description: 一个极简的Jekyll博客
+baseurl: "/d1"  # 关键：子仓库的路径前缀，如 "/blog" 或 "/myrepo"
+url: "https://pcrock99.github.io"  # 你的GitHub Pages主域名
+
+# 路径配置
+permalink: /:year/:month/:day/:title/
 paginate: 5
 paginate_path: "/page:num/"
+
+# 插件
+plugins:
+  - jekyll-paginate
