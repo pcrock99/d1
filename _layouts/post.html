@@ -1,18 +1,32 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<p>{{ page.date | date: "%Y-%m-%d" }}</p>
 
-{{ content }}
-
-<hr>
-<p>
-    <a href="{{ site.baseurl }}/">← 返回首页</a>
-    {% if page.previous.url %}
-        | <a href="{{ site.baseurl }}{{ page.previous.url }}">上一篇: {{ page.previous.title }}</a>
-    {% endif %}
-    {% if page.next.url %}
-        | <a href="{{ site.baseurl }}{{ page.next.url }}">下一篇: {{ page.next.title }}</a>
-    {% endif %}
-</p>
+<div class="post">
+  <h1>{{ page.title }}</h1>
+  <p class="post-date">{{ page.date | date: "%Y-%m-%d" }}</p>
+  
+  <div class="post-content">
+    {{ content }}
+  </div>
+  
+  <hr>
+  
+  <div class="post-navigation">
+    <p><a href="{{ site.baseurl | default: '' }}/">← 返回首页</a></p>
+    
+    <p>
+      {% if page.previous.url %}
+        <a href="{{ page.previous.url | relative_url }}">← 上一篇：{{ page.previous.title }}</a>
+      {% endif %}
+      
+      {% if page.previous.url and page.next.url %}
+        &nbsp;|&nbsp;
+      {% endif %}
+      
+      {% if page.next.url %}
+        <a href="{{ page.next.url | relative_url }}">下一篇：{{ page.next.title }} →</a>
+      {% endif %}
+    </p>
+  </div>
+</div>
