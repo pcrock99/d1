@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Transformers.js 离线AI - 真正在浏览器运行</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 90vh;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .model-selector {
+            background: #f8f9fa;
+            padding: 16px 24px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .model-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .model-btn {
+            padding: 8px 20px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .model-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .model-btn.active {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-color: transparent;
+            color: white;
+        }
+
+        .model-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .model-size {
+            font-size: 0.7rem;
+            margin-left: 6px;
+            opacity: 0.7;
+        }
+
+        .download-progress {
+            font-size: 0.7rem;
+            margin-left: 8px;
+            color: #28a745;
+        }
+
+        .chat-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+            background: #fafbfc;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 12px 18px;
+            border-radius: 18px;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        .user .message-content {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .assistant .message-content {
+            background: white;
+            color: #333;
+            border: 1px solid #e0e0e0;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .message-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 12px;
+            font-size: 1.2rem;
+        }
+
+        .user .message-avatar {
+            order: 2;
+            background: #2a5298;
+            color: white;
+        }
+
+        .assistant .message-avatar {
+            background: #1e3c72;
+            color: white;
+        }
+
+        .input-area {
+            padding: 20px 24px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-end;
+        }
+
+        .input-wrapper {
+            flex: 1;
+            position: relative;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 24px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            resize: none;
+            outline: none;
+            transition: border-color 0.2s;
+            max-height: 120px;
+        }
+
+        textarea:focus {
+            border-color: #1e3c72;
+        }
+
+        .send-btn {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.1s, opacity 0.2s;
+        }
+
+        .send-btn:hover:not(:disabled) {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+
+        .send-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .status-bar {
+            padding: 8px 24px;
+            background: #f0f0f0;
+            font-size: 0.8rem;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ddd;
+            border-top-color: #1e3c72;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .clear-btn {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            padding: 4px 12px;
+            border-radius: 16px;
+            transition: all 0.2s;
+        }
+
+        .clear-btn:hover {
+            background: #e0e0e0;
+            color: #666;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #e0e0e0;
+            z-index: 1000;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .model-selector {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .message-content {
+                max-width: 85%;
+            }
+            .model-buttons {
+                justify-content: center;
+            }
+            .header h1 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+    <!-- 引入 Transformers.js -->
+    <script type="importmap">
+        {
+            "imports": {
+                "@huggingface/transformers": "https://unpkg.com/@huggingface/transformers@2.17.0/dist/transformers.min.js"
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="progress-bar" id="progressBar" style="display: none;">
+    <div class="progress-fill" id="progressFill"></div>
+</div>
+
+<div class="app-container">
+    <div class="header">
+        <h1>🤖 Transformers.js 离线AI</h1>
+        <p>真正在浏览器运行 · 完全离线 · 隐私安全</p>
+    </div>
+
+    <div class="model-selector">
+        <div class="model-buttons" id="modelButtons">
+            <!-- 动态生成模型按钮 -->
+        </div>
+        <div class="model-info" id="modelInfo">
+            点击模型加载
+        </div>
+    </div>
+
+    <div class="chat-area" id="chatArea">
+        <div class="message assistant">
+            <div class="message-avatar">🤖</div>
+            <div class="message-content">
+                欢迎使用 Transformers.js 离线AI！<br><br>
+                ✨ <strong>真正的离线运行</strong> - AI模型直接在您的浏览器中运行<br>
+                🚀 <strong>支持多个模型</strong> - 可选择不同大小的模型<br>
+                🔒 <strong>完全隐私</strong> - 所有对话数据不会离开您的设备<br><br>
+                <strong>开始使用：</strong><br>
+                1. 点击上方选择一个模型（首次使用需要下载）<br>
+                2. 等待模型加载完成<br>
+                3. 开始对话！<br><br>
+                <small style="color:#888;">💡 提示：小模型加载快但回答简单，大模型更智能但需要更多内存和时间</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="input-area">
+        <div class="input-wrapper">
+            <textarea id="messageInput" rows="1" placeholder="输入你的问题..." disabled></textarea>
+        </div>
+        <button class="send-btn" id="sendBtn" disabled>发送</button>
+    </div>
+
+    <div class="status-bar">
+        <div id="statusText">⚙️ 初始化中...</div>
+        <button class="clear-btn" id="clearBtn">🗑️ 清空对话</button>
+    </div>
+</div>
+
+<script type="module">
+    import { pipeline, env } from '@huggingface/transformers';
+    
+    // 配置 Transformers.js - 使用 CDN 缓存
+    env.useBrowserCache = true;
+    env.allowLocalModels = false;
+    env.useFSCache = false; // 浏览器环境
+    
+    // 模型配置 - 使用 Hugging Face 上可用的模型
+    const models = [
+        {
+            id: 'tiny',
+            name: 'TinyLlama',
+            modelId: 'Xenova/TinyLlama-1.1B-Chat-v0.3',
+            size: '~1.1 GB',
+            description: '最小、最快，适合快速响应',
+            tag: '⚡ 极速',
+            memory: '约 2GB RAM',
+            type: 'text-generation'
+        },
+        {
+            id: 'small',
+            name: 'Phi-3 Mini',
+            modelId: 'Xenova/Phi-3-mini-4k-instruct',
+            size: '~2.4 GB',
+            description: '轻量但智能，微软出品',
+            tag: '🌟 推荐',
+            memory: '约 4GB RAM',
+            type: 'text-generation'
+        },
+        {
+            id: 'medium',
+            name: 'Qwen2.5-3B',
+            modelId: 'Xenova/Qwen2.5-3B-Instruct',
+            size: '~3.5 GB',
+            description: '中文优化，性能优秀',
+            tag: '🇨🇳 中文最佳',
+            memory: '约 6GB RAM',
+            type: 'text-generation'
+        },
+        {
+            id: 'large',
+            name: 'Gemma-2-2B',
+            modelId: 'Xenova/gemma-2-2b-it',
+            size: '~4.2 GB',
+            description: 'Google出品，能力强大',
+            tag: '💪 高性能',
+            memory: '约 8GB RAM',
+            type: 'text-generation'
+        }
+    ];
+    
+    // 全局变量
+    let currentModel = models[0];
+    let textGenerator = null;
+    let isModelLoading = false;
+    let isLoading = false;
+    let modelLoaded = false;
+    let chatHistory = [
+        { role: 'assistant', content: '欢迎使用 Transformers.js 离线AI！\n\n✨ **真正的离线运行** - AI模型直接在您的浏览器中运行\n🚀 **支持多个模型** - 可选择不同大小的模型\n🔒 **完全隐私** - 所有对话数据不会离开您的设备\n\n**开始使用：**\n1. 点击上方选择一个模型（首次使用需要下载）\n2. 等待模型加载完成\n3. 开始对话！\n\n💡 提示：小模型加载快但回答简单，大模型更智能但需要更多内存和时间' }
+    ];
+    
+    // DOM 元素
+    const chatArea = document.getElementById('chatArea');
+    const messageInput = document.getElementById('messageInput');
+    const sendBtn = document.getElementById('sendBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const statusTextDiv = document.getElementById('statusText');
+    const modelInfoDiv = document.getElementById('modelInfo');
+    const modelButtonsContainer = document.getElementById('modelButtons');
+    const progressBar = document.getElementById('progressBar');
+    const progressFill = document.getElementById('progressFill');
+    
+    // 辅助函数
+    function showProgress(show) {
+        progressBar.style.display = show ? 'block' : 'none';
+    }
+    
+    function updateProgress(percent) {
+        progressFill.style.width = `${percent}%`;
+    }
+    
+    function saveChatHistory() {
+        try {
+            localStorage.setItem('transformers_chat_history', JSON.stringify(chatHistory));
+            localStorage.setItem('transformers_selected_model', currentModel.id);
+        } catch(e) { console.warn('保存失败', e); }
+    }
+    
+    function loadChatHistory() {
+        try {
+            const saved = localStorage.getItem('transformers_chat_history');
+            if(saved) {
+                const parsed = JSON.parse(saved);
+                if(Array.isArray(parsed) && parsed.length > 0) {
+                    chatHistory = parsed;
+                }
+            }
+            const savedModelId = localStorage.getItem('transformers_selected_model');
+            if(savedModelId) {
+                const found = models.find(m => m.id === savedModelId);
+                if(found) currentModel = found;
+            }
+        } catch(e) { console.warn('加载失败', e); }
+    }
+    
+    function renderMessages() {
+        chatArea.innerHTML = '';
+        chatHistory.forEach((msg, idx) => {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${msg.role}`;
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.textContent = msg.role === 'user' ? '👤' : '🤖';
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            contentDiv.innerHTML = msg.content.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(contentDiv);
+            chatArea.appendChild(messageDiv);
+        });
+        chatArea.scrollTop = chatArea.scrollHeight;
+    }
+    
+    function updateStatus() {
+        if (modelLoaded && textGenerator) {
+            statusTextDiv.innerHTML = `✅ 就绪 | 模型: ${currentModel.name} (${currentModel.size}) | ${currentModel.description}`;
+            messageInput.disabled = false;
+            sendBtn.disabled = false;
+        } else if (isModelLoading) {
+            statusTextDiv.innerHTML = `🔄 正在加载 ${currentModel.name} 模型... 首次使用需要下载，请耐心等待`;
+            messageInput.disabled = true;
+            sendBtn.disabled = true;
+        } else {
+            statusTextDiv.innerHTML = `⚙️ 请点击上方按钮加载模型 (${currentModel.name} - ${currentModel.size})`;
+            messageInput.disabled = true;
+            sendBtn.disabled = true;
+        }
+        modelInfoDiv.innerHTML = `📊 ${currentModel.name} · 大小: ${currentModel.size} · ${currentModel.tag} · ${currentModel.memory}`;
+    }
+    
+    // 加载模型
+    async function loadModel(model) {
+        if (isModelLoading) return;
+        if (textGenerator && currentModel.id === model.id) {
+            // 模型已加载
+            return;
+        }
+        
+        isModelLoading = true;
+        modelLoaded = false;
+        currentModel = model;
+        updateStatus();
+        renderModelButtons();
+        showProgress(true);
+        updateProgress(0);
+        
+        try {
+            statusTextDiv.innerHTML = `📥 正在下载 ${model.name} 模型 (${model.size})... 首次加载需要时间`;
+            
+            // 创建文本生成管道
+            textGenerator = await pipeline(model.type, model.modelId, {
+                progress_callback: (progress) => {
+                    if (progress.status === 'downloading') {
+                        const percent = (progress.loaded / progress.total) * 100;
+                        updateProgress(percent);
+                        statusTextDiv.innerHTML = `📥 下载中: ${Math.round(percent)}% - ${model.name}`;
+                    } else if (progress.status === 'loading') {
+                        statusTextDiv.innerHTML = `🚀 加载模型到内存中...`;
+                        updateProgress(100);
+                    }
+                }
+            });
+            
+            modelLoaded = true;
+            statusTextDiv.innerHTML = `✅ 模型加载成功！可以开始对话了`;
+            updateStatus();
+            showProgress(false);
+            
+            // 添加系统消息
+            addSystemMessage(`${model.name} 模型已成功加载！现在可以开始对话了。`);
+            
+        } catch (error) {
+            console.error('模型加载失败:', error);
+            statusTextDiv.innerHTML = `❌ 模型加载失败: ${error.message}`;
+            textGenerator = null;
+            modelLoaded = false;
+            showProgress(false);
+            addSystemMessage(`模型加载失败: ${error.message}。请刷新页面重试或选择其他模型。`);
+        } finally {
+            isModelLoading = false;
+            renderModelButtons();
+        }
+    }
+    
+    // 生成AI响应
+    async function generateResponse(userMessage) {
+        if (!textGenerator || !modelLoaded) {
+            return "模型未加载，请先选择一个模型。";
+        }
+        
+        try {
+            // 构建对话历史
+            const messages = [
+                { role: "system", content: "你是一个有用的AI助手，用中文回答用户的问题。回答要详细、准确、有帮助。" },
+                ...chatHistory.slice(-8).map(msg => ({
+                    role: msg.role,
+                    content: msg.content
+                }))
+            ];
+            
+            // 生成响应
+            const response = await textGenerator(messages, {
+                max_new_tokens: 512,
+                temperature: 0.7,
+                top_p: 0.95,
+                do_sample: true,
+                pad_token_id: 50256
+            });
+            
+            let generatedText = response[0].generated_text;
+            
+            // 提取最新的助手回复
+            if (Array.isArray(generatedText)) {
+                const lastAssistantMsg = generatedText.filter(m => m.role === 'assistant').pop();
+                if (lastAssistantMsg) {
+                    return lastAssistantMsg.content;
+                }
+                return generatedText[generatedText.length - 1].content;
+            }
+            
+            return generatedText;
+        } catch (error) {
+            console.error('生成响应失败:', error);
+            return `生成响应时出错: ${error.message}。请重试或选择其他模型。`;
+        }
+    }
+    
+    async function sendMessage() {
+        if (isLoading || !modelLoaded || !textGenerator) {
+            alert("请等待模型加载完成后再发送消息");
+            return;
+        }
+        
+        const userText = messageInput.value.trim();
+        if (userText === "") return;
+        
+        // 添加用户消息
+        const userMsg = { role: 'user', content: userText };
+        chatHistory.push(userMsg);
+        renderMessages();
+        saveChatHistory();
+        
+        // 清空输入框
+        messageInput.value = '';
+        messageInput.style.height = 'auto';
+        
+        // 开始AI响应
+        isLoading = true;
+        sendBtn.disabled = true;
+        
+        // 显示加载状态
+        const loadingMsg = { role: 'assistant', content: '🤔 思考中...' };
+        chatHistory.push(loadingMsg);
+        renderMessages();
+        
+        try {
+            const aiResponseText = await generateResponse(userText);
+            // 替换最后一条消息
+            chatHistory.pop();
+            const assistantMsg = { role: 'assistant', content: aiResponseText };
+            chatHistory.push(assistantMsg);
+            renderMessages();
+            saveChatHistory();
+        } catch (error) {
+            console.error("生成错误", error);
+            chatHistory.pop();
+            const errorMsg = { role: 'assistant', content: `❌ 生成回复时出错: ${error.message}` };
+            chatHistory.push(errorMsg);
+            renderMessages();
+        } finally {
+            isLoading = false;
+            sendBtn.disabled = false;
+            messageInput.focus();
+            saveChatHistory();
+        }
+    }
+    
+    function addSystemMessage(content) {
+        const sysMsg = { role: 'assistant', content: `🔧 ${content}` };
+        chatHistory.push(sysMsg);
+        renderMessages();
+        saveChatHistory();
+    }
+    
+    function clearChat() {
+        if (isLoading || isModelLoading) {
+            alert("请等待操作完成后再清空");
+            return;
+        }
+        chatHistory = [
+            { role: 'assistant', content: '对话已清空！AI模型已就绪，可以开始新的对话。' }
+        ];
+        renderMessages();
+        saveChatHistory();
+    }
+    
+    function renderModelButtons() {
+        modelButtonsContainer.innerHTML = '';
+        models.forEach(model => {
+            const btn = document.createElement('button');
+            btn.className = `model-btn ${currentModel.id === model.id && modelLoaded ? 'active' : ''}`;
+            btn.innerHTML = `${model.name} <span class="model-size">${model.size}</span>`;
+            
+            if (isModelLoading) {
+                btn.disabled = true;
+            } else {
+                btn.addEventListener('click', async () => {
+                    if (isLoading) {
+                        alert('请等待当前回复完成后再切换模型');
+                        return;
+                    }
+                    await loadModel(model);
+                });
+            }
+            
+            modelButtonsContainer.appendChild(btn);
+        });
+    }
+    
+    function autoResizeTextarea() {
+        messageInput.style.height = 'auto';
+        messageInput.style.height = Math.min(messageInput.scrollHeight, 120) + 'px';
+    }
+    
+    // 键盘事件
+    messageInput.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' && !e.shiftKey && modelLoaded && !isLoading) {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+    messageInput.addEventListener('input', autoResizeTextarea);
+    sendBtn.addEventListener('click', sendMessage);
+    clearBtn.addEventListener('click', clearChat);
+    
+    // 初始化
+    async function init() {
+        loadChatHistory();
+        renderModelButtons();
+        renderMessages();
+        updateStatus();
+        statusTextDiv.innerHTML = "✨ 请选择一个模型开始（首次使用需要下载）";
+        
+        // 可选：自动加载第一个模型（注释掉，让用户主动选择）
+        // await loadModel(currentModel);
+    }
+    
+    init();
+</script>
+</body>
+</html>
