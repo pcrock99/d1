@@ -17,3 +17,4 @@ paginate_path: "/page:num/"
 # 插件
 plugins:
   - jekyll-paginate
+  - jekyll-remote-theme      # 激活远程主题插件
