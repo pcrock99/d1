@@ -1,14 +1,15 @@
-# pip3 install requests
-# cmd窗口运行：npx NeteaseCloudMusicApi
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-音乐工具箱 - 整合版
+超级音乐工具箱 - 完全整合版
 功能：
+0. 启动API服务（网易云搜索依赖）
 1. 网易云音乐搜索（搜索后自动检测有效性）
 2. 外链批量检测
 3. M3U格式互转
+4. 在线音乐播放器（M3U歌单随机循环）
+5. 本地音乐播放器（本地MP3随机循环）
+6. 退出
 """
 
 import os
@@ -17,16 +18,37 @@ import sys
 import requests
 import json
 import time
-import subprocess  # 用于启动外部程序
+import subprocess
+import random
+import socket
+import platform
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # ==================== 配置区域 ====================
 API_BASE = "http://localhost:3000"
 DETECT_TIMEOUT = 10
-MAX_WORKERS = 5  # 并发检测线程数
+MAX_WORKERS = 5
+
+# 播放器配置（可根据需要修改）
+# Windows 默认 mpv 路径，如果添加了环境变量可以直接用 "mpv"
+MPV_CMD = "mpv"  # 如果 mpv 不在 PATH 中，可以写完整路径，如: C:/mpv/mpv.exe
+M3U_URL = "https://pcrock99.github.io/d1/d/list/mp3list.m3u"
+LOCAL_M3U = "mp3list.m3u"  # 本地保存的歌单文件
+MP3_DIR = "mp3"  # 本地MP3保存目录
+# ================================================
 
 # ==================== 通用函数 ====================
+def is_windows():
+    return platform.system() == "Windows"
+
+def is_network_ok():
+    try:
+        socket.gethostbyname("github.com")
+        return True
+    except socket.error:
+        return False
+
 def parse_line(line: str) -> tuple:
     """解析一行文本，返回 (前缀, 外链)"""
     line = line.strip()
@@ -40,7 +62,6 @@ def parse_line(line: str) -> tuple:
         return prefix, url
     else:
         return None, line
-
 
 def check_url_validity(url: str, check_content_type: bool = True, timeout: int = DETECT_TIMEOUT) -> dict:
     """检测链接是否有效且可播放"""
@@ -86,7 +107,6 @@ def check_url_validity(url: str, check_content_type: bool = True, timeout: int =
         return {"valid": False, "message": "连接失败", "content_type": ""}
     except Exception as e:
         return {"valid": False, "message": f"请求失败: {str(e)[:50]}", "content_type": ""}
-
 
 def batch_detect(lines: list, show_progress: bool = True) -> tuple:
     """批量检测链接，返回 (valid_list, invalid_list, stats)"""
@@ -142,7 +162,6 @@ def batch_detect(lines: list, show_progress: bool = True) -> tuple:
     
     return valid, invalid, stats
 
-
 def save_results(valid: list, invalid: list, prefix: str = ""):
     """保存检测结果"""
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -170,6 +189,54 @@ def save_results(valid: list, invalid: list, prefix: str = ""):
     
     return valid_file if valid else None, invalid_file if invalid else None
 
+# ==================== 功能0：API服务管理 ====================
+def check_api_status():
+    """检查API服务状态"""
+    try:
+        requests.get(f"{API_BASE}/check", timeout=2)
+        return True
+    except:
+        return False
+
+def start_api_service():
+    """启动网易云API服务"""
+    # 检查是否已运行
+    if check_api_status():
+        print("\n✅ API服务已在运行中！")
+        return
+    
+    print("\n🚀 正在启动网易云API服务...")
+    print("这会在后台打开一个新窗口运行服务")
+    print("关闭服务请手动关闭对应的命令行窗口")
+    
+    try:
+        if is_windows():
+            subprocess.Popen(
+                "start cmd /k npx NeteaseCloudMusicApi@latest",
+                shell=True
+            )
+        else:
+            subprocess.Popen(
+                "npx NeteaseCloudMusicApi@latest",
+                shell=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+        
+        print("等待服务启动", end="")
+        for i in range(6):
+            time.sleep(1)
+            print(".", end="", flush=True)
+            if check_api_status():
+                print("\n✅ API服务启动成功！")
+                return
+        
+        print("\n⚠️ 请手动确认服务是否启动")
+        print("可以访问 http://localhost:3000 测试")
+        
+    except Exception as e:
+        print(f"\n❌ 启动失败: {e}")
+        print("请手动在命令行运行: npx NeteaseCloudMusicApi@latest")
 
 # ==================== 功能1：网易云搜索 ====================
 def search_song(song_name: str, limit: int = 100, filter_vip: bool = True) -> list:
@@ -214,21 +281,10 @@ def search_song(song_name: str, limit: int = 100, filter_vip: bool = True) -> li
             
     except requests.exceptions.ConnectionError:
         print("❌ 无法连接到API服务！")
-        print("请确保已经运行: npx NeteaseCloudMusicApi@latest")
         return []
     except Exception as e:
         print(f"请求失败: {e}")
         return []
-
-
-def check_api():
-    """检查API是否可用"""
-    try:
-        requests.get(f"{API_BASE}/check", timeout=3)
-        return True
-    except:
-        return False
-
 
 def function_search():
     """功能1：网易云音乐搜索（带自动检测）"""
@@ -236,15 +292,17 @@ def function_search():
     print("功能1：网易云音乐搜索（自动检测）")
     print("=" * 60)
     
-    # 检查API
-    if not check_api():
+    if not check_api_status():
         print("\n⚠️ 警告: 本地API服务未启动！")
-        print("请另开一个命令行窗口执行: npx NeteaseCloudMusicApi@latest")
-        print("\n按任意键返回主菜单...")
-        input()
-        return
+        start = input("是否立即启动？(y/n): ").strip().lower()
+        if start == 'y':
+            start_api_service()
+            if not check_api_status():
+                input("按回车键返回主菜单...")
+                return
+        else:
+            return
     
-    # 是否显示VIP
     show_vip = input("\n是否显示VIP歌曲？(y/n，默认n): ").strip().lower()
     filter_vip = show_vip != 'y'
     
@@ -253,7 +311,6 @@ def function_search():
         keyword = input("请输入歌名 (直接回车返回主菜单): ").strip()
         
         if not keyword:
-            print("返回主菜单...")
             break
         
         print(f"\n正在搜索「{keyword}」...")
@@ -269,29 +326,21 @@ def function_search():
             if len(results) > 20:
                 print(f"... 还有 {len(results) - 20} 首")
             
-            # 询问是否检测
             detect = input(f"\n是否检测这 {len(results)} 条链接的有效性？(y/n，默认y): ").strip().lower()
             if detect != 'n':
                 print("\n" + "=" * 60)
                 print("开始检测...")
                 valid, invalid, stats = batch_detect(results, show_progress=True)
                 
-                # 显示统计
                 print("-" * 60)
                 print(f"📊 检测完成！")
                 print(f"   总计: {stats['total']} 条")
                 print(f"   ✅ 有效: {stats['valid']} 条")
                 print(f"   ❌ 无效: {stats['invalid']} 条")
-                if stats['html'] > 0:
-                    print(f"      └─ 伪外链: {stats['html']} 条")
-                if stats['error'] > 0:
-                    print(f"      └─ 其他错误: {stats['error']} 条")
                 
-                # 保存结果
                 if valid or invalid:
-                    valid_file, invalid_file = save_results(valid, invalid, f"{keyword}_")
+                    save_results(valid, invalid, f"{keyword}_")
                     
-                    # 询问是否只保存有效链接
                     if valid:
                         save_clean = input(f"\n是否只保存有效链接到单独文件？(y/n): ").strip().lower()
                         if save_clean == 'y':
@@ -301,20 +350,17 @@ def function_search():
                                     f.write(f"{line}\n")
                             print(f"✅ 已保存到: {clean_file}")
             else:
-                # 不检测，直接保存原始搜索结果
                 save = input(f"\n是否保存原始搜索结果？(y/n): ").strip().lower()
                 if save == 'y':
                     filename = f"{keyword}_歌曲链接.txt"
                     with open(filename, 'w', encoding='utf-8') as f:
                         f.write(f"# 搜索: {keyword}\n")
-                        f.write(f"# 时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-                        f.write(f"# 类型: {'仅免费' if filter_vip else '全部'}\n\n")
+                        f.write(f"# 时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
                         for r in results:
                             f.write(r + "\n")
                     print(f"✅ 已保存到 {filename}")
         else:
             print("未找到免费歌曲，尝试其他关键词或允许显示VIP")
-
 
 # ==================== 功能2：链接检测 ====================
 def function_detect():
@@ -324,15 +370,11 @@ def function_detect():
     print("=" * 60)
     print("\n说明：")
     print("  - 支持格式：前缀$外链 或 纯外链")
-    print("  - ✅ 检测链接是否可访问（HTTP 2xx/3xx）")
-    print("  - 🎵 检测Content-Type是否为音频格式（过滤伪外链）")
-    print("  - 结果保存到 valid_urls.txt 和 invalid_urls.txt")
-    print("\n" + "=" * 60)
-    
+    print("  - ✅ 检测链接是否可访问")
+    print("  - 🎵 检测是否为真实音频格式")
     print("\n📝 请粘贴内容（多行粘贴，输入空行结束）：")
     print("   格式示例：")
     print("     歌名-歌手$https://example.com/song.mp3")
-    print("     或直接：https://example.com/song.mp3")
     print()
     
     lines = []
@@ -346,16 +388,13 @@ def function_detect():
             break
     
     if not lines:
-        print("\n⚠️ 未检测到内容，返回主菜单...")
+        print("\n⚠️ 未检测到内容")
         input("按回车键继续...")
         return
     
     print(f"\n📋 共 {len(lines)} 条记录待检测")
-    
-    # 开始检测
     valid, invalid, stats = batch_detect(lines, show_progress=True)
     
-    # 保存结果
     print("-" * 60)
     print(f"📊 检测完成！")
     print(f"   总计: {stats['total']} 条")
@@ -365,13 +404,11 @@ def function_detect():
     if valid or invalid:
         save_results(valid, invalid)
     
-    print("\n按回车键返回主菜单...")
-    input()
+    input("\n按回车键继续...")
 
-
-# ==================== 功能3：列表转换 ====================
+# ==================== 功能3：M3U转换 ====================
 def format_a_to_b(content: str) -> str:
-    """格式A转格式B: #EXTINF:-1,XXX\nhttp...mp3 -> XXX$http...mp3"""
+    """格式A转格式B"""
     lines = content.split('\n')
     result = []
     i = 0
@@ -400,9 +437,8 @@ def format_a_to_b(content: str) -> str:
             i += 1
     return '\n'.join(result)
 
-
 def format_b_to_a(content: str) -> str:
-    """格式B转格式A: XXX$http...mp3 -> #EXTINF:-1,XXX\nhttp...mp3"""
+    """格式B转格式A"""
     lines = content.split('\n')
     result = ['#EXTM3U']
     
@@ -426,193 +462,306 @@ def format_b_to_a(content: str) -> str:
     
     return '\n'.join(result)
 
-
 def function_convert():
     """功能3：M3U格式互转"""
     print("\n" + "=" * 60)
     print("功能3：M3U格式互转")
     print("=" * 60)
-    print("\n1. 格式A 转 格式B")
-    print("   (#EXTINF:-1,歌名 + 链接) -> (歌名$链接)")
-    print()
-    print("2. 格式B 转 格式A")
-    print("   (歌名$链接) -> (#EXTINF:-1,歌名 + 链接)")
-    print()
-    print("3. 返回主菜单")
-    print("=" * 60)
+    print("\n1. 格式A 转 格式B (M3U → TXT)")
+    print("2. 格式B 转 格式A (TXT → M3U)")
+    print("3. 返回")
     
     choice = input("\n请选择 (1/2/3): ").strip()
-    
     if choice not in ['1', '2']:
         return
     
     file_path = input("请拖入或输入文件路径: ").strip().strip('"')
-    
     if not os.path.exists(file_path):
-        print(f"❌ 文件不存在: {file_path}")
+        print(f"❌ 文件不存在")
         input("按回车键继续...")
         return
     
-    # 读取文件
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
     except UnicodeDecodeError:
-        try:
-            with open(file_path, 'r', encoding='gbk') as f:
-                content = f.read()
-        except Exception as e:
-            print(f"❌ 读取文件失败: {e}")
-            input("按回车键继续...")
-            return
+        with open(file_path, 'r', encoding='gbk') as f:
+            content = f.read()
     
-    # 转换
     if choice == '1':
-        print("正在转换: 格式A -> 格式B")
         result = format_a_to_b(content)
-        output_path = file_path.replace('.m3u', '_AtoB.m3u').replace('.txt', '_AtoB.txt')
-        if output_path == file_path:
-            output_path = file_path + '_converted'
+        output_path = file_path.replace('.m3u', '_AtoB.txt').replace('.txt', '_AtoB.txt')
     else:
-        print("正在转换: 格式B -> 格式A")
         result = format_b_to_a(content)
-        output_path = file_path.replace('.m3u', '_BtoA.m3u').replace('.txt', '_BtoA.txt')
-        if output_path == file_path:
-            output_path = file_path + '_converted'
+        output_path = file_path.replace('.txt', '_BtoA.m3u').replace('.m3u', '_BtoA.m3u')
     
-    # 写入文件
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(result)
     
-    print(f"\n✅ 转换完成！")
-    print(f"输出文件: {output_path}")
-    
-    # 预览
-    lines = result.split('\n')[:10]
-    print("\n预览（前10行）:")
-    print("-" * 50)
-    for line in lines:
-        if line:
-            print(line[:80] + ('...' if len(line) > 80 else ''))
-    print("-" * 50)
-    
+    print(f"\n✅ 转换完成！输出: {output_path}")
     input("\n按回车键继续...")
 
+# ==================== 功能4：在线播放器 ====================
+def check_get_m3u():
+    """检测并下载在线歌单"""
+    os.makedirs(os.path.dirname(LOCAL_M3U) if os.path.dirname(LOCAL_M3U) else ".", exist_ok=True)
+    if not os.path.exists(LOCAL_M3U):
+        print("📥 正在下载在线歌单...")
+        try:
+            r = requests.get(M3U_URL, timeout=10)
+            with open(LOCAL_M3U, "wb") as f:
+                f.write(r.content)
+            print("✅ 歌单下载完成")
+        except Exception as e:
+            print(f"❌ 下载失败: {e}")
+            return False
+    return True
 
-def check_api_status():
-    """检查API服务状态"""
-    try:
-        requests.get(f"{API_BASE}/check", timeout=2)
-        return True
-    except:
-        return False
+def parse_m3u():
+    """解析M3U文件，返回歌曲列表 [(歌名, URL), ...]"""
+    songs = []
+    title = None
+    with open(LOCAL_M3U, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith("#EXTINF"):
+                title = line.split(",", 1)[-1].strip()
+            elif line and not line.startswith("#"):
+                songs.append((title or "未知歌曲", line))
+    return songs
 
-def start_api_service():
-    """启动网易云API服务"""
-    import subprocess
-    import threading
-    import os
-    
-    # 检查是否已运行
-    if check_api_status():
-        print("\n✅ API服务已在运行中！")
+def download_song(title, url):
+    """下载歌曲到本地"""
+    if not is_network_ok():
+        print("❌ 无网络，无法下载")
         return
-    
-    print("\n正在启动网易云API服务...")
-    print("这会在后台打开一个新窗口运行服务")
-    print("关闭服务请手动关闭对应的命令行窗口")
-    
     try:
-        # Windows
-        if os.name == 'nt':
-            subprocess.Popen(
-                "start cmd /k npx NeteaseCloudMusicApi@latest",
-                shell=True
+        safe_name = "".join(c for c in title if c not in r'\/:*?"<>|')
+        os.makedirs(MP3_DIR, exist_ok=True)
+        save_path = os.path.join(MP3_DIR, f"{safe_name}.mp3")
+        
+        if os.path.exists(save_path):
+            print(f"📁 已存在：{title}")
+            return
+            
+        print(f"⬇️ 下载中：{title}")
+        with requests.get(url, stream=True, timeout=15) as res:
+            res.raise_for_status()
+            with open(save_path, "wb") as f:
+                for chunk in res.iter_content(8192):
+                    f.write(chunk)
+        print("✅ 下载完成")
+    except Exception as e:
+        print(f"❌ 下载失败: {e}")
+
+def play_mpv(url_or_path, title=""):
+    """跨平台播放mpv（静默模式）"""
+    try:
+        if is_windows():
+            startupinfo = subprocess.STARTUPINFO()
+            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+            startupinfo.wShowWindow = 0
+            proc = subprocess.Popen(
+                [MPV_CMD, "--no-video", "--quiet", "--no-terminal", url_or_path],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                startupinfo=startupinfo
             )
         else:
-            # Mac/Linux
-            subprocess.Popen(
-                "npx NeteaseCloudMusicApi@latest",
-                shell=True,
+            proc = subprocess.Popen(
+                [MPV_CMD, "--no-video", "--quiet", url_or_path],
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL
             )
-        
-        # 等待服务启动
-        print("等待服务启动", end="")
-        for i in range(6):
-            time.sleep(1)
-            print(".", end="", flush=True)
-            if check_api_status():
-                print("\n✅ API服务启动成功！")
-                return
-        
-        print("\n⚠️ 请手动确认服务是否启动")
-        print("可以访问 http://localhost:3000 测试")
-        
+        return proc
+    except FileNotFoundError:
+        print("❌ 未找到 mpv 播放器！")
+        print("   请下载 mpv 并添加到系统PATH，或修改 MPV_CMD 变量为完整路径")
+        return None
     except Exception as e:
-        print(f"\n❌ 启动失败: {e}")
-        print("请手动在命令行运行: npx NeteaseCloudMusicApi@latest")
+        print(f"❌ 播放失败: {e}")
+        return None
 
+def function_online_play():
+    """功能4：在线M3U播放器"""
+    print("\n" + "=" * 60)
+    print("功能4：在线音乐播放器")
+    print("=" * 60)
+    
+    if not is_network_ok():
+        print("❌ 无网络连接，无法在线播放")
+        input("按回车键继续...")
+        return
+    
+    if not check_get_m3u():
+        input("按回车键继续...")
+        return
+    
+    songs = parse_m3u()
+    if not songs:
+        print("❌ 歌单为空或解析失败")
+        input("按回车键继续...")
+        return
+    
+    print(f"\n✅ 共 {len(songs)} 首歌曲")
+    print("🎵 随机循环播放 | q=退出 | n=下一首 | s=下载当前歌曲\n")
+    
+    while True:
+        random.shuffle(songs)
+        for title, url in songs:
+            print(f"\n▶️ 播放：{title}")
+            proc = play_mpv(url, title)
+            
+            if proc is None:
+                return
+            
+            # 等待播放结束或手动控制
+            while proc.poll() is None:
+                # Windows下用msvcrt，跨平台用select
+                if is_windows():
+                    import msvcrt
+                    if msvcrt.kbhit():
+                        key = msvcrt.getch().decode().lower()
+                        if key == 'q':
+                            proc.terminate()
+                            print("\n👋 已退出")
+                            return
+                        elif key == 'n':
+                            proc.terminate()
+                            break
+                        elif key == 's':
+                            download_song(title, url)
+                else:
+                    import select
+                    r, _, _ = select.select([sys.stdin], [], [], 0.1)
+                    if r:
+                        key = sys.stdin.readline().strip().lower()
+                        if key == 'q':
+                            proc.terminate()
+                            print("👋 已退出")
+                            return
+                        elif key == 'n':
+                            proc.terminate()
+                            break
+                        elif key == 's':
+                            download_song(title, url)
+                time.sleep(0.1)
 
+# ==================== 功能5：本地播放器 ====================
+def function_local_play():
+    """功能5：本地MP3播放器"""
+    print("\n" + "=" * 60)
+    print("功能5：本地音乐播放器")
+    print("=" * 60)
+    
+    os.makedirs(MP3_DIR, exist_ok=True)
+    songs = [f for f in os.listdir(MP3_DIR) if f.lower().endswith(".mp3")]
+    
+    if not songs:
+        print("❌ 本地无MP3文件")
+        print(f"💡 提示：请将MP3文件放入 {MP3_DIR} 文件夹")
+        input("按回车键继续...")
+        return
+    
+    print(f"\n✅ 本地 {len(songs)} 首歌曲")
+    print("🎵 随机循环播放 | q=退出 | n=下一首\n")
+    
+    while True:
+        random.shuffle(songs)
+        for song in songs:
+            path = os.path.join(MP3_DIR, song)
+            print(f"\n▶️ 播放：{song}")
+            proc = play_mpv(path, song)
+            
+            if proc is None:
+                return
+            
+            while proc.poll() is None:
+                if is_windows():
+                    import msvcrt
+                    if msvcrt.kbhit():
+                        key = msvcrt.getch().decode().lower()
+                        if key == 'q':
+                            proc.terminate()
+                            print("\n👋 已退出")
+                            return
+                        elif key == 'n':
+                            proc.terminate()
+                            break
+                else:
+                    import select
+                    r, _, _ = select.select([sys.stdin], [], [], 0.1)
+                    if r:
+                        key = sys.stdin.readline().strip().lower()
+                        if key == 'q':
+                            proc.terminate()
+                            print("👋 已退出")
+                            return
+                        elif key == 'n':
+                            proc.terminate()
+                            break
+                time.sleep(0.1)
+
+# ==================== 主菜单 ====================
 def main():
     while True:
         print("\n" + "=" * 60)
-        print("         🎵 音乐工具箱 🎵")
+        print("         🎵 超级音乐工具箱 🎵")
         print("=" * 60)
         print()
         
-        # 显示API服务状态
-        if check_api_status():
-            print("   🌐 API服务: ✅ 已启动")
-        else:
-            print("   🌐 API服务: ❌ 未启动")
+        # 显示状态
+        api_status = "✅" if check_api_status() else "❌"
+        net_status = "✅" if is_network_ok() else "❌"
+        print(f"   🌐 API服务: {api_status}    📡 网络: {net_status}")
         print()
         
-        print("   0. 🚀 启动API服务（功能1依赖）")
+        print("   📋 工具类：")
+        print("   0. 🚀 启动API服务")
         print("   1. 🔍 网易云搜索（自动检测）")
         print("   2. 🔗 外链批量检测")
         print("   3. 📑 M3U格式互转")
-        print("   4. 🚪 退出")
+        print()
+        print("   🎵 播放器类：")
+        print("   4. 🌍 在线音乐播放器（M3U随机循环）")
+        print("   5. 💾 本地音乐播放器（MP3文件夹）")
+        print()
+        print("   6. 🚪 退出")
         print()
         print("=" * 60)
         
-        choice = input("\n请选择功能 (0/1/2/3/4): ").strip()
+        choice = input("\n请选择功能 (0-6): ").strip()
         
         if choice == '0':
             start_api_service()
             input("\n按回车键继续...")
         elif choice == '1':
-            if not check_api_status():
-                print("\n❌ API服务未启动！")
-                start = input("是否立即启动？(y/n): ").strip().lower()
-                if start == 'y':
-                    start_api_service()
-                    if check_api_status():
-                        function_search()
-                    else:
-                        input("按回车键继续...")
-                else:
-                    continue
-            else:
-                function_search()
+            function_search()
         elif choice == '2':
             function_detect()
         elif choice == '3':
             function_convert()
         elif choice == '4':
+            function_online_play()
+        elif choice == '5':
+            function_local_play()
+        elif choice == '6':
             print("\n👋 再见！")
             sys.exit(0)
         else:
-            print("\n❌ 无效选择，请重新输入")
+            print("\n❌ 无效选择")
             input("按回车键继续...")
-
 
 if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\n\n👋 已取消，再见！")
+        # 清理可能残留的mpv进程
+        if is_windows():
+            subprocess.run(["taskkill", "/f", "/im", "mpv.exe"], capture_output=True)
+        else:
+            subprocess.run(["pkill", "mpv"], capture_output=True)
+        print("\n\n👋 已退出")
         sys.exit(0)
     except Exception as e:
         print(f"\n❌ 错误: {e}")
