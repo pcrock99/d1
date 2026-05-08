@@ -1,0 +1,184 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <meta name="x5-orientation" content="landscape">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-page-mode" content="app">
+    <title>FC游戏在线玩 | 小霸王其乐无穷</title>
+    <meta name="keywords" content="FC/NES模拟器，在线畅玩八十款任天堂红白机游戏，小霸王游戏机其乐无穷。支持魂斗罗/超级玛丽/忍者龙剑传等等任天堂红白机游戏。" />
+    <meta name="description" content="非常适合在手机/电脑上在线游玩，近乎完美的还原任天堂FC/NES原版ROM游戏的视频和声音。" />
+    <link href="css/jsnes.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/static/favicon.ico">
+</head>
+
+<body>
+    <div class="main">
+        <div class="panel">
+            <div class="controller-area">
+                <div class="controller">
+                    <div id="controls-direction">
+                        <div id="controls-rocker"></div>
+                        <button role="BUTTON_UP" class="up joydirection" id="joystick_btn_up">U</button>
+                        <button role="BUTTON_RIGHT" class="right joydirection" id="joystick_btn_right">R</button>
+                        <button role="BUTTON_DOWN" class="down joydirection" id="joystick_btn_down">D</button>
+                        <button role="BUTTON_LEFT" class="left joydirection" id="joystick_btn_left">L</button>
+                    </div>
+                </div>
+                <div class="joy">I</div>
+               <div><a href="https://github.com/lucaschungzsj/fcgame?tab=readme-ov-file#按键说明" tppabs="" target="_blank" class="readme">按键说明</a></div>
+            </div>
+            <div class="function-area">
+                <div class="screen">
+                    <div id="emulator" align="center" style="width:100%;height:100%"></div>
+                </div>
+                <div class="function">
+                    <button class="controls-center-select joybtn" id="joystick_btn_select" role="BUTTON_SELECT">Select</button>
+                    <button class="controls-center-start joybtn" id="joystick_btn_start" role="BUTTON_START">Start</button>
+                </div>
+            </div>
+            <div class="action-area">
+                <div class="action">
+                    <div id="controls-fire">
+                        <button class="b joybtn" role="BUTTON_B" id="joystick_btn_B">B</button>
+                        <button class="a joybtn" role="BUTTON_A" id="joystick_btn_A">A</button>
+                    </div>
+                </div>
+            </div>
+            <div class="sign">FAMILY <br> COMPUTER</div>
+        </div>
+    </div>
+</body>
+<script src="lib/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/dynamicaudio-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/nes.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/utils.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/cpu.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/keyboard.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/mappers.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/papu.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/ppu.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/rom.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/ui.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/debug.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/nipplejs.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/joystick.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/jweixin-1.6.0.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+    var nes;
+    $(function() {
+        nes = new JSNES({
+            'ui': $('#emulator').JSNESUI({
+                "魂斗罗系列": [
+                    ['赤影战士', 'roms/Kage (J).nes'],
+                    ['赤影战士-2024双武器', 'roms/Kage-2024.nes'],
+                    ['魂斗罗1', 'roms/Gryzor (J).nes'],
+                    ['魂斗罗2', 'roms/Super Contra (J).nes'],
+                    ['魂斗罗:力量', 'roms/Contra Force (U).nes'],
+                    ['魂斗罗:精神','roms/Contra Spirits (Unl).nes'],
+                    ['最终任务', 'roms/Action in New York (E) [!].nes'],
+                    ['魂斗罗X','roms/Super Contra X (Unl).nes'],
+                    ['魂斗罗7','roms/Chao Ji Zhan Hun (Unl).nes'],
+                    ['raf world','roms/raf world.nes'],
+                ],
+                "超级马里奥系列": [
+                    ['马里奥1', 'roms/Super Mario Bros. (E) (PRG0) [!].nes'],
+                    ['马里奥2', 'roms/Super Mario USA (J) [!].nes'],
+                    ['马里奥3', 'roms/Super Mario Bros. 3 (J) (PRG0).nes'],
+                    ['马里奥三周年', 'roms/Super Mario Bros. Special - 35th Anniversary Edition (Unl) (v1.3).nes'],
+                ],
+            })
+        });
+    });
+</script>
+<!--[if IE]>
+    <script type="text/vbscript" src="lib/jsnes-ie-hacks.vbscript"></script>
+<![endif]-->
+<script>
+    function touchDwon(evt) {
+    nes.keyboard.keyDown({
+        keyCode: evt.keyCode
+    });
+};
+
+function touchUp(evt) {
+    nes.keyboard.keyUp({
+        keyCode: evt.keyCode
+    });
+};
+
+function select(val) {
+    if (val.substring(0, 1) == "#") {
+        return document.querySelector(val);
+    } else {
+        return document.getElementById(val);
+    }
+}
+
+var joystick = new Joystick({
+    el: select("controls-rocker"),
+    mode: 'static',
+    color: "#808080",
+    size: 100,
+    isFourBtn: false,
+    keyCodes: [87, 83, 65, 68],
+    btn_down_fn: touchDwon,
+    btn_up_fn: touchUp,
+    relative: true,
+});
+joystick.init();
+</script>
+<!-- <script>
+    var url=location.href;
+    var imageUrl = '../static/fc.png';
+
+    $.ajax({
+        type : "get",
+        url : "/wx/jssdk?url="+url,
+        success : function(r){
+            var data = r.data;
+            wx.config({
+                debug: false,
+                appId: data.appId,
+                timestamp: data.timestamp,
+                nonceStr: data.nonceStr,
+                signature: data.signature,
+                jsApiList: [
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo',
+                    'onMenuShareQZone'
+
+                ]
+            });
+        }
+    });
+
+    wx.ready(function () {
+        var shareData = {
+            title: '小霸王游戏机，时光倒转回童年',
+            desc: '在线游玩魂斗罗/超级玛丽/双截龙/冒险岛等等八十款任天堂红白机游戏！爷的青春回来了',
+            link: url,
+            imgUrl: imageUrl
+        };
+
+        wx.onMenuShareAppMessage(shareData);//分享给好友
+        wx.onMenuShareTimeline(shareData);//分享到朋友圈
+        wx.onMenuShareQQ(shareData);//分享给手机QQ
+        wx.onMenuShareWeibo(shareData);//分享腾讯微博
+        wx.onMenuShareQZone(shareData);//分享到QQ空间
+    });
+    wx.error(function (res) {
+        //alert(res.errMsg);//错误提示
+    });
+</script> -->
+</html>
