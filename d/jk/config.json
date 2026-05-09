@@ -40,5 +40,4 @@
   {"name":"+香奶","url":"https://www.gdlsp.com/api/xml.php","format":"json","searchable":true,"enabled":true,"group":"+18","note":"正常，支持搜索"},
   {"name":"+美少女","url":"https://www.msnii.com/api/xml.php","format":"json","searchable":true,"enabled":true,"group":"+18","note":"正常，支持搜索"},
   {"name":"+饮水机","url":"https://www.xrbsp.com/api/xml.php","format":"json","searchable":true,"enabled":true,"group":"+18","note":"正常，支持搜索"}
-],
-"mpv_path":"mpv","request_timeout":10,"max_concurrent":5,"page_size":50,"max_pages":3,"enable_ad_filter":false,"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36","ad_domains":["ad.","ads.","doubleclick","googlead","googlesyndication","adservice","adserver","advertising","advert","promo"],"speed_test":{"enabled":true,"timeout":5},"health_check":{"enabled":true,"interval_hours":24,"auto_disable":true}}
+]}
