@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON 工具箱 - 格式化|校验|智能修复|压缩|导入导出</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            success: '#00B42A',
+            warning: '#FF7D00',
+            danger: '#F53F3F',
+            dark: '#1E1E2E',
+            light: '#F7F8FA',
+          },
+          fontFamily: {
+            mono: ['Consolas', 'Monaco', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .btn-hover { @apply hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200; }
+      .card-shadow { @apply shadow-md hover:shadow-lg transition-shadow; }
+    }
+    textarea {
+      scrollbar-width: thin;
+    }
+    textarea::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    textarea::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 3px;
+    }
+    .error-line {
+      background-color: #ffebee !important;
+    }
+    .dark .error-line {
+      background-color: #422222 !important;
+    }
+  </style>
+</head>
+<body class="bg-light dark:bg-dark text-gray-800 dark:text-gray-200 min-h-screen transition-colors duration-300">
+  <div class="container mx-auto px-4 py-6 max-w-6xl">
+    <header class="mb-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+      <div>
+        <h1 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary flex items-center gap-2">
+          <i class="fa fa-code"></i> JSON 全能工具箱
+        </h1>
+        <p class="text-gray-500 dark:text-gray-400">格式化 · 校验 · 智能修复 · 压缩 · 导入文件 · 导出文件 · 错误行定位</p>
+      </div>
+      <button id="themeToggle" class="btn-hover w-12 h-12 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-yellow-300 border border-gray-200 dark:border-gray-700">
+        <i class="fa fa-moon-o dark:hidden text-xl"></i>
+        <i class="fa fa-sun-o hidden dark:inline text-xl"></i>
+      </button>
+    </header>
+
+    <!-- 功能按钮区 -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-5">
+      <button id="formatBtn" class="btn-hover card-shadow bg-primary text-white py-3 px-2 rounded-lg font-medium flex flex-col items-center gap-1">
+        <i class="fa fa-indent text-lg"></i>
+        <span>格式化</span>
+      </button>
+      <button id="compressBtn" class="btn-hover card-shadow bg-white dark:bg-gray-800 py-3 px-2 rounded-lg font-medium flex flex-col items-center gap-1">
+        <i class="fa fa-compress text-lg"></i>
+        <span>压缩</span>
+      </button>
+      <button id="checkBtn" class="btn-hover card-shadow bg-white dark:bg-gray-800 py-3 px-2 rounded-lg font-medium flex flex-col items-center gap-1">
+        <i class="fa fa-check-circle text-lg"></i>
+        <span>校验</span>
+      </button>
+      <button id="fixBtn" class="btn-hover card-shadow bg-warning text-white py-3 px-2 rounded-lg font-medium flex flex-col items-center gap-1">
+        <i class="fa fa-wrench text-lg"></i>
+        <span>智能修复</span>
+      </button>
+      <button id="importBtn" class="btn-hover card-shadow bg-white dark:bg-gray-800 py-3 px-2 rounded-lg font-medium flex flex-col items-center gap-1 relative">
+        <i class="fa fa-upload text-lg"></i>
+        <span>导入JSON</span>
+        <input type="file" id="fileInput" accept=".json,.txt" class="absolute inset-0 opacity-0 cursor-pointer">
+      </button>
+      <button id="exportBtn" class="btn-hover card-shadow bg-white dark:bg-gray-800 py-3 px-2 rounded-lg font-medium flex flex-col items-center gap-1">
+        <i class="fa fa-download text-lg"></i>
+        <span>导出结果</span>
+      </button>
+      <button id="copyBtn" class="btn-hover card-shadow bg-white dark:bg-gray-800 py-3 px-2 rounded-lg font-medium flex flex-col items-center gap-1">
+        <i class="fa fa-clipboard text-lg"></i>
+        <span>复制结果</span>
+      </button>
+      <button id="clearBtn" class="btn-hover card-shadow bg-white dark:bg-gray-800 py-3 px-2 rounded-lg font-medium flex flex-col items-center gap-1">
+        <i class="fa fa-trash text-lg"></i>
+        <span>清空</span>
+      </button>
+    </div>
+
+    <!-- 编辑器区域 -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+      <div class="card-shadow bg-white dark:bg-gray-800 rounded-xl p-4 h-[500px] flex flex-col">
+        <div class="flex justify-between items-center mb-3">
+          <h2 class="font-semibold text-lg flex items-center gap-2"><i class="fa fa-pencil text-primary"></i> 输入 JSON</h2>
+          <span id="inputCount" class="text-xs text-gray-500 dark:text-gray-400">0 字符</span>
+        </div>
+        <textarea id="inputArea" placeholder="粘贴JSON、导入文件均可，支持残缺少逗号、单引号、无键引号、注释..." 
+        class="flex-1 w-full resize-none p-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-light dark:bg-dark font-mono text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"></textarea>
+      </div>
+
+      <div class="card-shadow bg-white dark:bg-gray-800 rounded-xl p-4 h-[500px] flex flex-col">
+        <div class="flex justify-between items-center mb-3">
+          <h2 class="font-semibold text-lg flex items-center gap-2"><i class="fa fa-file-text-o text-success"></i> 输出结果</h2>
+          <span id="outputCount" class="text-xs text-gray-500 dark:text-gray-400">0 字符</span>
+        </div>
+        <textarea id="outputArea" readonly placeholder="处理结果将显示在这里..." 
+        class="flex-1 w-full resize-none p-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-light dark:bg-dark font-mono text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"></textarea>
+      </div>
+    </div>
+
+    <!-- 错误信息 & 行号提示 -->
+    <div id="message" class="mb-6 p-4 rounded-lg hidden transition-all duration-300"></div>
+    <div id="errorTip" class="mb-4 p-3 rounded-lg bg-danger/10 text-danger hidden"></div>
+  </div>
+
+  <script>
+    const inputArea = document.getElementById('inputArea');
+    const outputArea = document.getElementById('outputArea');
+    const inputCount = document.getElementById('inputCount');
+    const outputCount = document.getElementById('outputCount');
+    const message = document.getElementById('message');
+    const errorTip = document.getElementById('errorTip');
+    const themeToggle = document.getElementById('themeToggle');
+    const fileInput = document.getElementById('fileInput');
+
+    const formatBtn = document.getElementById('formatBtn');
+    const compressBtn = document.getElementById('compressBtn');
+    const checkBtn = document.getElementById('checkBtn');
+    const fixBtn = document.getElementById('fixBtn');
+    const importBtn = document.getElementById('importBtn');
+    const exportBtn = document.getElementById('exportBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const clearBtn = document.getElementById('clearBtn');
+
+    // 深色模式初始化
+    if (localStorage.getItem('dark-mode') === 'true' || (!localStorage.getItem('dark-mode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('dark-mode', document.documentElement.classList.contains('dark'));
+    });
+
+    // 字符统计
+    function updateCount() {
+      inputCount.textContent = `${inputArea.value.length} 字符`;
+      outputCount.textContent = `${outputArea.value.length} 字符`;
+    }
+
+    // 普通提示
+    function showMessage(text, type = 'info') {
+      message.textContent = text;
+      message.className = 'mb-6 p-4 rounded-lg transition-all duration-300';
+      errorTip.classList.add('hidden');
+      switch(type) {
+        case 'success': message.classList.add('bg-success/10','text-success','border-l-4','border-success'); break;
+        case 'error': message.classList.add('bg-danger/10','text-danger','border-l-4','border-danger'); break;
+        case 'warning': message.classList.add('bg-warning/10','text-warning','border-l-4','border-warning'); break;
+        default: message.classList.add('bg-primary/10','text-primary','border-l-4','border-primary');
+      }
+      message.classList.remove('hidden');
+      setTimeout(() => message.classList.add('opacity-0'), 3000);
+      setTimeout(() => message.classList.add('hidden'), 3500);
+    }
+
+    // 错误行号提示
+    function showErrorLineTip(msg) {
+      errorTip.textContent = msg;
+      errorTip.classList.remove('hidden');
+      message.classList.add('hidden');
+    }
+
+    // 核心：强力修复残缺JSON（自动补逗号、去注释、单引号转双、键补引号、去尾逗号）
+    function fixBrokenJson(str) {
+      try {
+        // 移除注释
+        str = str.replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
+        // 单引号转双引号
+        str = str.replace(/'/g, '"').replace(/\\'/g, "'");
+        // 对象key自动加双引号
+        str = str.replace(/(['"])?([a-zA-Z0-9_\u4e00-\u9fa5]+)(['"])?:/g, '"$2":');
+        // 移除尾部多余逗号
+        str = str.replace(/,\s*([\]}])/g, '$1').trim();
+
+        // 逐行自动补缺失逗号
+        const lines = str.split('\n').map(line => line.trimEnd());
+        let fixed = [];
+        for (let i = 0; i < lines.length; i++) {
+          let line = lines[i];
+          if (
+            /["\}\]]\s*$/.test(line) &&
+            i + 1 < lines.length &&
+            /^\s*["\{[\u4e00-\u9fa5a-zA-Z0-9_]/.test(lines[i+1]) &&
+            !line.endsWith(',')
+          ) {
+            line += ',';
+          }
+          fixed.push(line);
+        }
+        str = fixed.join('\n');
+
+        const parsed = JSON.parse(str);
+        return { success: true, data: parsed };
+      } catch (e) {
+        return { success: false, error: e.message };
+      }
+    }
+
+    // 格式化JSON
+    function formatJson() {
+      errorTip.classList.add('hidden');
+      try {
+        const json = JSON.parse(inputArea.value.trim());
+        outputArea.value = JSON.stringify(json, null, 2);
+        updateCount();
+        showMessage('✅ JSON 格式化成功', 'success');
+      } catch (e) {
+        showErrorLineTip(`❌ 语法错误：${e.message}`);
+      }
+    }
+
+    // 压缩JSON
+    function compressJson() {
+      errorTip.classList.add('hidden');
+      try {
+        const json = JSON.parse(inputArea.value.trim());
+        outputArea.value = JSON.stringify(json);
+        updateCount();
+        showMessage('✅ JSON 压缩成功', 'success');
+      } catch (e) {
+        showErrorLineTip(`❌ 语法错误：${e.message}`);
+      }
+    }
+
+    // 语法校验 + 错误定位
+    function checkJson() {
+      errorTip.classList.add('hidden');
+      const v = inputArea.value.trim();
+      if (!v) return showMessage('⚠️ 请输入JSON内容', 'warning');
+      try {
+        JSON.parse(v);
+        showMessage('✅ JSON 格式完全合法', 'success');
+      } catch (e) {
+        let posMatch = e.message.match(/position (\d+)/);
+        let lineTip = posMatch ? `错误位置：第 ${posMatch[1]} 字符` : '';
+        showErrorLineTip(`❌ 格式错误：${e.message} ${lineTip}`);
+      }
+    }
+
+    // 智能修复
+    function fixJson() {
+      errorTip.classList.add('hidden');
+      const v = inputArea.value.trim();
+      if (!v) return showMessage('⚠️ 请输入JSON内容', 'warning');
+      const res = fixBrokenJson(v);
+      if (res.success) {
+        outputArea.value = JSON.stringify(res.data, null, 2);
+        updateCount();
+        showMessage('✅ 智能修复完成（自动补逗号/引号/去注释）', 'success');
+      } else {
+        showErrorLineTip(`❌ 无法修复：${res.error}`);
+      }
+    }
+
+    // 导入JSON文件
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = evt => {
+        inputArea.value = evt.target.result;
+        updateCount();
+        showMessage(`✅ 已导入文件：${file.name}`, 'success');
+        fileInput.value = '';
+      };
+      reader.readAsText(file);
+    });
+
+    // 导出为JSON文件
+    function exportJson() {
+      if (!outputArea.value) return showMessage('⚠️ 暂无可导出内容', 'warning');
+      const blob = new Blob([outputArea.value], {type: 'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'result.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showMessage('✅ 已导出为 result.json', 'success');
+    }
+
+    // 复制结果
+    function copyResult() {
+      if (!outputArea.value) return showMessage('⚠️ 暂无结果可复制', 'warning');
+      outputArea.select();
+      document.execCommand('copy');
+      showMessage('✅ 已复制到剪贴板', 'success');
+    }
+
+    // 清空
+    function clearAll() {
+      inputArea.value = '';
+      outputArea.value = '';
+      errorTip.classList.add('hidden');
+      updateCount();
+      showMessage('✅ 已清空所有内容', 'success');
+    }
+
+    // 绑定事件
+    formatBtn.onclick = formatJson;
+    compressBtn.onclick = compressJson;
+    checkBtn.onclick = checkJson;
+    fixBtn.onclick = fixJson;
+    exportBtn.onclick = exportJson;
+    copyBtn.onclick = copyResult;
+    clearBtn.onclick = clearAll;
+    inputArea.oninput = updateCount;
+
+    updateCount();
+  </script>
+</body>
+</html>
