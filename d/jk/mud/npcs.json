@@ -1,0 +1,37 @@
+{
+"老村长": {"type": "quest_giver", "dialog": "少侠，村里需要你帮助"},
+"铁匠": {"type": "shop", "shop_id": "武器店", "dialog": "要买武器吗？"},
+"小贩": {"type": "shop", "shop_id": "杂货铺", "dialog": "来看看吧"},
+"武师": {"type": "trainer", "trainer_id": "武师", "dialog": "想学武功吗？"},
+"刘寡妇": {"type": "quest_giver", "dialog": "少侠，能帮我个忙吗？"},
+
+
+"采药婆婆": {"type": "quest_giver", "dialog": "山里草药难找，可否帮老身寻几株药材？"},
+"隐居樵夫": {"type": "talker", "dialog": "密林深处危险重重，劝你莫要轻易深入"},
+"摆渡船夫": {"type": "transporter", "dialog": "想去对岸？付些银两便载你一程"},
+"渔翁老伯": {"type": "shop", "shop_id": "水产小店", "dialog": "新鲜河鱼河虾，物美价廉"},
+"行脚游医": {"type": "shop", "shop_id": "药草商行", "dialog": "疗伤丹药解毒草药应有尽有"},
+"种田农夫": {"type": "talker", "dialog": "近来野兽作乱，庄稼都被糟蹋了"},
+"牧羊少年": {"type": "quest_giver", "dialog": "我的羊群跑丢了，少侠能帮我找找吗？"},
+"隐世散仙": {"type": "trainer", "trainer_id": "仙法导师", "dialog": "有缘人，可愿修习上乘心法？"},
+"戏水孩童": {"type": "talker", "dialog": "河滩深处有奇怪的影子，好吓人"},
+"落魄道士": {"type": "quest_giver", "dialog": "古庙阴气太重，还请少侠前来除邪"},
+"黑衣隐士": {"type": "talker", "dialog": "江湖风波四起，安稳度日方为上策"},
+"流浪猎手": {"type": "shop", "shop_id": "猎手商行", "dialog": "上等兽皮利爪，皆是山野好物"},
+"沼泽引路者": {"type": "transporter", "dialog": "沼泽路况复杂，我带你走安全路径"},
+"峡谷猎户": {"type": "quest_giver", "dialog": "峡谷凶兽横行，还望少侠出手相助"},
+
+"城主仙尊":{"type":"quest_giver","dialog":"凡界少侠可入仙途，完成历练便可修行仙法"},
+"仙器商人":{"type":"shop","shop_id":"仙器阁","dialog":"各类仙家神兵宝甲应有尽有"},
+"宗门导师":{"type":"trainer","trainer_id":"仙武导师","dialog":"习得仙门武学，纵横两界无忧"},
+"药仙长老":{"type":"shop","shop_id":"仙药堂","dialog":"千年灵药、进阶丹药用不尽"},
+"瑶池仙子":{"type":"quest_giver","dialog":"灵泽妖物作乱，还请少侠出手平定"},
+"灵泽渔夫":{"type":"talker","dialog":"瑶池深处藏有水系至宝，切记小心"},
+"星陨猎人":{"type":"quest_giver","dialog":"陨星魔物肆虐，急需强者清扫"},
+"黑市商人":{"type":"shop","shop_id":"黑市商行","dialog":"稀有材料、隐秘好物低价出手"},
+"秘境守护者":{"type":"quest_giver","dialog":"闯过秘境试炼，赐予无上机缘"},
+"妖族首领":{"type":"talker","dialog":"人妖两界本无仇，切莫肆意屠杀妖族"},
+"化形小妖":{"type":"quest_giver","dialog":"族人被人类追杀，求少侠出手相助"},
+"幻境引路人":{"type":"transporter","dialog":"我可带你穿梭幻境，直达深处"},
+"幽冥摆渡人":{"type":"transporter","dialog":"付足仙币，我渡你穿行幽冥古域"}
+}
