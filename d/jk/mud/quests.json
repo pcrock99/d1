@@ -1,0 +1,125 @@
+{
+  "收集兔毛":{
+    "name":"收集兔毛",
+    "desc":"刘寡妇让你帮她杀2只野兔收集兔毛",
+    "from_npc":"刘寡妇",
+    "goal":{"type":"kill","monster":"野兔","target":2},
+    "reward":{"exp":20,"item":"鸡肉", "money":12}, 
+    "repeatable": true
+  }, 
+  "除害1": {
+    "name": "除害·偷鸡贼",
+    "desc": "老村长让你教训村口的偷鸡贼",
+    "from_npc": "老村长",
+    "goal": {"type": "kill", "monster": "偷鸡贼", "target": 1},
+    "reward": {"exp": 50, "item": "布衣"}
+  },
+  "狼患": {
+    "name": "北林狼患",
+    "desc": "老村长让你去碎石山道杀3只野狼",
+    "require_quest": "除害1",
+    "from_npc": "老村长",
+    "goal": {"type": "kill", "monster": "野狼", "target": 3},
+    "reward": {"exp": 150, "item": "铁剑"}
+  },
+  "灭鼠清扰": {
+    "name": "灭鼠清扰",
+    "desc": "采药婆婆厌烦山鼠作乱，帮忙清理五只调皮山鼠",
+    "from_npc": "采药婆婆",
+    "goal": {"type": "kill", "monster": "调皮山鼠", "target": 5},
+    "reward": {"exp": 60, "item": "金疮药", "money": 25},
+    "repeatable": true
+  },
+  "竹林驱蛇": {
+    "name": "竹林驱蛇",
+    "desc": "隐居樵夫恳请你除掉林间害人的竹叶青蛇",
+    "from_npc": "隐居樵夫",
+    "goal": {"type": "kill", "monster": "竹叶青蛇", "target": 4},
+    "reward": {"exp": 120, "item": "解毒药", "money": 40}
+  },
+  "驱赶鱼精": {
+    "name": "河畔清妖",
+    "desc": "渔翁老伯求助，赶走捣乱河面的黑水鱼精",
+    "from_npc": "渔翁老伯",
+    "goal": {"type": "kill", "monster": "黑水鱼精", "target": 3},
+    "reward": {"exp": 100, "item": "鲜蟹肉", "money": 35}
+  },
+  "猎杀豺狼": {
+    "name": "山道除凶",
+    "desc": "行脚游医出行受阻，剿灭山道野山豺狼",
+    "from_npc": "行脚游医",
+    "goal": {"type": "kill", "monster": "野山豺狼", "target": 4},
+    "reward": {"exp": 130, "item": "回春散", "money": 50}
+  },
+  "驱逐野猪": {
+    "name": "护田除患",
+    "desc": "种田农夫的田地遭野猪践踏，前去驱赶斩杀",
+    "from_npc": "种田农夫",
+    "goal": {"type": "kill", "monster": "蛮横野猪", "target": 2},
+    "reward": {"exp": 140, "item": "野猪肉", "money": 45}
+  },
+  "寻回羊群": {
+    "name": "寻回羊群",
+    "desc": "牧羊少年羊群走失，斩杀凶兽寻回羊群踪迹",
+    "from_npc": "牧羊少年",
+    "goal": {"type": "kill", "monster": "疾风苍鹰", "target": 2},
+    "reward": {"exp": 160, "item": "布靴", "money": 60}
+  },
+  "幽谷除蝎": {
+    "name": "幽谷除毒",
+    "desc": "隐世散仙命你清理幽谷剧毒蝎怪",
+    "from_npc": "隐世散仙",
+    "goal": {"type": "kill", "monster": "毒蝎精怪", "target": 3},
+    "reward": {"exp": 180, "item": "壮骨丹", "money": 70}
+  },
+  "河滩清怪": {
+    "name": "浅滩安宁",
+    "desc": "戏水孩童惧怕河滩精怪，帮忙肃清巨型螃蟹",
+    "from_npc": "戏水孩童",
+    "goal": {"type": "kill", "monster": "巨型螃蟹", "target": 3},
+    "reward": {"exp": 90, "item": "滑腻粘液", "money": 30},
+    "repeatable": true
+  },
+  "古庙镇邪": {
+    "name": "古庙镇邪",
+    "desc": "落魄道士无力除邪，拜托你斩杀游荡孤魂",
+    "from_npc": "落魄道士",
+    "goal": {"type": "kill", "monster": "游荡孤魂", "target": 5},
+    "reward": {"exp": 200, "item": "粗布腰带", "money": 80}
+  },
+  "荒坡平乱": {
+    "name": "荒坡平乱",
+    "desc": "流浪猎手痛恨沙盗劫掠，出手剿灭戈壁沙盗",
+    "from_npc": "流浪猎手",
+    "goal": {"type": "kill", "monster": "戈壁沙盗", "target": 4},
+    "reward": {"exp": 170, "item": "铜戒", "money": 65}
+  },
+  "降服野牛": {
+    "name": "狂牛作乱",
+    "desc": "荒野狂躁野牛四处冲撞，出手将其降服",
+    "from_npc": "黑衣隐士",
+    "goal": {"type": "kill", "monster": "狂躁野牛", "target": 2},
+    "reward": {"exp": 220, "item": "皮甲", "money": 90}
+  },
+  "沼泽斩蟒": {
+    "name": "沼泽巨祸",
+    "desc": "沼泽巨蟒威胁路人，引路者重金求助除蟒",
+    "from_npc": "沼泽引路者",
+    "goal": {"type": "kill", "monster": "沼泽巨蟒", "target": 1},
+    "reward": {"exp": 260, "item": "钢刀", "money": 120}
+  },
+  "黑林清巢": {
+    "name": "黑林清巢",
+    "desc": "黑风林中黑熊横行，前去剿灭暗夜黑熊",
+    "from_npc": "黑衣隐士",
+    "goal": {"type": "kill", "monster": "暗夜黑熊", "target": 2},
+    "reward": {"exp": 240, "item": "黑熊掌", "money": 100}
+  },
+  "峡谷伏虎": {
+    "name": "峡谷伏虎",
+    "desc": "峡谷猎户常年受猛虎侵扰，恳请少侠斩杀猛虎",
+    "from_npc": "峡谷猎户",
+    "goal": {"type": "kill", "monster": "岩崖猛虎", "target": 1},
+    "reward": {"exp": 300, "item": "银戒指", "money": 150}
+  }
+}
