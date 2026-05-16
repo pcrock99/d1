@@ -1,5 +1,5 @@
 {
-"偷鸡贼":{"hp":45,"attack":12,"defense":3,"exp":30,"drops":["鸡肉"]},
+"黄鼠狼":{"hp":45,"attack":12,"defense":3,"exp":30,"drops":["鸡肉"]},
 "野狼":{"hp":60,"attack":18,"defense":5,"exp":50,"drops":["狼牙"]},
 "野兔":{"hp":30,"attack":8,"defense":1,"exp":15,"drops":["兔毛"]},
 "调皮山鼠":{"hp":35,"attack":10,"defense":2,"exp":20,"drops":["鼠肉","鼠须"]},
