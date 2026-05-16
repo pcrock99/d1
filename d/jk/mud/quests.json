@@ -3,7 +3,7 @@
     "name":"收集兔毛",
     "desc":"少侠，你能帮我收集2把兔毛吗？我做衣服的材料还差一些…",
     "from_npc":"刘寡妇",
-    "goal":{"type":"kill","monster":"野兔","target":2},
+    "goal":{"type":"kill","monster":"野兔","target":20},
     "reward":{"exp":20,"item":"鸡肉", "money":12}, 
     "repeatable": true
   }, 
@@ -11,7 +11,7 @@
     "name": "除害·黄鼠狼",
     "desc": "老村长让你教训村口的偷鸡贼",
     "from_npc": "老村长",
-    "goal": {"type": "kill", "monster": "黄鼠狼", "target": 1},
+    "goal": {"type": "kill", "monster": "黄鼠狼", "target": 10},
     "reward": {"exp": 50, "item": "布衣"}
   },
   "狼患": {
