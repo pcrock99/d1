@@ -8,10 +8,10 @@
     "repeatable": true
   }, 
   "除害1": {
-    "name": "除害·偷鸡贼",
+    "name": "除害·黄鼠狼",
     "desc": "老村长让你教训村口的偷鸡贼",
     "from_npc": "老村长",
-    "goal": {"type": "kill", "monster": "偷鸡贼", "target": 1},
+    "goal": {"type": "kill", "monster": "黄鼠狼", "target": 1},
     "reward": {"exp": 50, "item": "布衣"}
   },
   "狼患": {
