@@ -1,0 +1,4 @@
+{
+  "杂货铺": {"items": [{"name": "金疮药", "price": 25}, {"name": "鸡肉", "price": 8}, {"name": "草鞋", "price": 10}]},
+  "武器店": {"items": [{"name": "铁剑", "price": 100}, {"name": "布衣", "price": 30}]}
+}
