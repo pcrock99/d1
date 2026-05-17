@@ -1,0 +1,29 @@
+{
+  "shops": {
+    "杂货铺": {"name": "老王的杂货铺", "owner": "老王", "daily_cost": 20, "level": 1},
+    "武器店": {"name": "铁匠铺", "owner": "老张", "daily_cost": 30, "level": 1},
+    "药店": {"name": "济世堂", "owner": "李大夫", "daily_cost": 25, "level": 1}
+  },
+  "products": {
+    "茶叶": {"name": "茶叶", "buy_price": 20, "sell_price": 35, "demand": 30, "type": "food"},
+    "丝绸": {"name": "丝绸", "buy_price": 80, "sell_price": 120, "demand": 15, "type": "cloth"},
+    "瓷器": {"name": "瓷器", "buy_price": 50, "sell_price": 85, "demand": 20, "type": "goods"},
+    "铁剑": {"name": "铁剑", "buy_price": 60, "sell_price": 100, "demand": 10, "type": "weapon"},
+    "金疮药": {"name": "金疮药", "buy_price": 15, "sell_price": 25, "demand": 25, "type": "potion"},
+    "人参": {"name": "人参", "buy_price": 40, "sell_price": 70, "demand": 12, "type": "herb"}
+  },
+  "upgrades": {
+    "1": {"level": 2, "cost": 500, "benefits": ["仓库+50", "顾客+20%"]},
+    "2": {"level": 3, "cost": 1000, "benefits": ["仓库+100", "可以雇佣店员"]}
+  },
+  "random_events": [
+    {"name": "物价上涨", "chance": 0.1, "effect": "price_up", "msg": "📈 物价上涨！卖出价格+20%"},
+    {"name": "小偷光顾", "chance": 0.05, "effect": "lose_money", "msg": "😱 遭小偷了！损失50两", "amount": 50},
+    {"name": "贵客上门", "chance": 0.08, "effect": "big_order", "msg": "👑 大商人来了！额外收入100两", "bonus": 100},
+    {"name": "货物滞销", "chance": 0.07, "effect": "slow_sale", "msg": "📉 市场冷淡，销量减半"}
+  ],
+  "market": {
+    "trends": {"food": {"base": 1.0, "volatility": 0.2}, "weapon": {"base": 1.0, "volatility": 0.15}},
+    "news": ["最近战事紧张，武器价格上涨！", "瘟疫流行，药品需求大增！", "丰收季节，粮食价格下跌。", "海外商船到港，丝绸热销！"]
+  }
+}
