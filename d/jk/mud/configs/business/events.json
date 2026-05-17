@@ -1,0 +1,6 @@
+{
+  "price_up": {"type": "message", "msg": "📈 今日物价上涨！"},
+  "tax": {"type": "money", "amount": -20, "msg": "💸 官府收税20两"},
+  "ship_arrival": {"type": "message", "msg": "🚢 商船到港，新货上架！"},
+  "market_news": {"type": "message", "msg": "📰 市场今日行情不错"}
+}
