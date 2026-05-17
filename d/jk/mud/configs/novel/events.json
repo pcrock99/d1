@@ -1,0 +1,4 @@
+{
+  "find_herb": {"type": "item", "item": "灵芝", "msg": "🌿 你发现了一株灵芝"},
+  "cabin_msg": {"type": "message", "msg": "🏠 小屋的门虚掩着，里面传来老人的声音：'进来吧'"}
+}
