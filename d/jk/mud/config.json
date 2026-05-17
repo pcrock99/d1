@@ -1,0 +1,23 @@
+{
+  "game_name": "文字江湖",
+  "version": "1.0",
+  "game_type": "rpg",
+  "enabled_modules": ["rpg"],
+  "features": {
+    "combat": true,
+    "skills": true,
+    "equipment": true,
+    "inventory": true,
+    "quests": true,
+    "puzzle": true,
+    "story_branches": false,
+    "npc_favor": false,
+    "pet": false,
+    "craft": false
+  },
+  "start_map": "村口",
+  "debug_mode": false,
+  "auto_save": true,
+  "max_level": 100,
+  "exp_base": 100
+}
