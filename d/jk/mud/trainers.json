@@ -1,0 +1,44 @@
+{
+  "武师": {
+    "skills": [
+      {
+        "name": "重击",
+        "price": 100,
+        "need_level": 2,
+        "description": "用力一击，伤害更高"
+      },
+      {
+        "name": "轻功",
+        "price": 150,
+        "need_level": 3,
+        "description": "增加闪避率"
+      }
+    ]
+  },
+  "少林方丈": {
+    "skills": [
+      {
+        "name": "罗汉拳",
+        "price": 200,
+        "need_level": 5,
+        "description": "少林基础拳法"
+      },
+      {
+        "name": "金刚掌",
+        "price": 500,
+        "need_level": 8,
+        "description": "刚猛无铸的掌法"
+      }
+    ]
+  },
+  "丐帮帮主": {
+    "skills": [
+      {
+        "name": "打狗棍法",
+        "price": 300,
+        "need_level": 6,
+        "description": "丐帮绝学"
+      }
+    ]
+  }
+}
