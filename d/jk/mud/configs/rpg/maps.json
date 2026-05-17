@@ -1,0 +1,62 @@
+{
+  "村口": {
+    "desc": "前面就是新手村了，这里是江湖的起点。",
+    "exits": {"北": "新手村"},
+    "monsters": [],
+    "npcs": [],
+    "on_enter": "welcome_msg",
+    "random_events": [
+      {"chance": 0.05, "event": "find_coin"}
+    ]
+  },
+  "新手村": {
+    "desc": "青石铺地，中央有棵老槐树，微风拂面。这里是江湖的起点。",
+    "exits": {"北": "村北树林", "西": "村西", "南": "村口"},
+    "monsters": ["偷鸡贼"],
+    "npcs": ["村长", "小贩", "武师"],
+    "on_enter": "welcome_msg",
+    "random_events": [
+      {"chance": 0.05, "event": "find_coin"}
+    ]
+  },
+  "村北树林": {
+    "desc": "昏暗的树林，树木茂密，偶尔有野狼出没。",
+    "exits": {"南": "新手村", "东": "神秘石室"},
+    "monsters": ["野狼"],
+    "npcs": [],
+    "random_events": [
+      {"chance": 0.1, "event": "find_herb"},
+      {"chance": 0.05, "event": "wild_dog"}
+    ]
+  },
+  "村西": {
+    "desc": "一条蜿蜒的小路，通向远方的山脉。",
+    "exits": {"东": "新手村"},
+    "monsters": ["野兔"],
+    "npcs": ["刘寡妇"]
+  },
+  "神秘石室": {
+    "desc": "一间封闭的石室，墙壁上刻着奇怪的符号。",
+    "exits": {"西": "村北树林", "东": "宝藏室"},
+    "monsters": [],
+    "npcs": [],
+    "puzzle": {
+      "id": "stone_chamber",
+      "type": "riddle",
+      "question": "什么东西越洗越脏？",
+      "answer": "水",
+      "hint": "想想洗手的时候",
+      "success_msg": "轰隆一声，暗门打开了！",
+      "on_solve": {"exits": {"东": "宝藏室"}, "msg": "墙壁裂开，一条密道出现了！"}
+    }
+  },
+  "宝藏室": {
+    "desc": "一间堆满财宝的房间，中央有个精致的宝箱",
+    "exits": {"西": "神秘石室"},
+    "monsters": [],
+    "npcs": [],
+    "random_events": [
+      {"chance": 0.3, "event": "treasure_chest"}
+    ]
+  }
+}
