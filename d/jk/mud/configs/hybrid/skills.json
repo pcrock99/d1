@@ -1,0 +1,5 @@
+{
+  "普通攻击": {"type": "active", "cost_mp": 0, "damage_base": 15, "damage_variance": 5, "description": "基础攻击"},
+  "重击": {"type": "active", "cost_mp": 8, "damage_base": 28, "damage_variance": 8, "need_level": 2, "price": 100, "description": "用力一击"},
+  "打坐": {"type": "active", "cost_mp": 0, "effect": "meditate", "hp_recover": 10, "mp_recover": 5, "description": "恢复气血"}
+}
