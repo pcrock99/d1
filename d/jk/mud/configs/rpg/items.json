@@ -1,0 +1,12 @@
+{
+  "鸡肉": {"type": "food", "price": 8, "hp_recover": 15, "desc": "鲜嫩多汁的鸡肉"},
+  "兔肉": {"type": "food", "price": 10, "hp_recover": 12, "desc": "鲜美的兔肉"},
+  "兔毛": {"type": "material", "price": 5, "desc": "柔软的兔毛"},
+  "狼牙": {"type": "material", "price": 12, "desc": "锋利的狼牙"},
+  "灵芝": {"type": "potion", "price": 50, "hp_recover": 50, "desc": "百年灵芝"},
+  "金疮药": {"type": "potion", "price": 25, "hp_recover": 40, "desc": "金疮药"},
+  "夜明珠": {"type": "treasure", "price": 500, "desc": "璀璨的夜明珠"},
+  "布衣": {"type": "armor", "slot": "body", "defense": 3, "price": 30, "desc": "粗布衣裳"},
+  "铁剑": {"type": "weapon", "slot": "weapon", "attack": 8, "price": 100, "desc": "铁铸长剑"},
+  "草鞋": {"type": "armor", "slot": "feet", "defense": 1, "price": 10, "desc": "草鞋"}
+}
