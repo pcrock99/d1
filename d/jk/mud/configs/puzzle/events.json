@@ -1,0 +1,4 @@
+{
+  "treasure_msg": {"type": "message", "msg": "✨ 你打开了宝箱，里面有一颗夜明珠！"},
+  "find_clue": {"type": "message", "msg": "📜 你发现了一张泛黄的纸条..."}
+}
