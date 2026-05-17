@@ -1,0 +1,8 @@
+{
+  "杂货店老板": {"type": "shop", "shop_id": "杂货铺", "dialog": "客官想要点什么？"},
+  "武器店老板": {"type": "shop", "shop_id": "武器店", "dialog": "要买武器吗？"},
+  "药店老板": {"type": "shop", "shop_id": "药店", "dialog": "看病还是买药？"},
+  "商贩": {"type": "normal", "dialog": "来看看吧，都是好货！"},
+  "收购商": {"type": "normal", "dialog": "有多少货我收多少！"},
+  "钱庄老板": {"type": "normal", "dialog": "存钱取钱，随叫随到"}
+}
