@@ -1,0 +1,17 @@
+{
+  "除害1": {
+    "name": "除害·偷鸡贼",
+    "desc": "村长让你教训村口的偷鸡贼",
+    "from_npc": "村长",
+    "goal": {"type": "kill", "monster": "偷鸡贼", "target": 1},
+    "reward": {"exp": 50, "item": "布衣", "money": 20}
+  },
+  "收集兔毛": {
+    "name": "收集兔毛",
+    "desc": "帮刘寡妇收集5个兔毛",
+    "from_npc": "刘寡妇",
+    "goal": {"type": "collect", "item": "兔毛", "target": 5},
+    "reward": {"exp": 80, "money": 50},
+    "repeatable": true
+  }
+}
