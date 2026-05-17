@@ -1,0 +1,7 @@
+{
+  "welcome_msg": {"type": "message", "msg": "📜 村口告示：悬赏捉拿偷鸡贼！"},
+  "find_coin": {"type": "money", "amount": 5, "msg": "💰 捡到5两银子"},
+  "find_herb": {"type": "item", "item": "灵芝", "msg": "🌿 发现一株灵芝"},
+  "wild_dog": {"type": "fight", "monster": "野狼", "msg": "🐺 野狼出现了！"},
+  "treasure_chest": {"type": "item", "item": "夜明珠", "msg": "✨ 获得夜明珠"}
+}
