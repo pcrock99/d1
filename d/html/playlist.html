@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>歌单列表</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #1a1a2e;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            padding: 20px;
+            color: #FFCC33;
+        }
+        h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,204,51,0.3);
+        }
+        .song-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .song-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .song-item:hover {
+            background: rgba(255,204,51,0.3);
+            transform: translateX(4px);
+        }
+        .song-index {
+            font-size: 14px;
+            color: #aaa;
+            min-width: 40px;
+        }
+        .song-name {
+            flex: 1;
+            font-size: 15px;
+        }
+        .song-play {
+            font-size: 18px;
+            opacity: 0.6;
+        }
+        .song-item:hover .song-play {
+            opacity: 1;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #aaa;
+        }
+        .close-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255,204,51,0.2);
+            border: none;
+            color: #FFCC33;
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .close-btn:hover {
+            background: rgba(255,204,51,0.5);
+        }
+    </style>
+</head>
+<body>
+    <h3>📋 当前歌单</h3>
+    <div id="songList" class="song-list">
+        <div class="loading">加载歌单中...</div>
+    </div>
+    <button class="close-btn" onclick="window.closePopup ? window.closePopup() : window.close()">关闭</button>
+
+    <script>
+        // 获取父窗口的 playlist 数据
+        let songList = [];
+        
+        // 从父窗口获取歌单
+        function fetchPlaylist() {
+            // 方法1：通过 postMessage 请求父窗口发送歌单
+            window.parent.postMessage({ type: 'GET_PLAYLIST' }, '*');
+        }
+        
+        // 接收父窗口的消息
+        window.addEventListener('message', (e) => {
+            if (e.data && e.data.type === 'PLAYLIST_DATA') {
+                songList = e.data.playlist;
+                renderSongList();
+            }
+        });
+        
+        function renderSongList() {
+            const container = document.getElementById('songList');
+            if (!songList.length) {
+                container.innerHTML = '<div class="loading">暂无歌曲</div>';
+                return;
+            }
+            container.innerHTML = songList.map((song, idx) => `
+                <div class="song-item" data-index="${idx}">
+                    <span class="song-index">${(idx+1).toString().padStart(2, '0')}</span>
+                    <span class="song-name">${escapeHtml(song.name)}</span>
+                    <span class="song-play">▶</span>
+                </div>
+            `).join('');
+            
+            // 绑定点击事件
+            document.querySelectorAll('.song-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const idx = parseInt(item.dataset.index);
+                    const song = songList[idx];
+                    if (song && song.url) {
+                        // 通知父窗口播放这首歌
+                        window.parent.postMessage({
+                            type: 'PLAY_SONG',
+                            index: idx,
+                            url: song.url,
+                            name: song.name
+                        }, '*');
+                        // 可选：关闭弹窗
+                        if (window.closePopup) window.closePopup();
+                        else window.close();
+                    }
+                });
+            });
+        }
+        
+        function escapeHtml(str) {
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+        
+        // 请求歌单
+        fetchPlaylist();
+    </script>
+</body>
+</html>
