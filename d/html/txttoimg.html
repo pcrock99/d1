@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 画图</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:sans-serif;background:#111;color:#eee;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px 12px}
+h1{font-size:1.3rem;margin-bottom:16px;opacity:.85}
+.mode-tabs{display:flex;gap:0;margin-bottom:16px;border-radius:10px;overflow:hidden;border:1px solid #444;width:100%;max-width:500px}
+.mode-tab{flex:1;padding:10px;text-align:center;cursor:pointer;font-size:.95rem;background:#222;color:#aaa;transition:.2s}
+.mode-tab.active{background:#0af;color:#fff}
+.input-group{width:100%;max-width:500px;margin-bottom:14px}
+.input-group label{display:block;font-size:.85rem;color:#aaa;margin-bottom:5px}
+.input-group select,.input-group input[type=text]{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #444;background:#222;color:#eee;font-size:.95rem;outline:none}
+.input-group select:focus,.input-group input[type=text]:focus{border-color:#6cf}
+.row{display:flex;gap:10px;width:100%;max-width:500px;margin-bottom:14px}
+.row .input-group{flex:1;margin:0}
+button{margin-top:6px;padding:12px 28px;border-radius:10px;border:none;background:#0af;color:#fff;font-size:1rem;cursor:pointer}
+button:active{opacity:.7}
+button:disabled{opacity:.5;cursor:not-allowed}
+#result{margin-top:20px;text-align:center}
+#result img{max-width:100%;border-radius:10px;box-shadow:0 0 20px rgba(0,170,255,.25)}
+#loading{margin-top:20px;color:#888;font-size:.9rem}
+.file-input-wrap{position:relative;display:inline-block;width:100%;padding:24px 14px;border:2px dashed #444;border-radius:10px;background:#1a1a1a;color:#aaa;text-align:center;cursor:pointer;transition:.2s}
+.file-input-wrap:hover{border-color:#0af;color:#eee}
+.file-input-wrap input{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;cursor:pointer}
+#preview-img{max-width:100%;max-height:220px;border-radius:8px;margin-top:10px;border:1px solid #444}
+</style>
+</head>
+<body>
+<h1>🎨 AI 画图</h1>
+
+<div class="mode-tabs">
+<div class="mode-tab active" onclick="switchMode('txt2img')">✏️ 文生图</div>
+<div class="mode-tab" onclick="switchMode('img2img')">🖼️ 图生图</div>
+</div>
+
+<!-- ====== 图生图区域 ====== -->
+<div id="img2img-area" style="display:none;width:100%;max-width:500px;margin-bottom:14px">
+<label style="font-size:.85rem;color:#aaa;display:block;margin-bottom:5px">选择参考图</label>
+<div class="file-input-wrap" id="drop-zone">
+<input type="file" accept="image/*" onchange="handleFile(this)">
+<span id="file-label">📁 点击选择图片，或拖拽到此处（≤5MB）</span>
+</div>
+<div id="preview"></div>
+</div>
+
+<div class="input-group">
+<label id="prompt-label">提示词</label>
+<input type="text" id="prompt" placeholder="输入提示词..." autofocus>
+</div>
+
+<div class="row">
+<div class="input-group">
+<label>模型</label>
+<select id="model">
+<optgroup label="FLUX 系列">
+<option value="flux">FLUX.1 Schnell（默认）</option>
+<option value="flux-pro">FLUX Pro（精细）</option>
+<option value="flux-realism">FLUX Realism（写实）</option>
+<option value="flux-anime">FLUX Anime（动漫）</option>
+<option value="flux-3d">FLUX 3D（3D渲染）</option>
+<option value="flux-cablyai">FLUX CablyAI（创意）</option>
+</optgroup>
+<optgroup label="极速轻量">
+<option value="turbo">Turbo（极速草稿）</option>
+</optgroup>
+<optgroup label="Stable Diffusion">
+<option value="stable-diffusion">SD 1.5</option>
+<option value="sdxl">SDXL 1.0</option>
+</optgroup>
+</select>
+</div>
+<div class="input-group">
+<label>风格</label>
+<select id="style">
+<option value="">无额外风格</option>
+<option value="photorealistic, photo real, ultra realistic">写实摄影</option>
+<option value="anime style, Japanese anime illustration">日系动漫</option>
+<option value="oil painting, classical art style">油画古典</option>
+<option value="watercolor, soft artistic painting">水彩插画</option>
+<option value="cyberpunk, neon lights, futuristic">赛博朋克</option>
+<option value="pixel art, retro game style">像素复古</option>
+<option value="3D render, octane render, C4D style">3D渲染</option>
+<option value="chinese ink painting, traditional Chinese art">水墨国风</option>
+</select>
+</div>
+</div>
+
+<div class="row">
+<div class="input-group">
+<label>尺寸</label>
+<select id="size">
+<option value="1024x1024">1024×1024 方形</option>
+<option value="1280x720">1280×720 横屏</option>
+<option value="720x1280">720×1280 竖屏</option>
+<option value="1536x1024">1536×1024 宽幅</option>
+<option value="1024x1536">1024×1536 长竖</option>
+<option value="512x512">512×512 小图</option>
+</select>
+</div>
+<div class="input-group">
+<label>随机种子</label>
+<input type="text" id="seed" value="" placeholder="留空=随机，填数字固定">
+</div>
+<div class="input-group">
+<label>反向提示词</label>
+<input type="text" id="negprompt" placeholder="如：blurry, bad quality, watermark">
+</div>
+</div>
+
+<button onclick="generate()">生成图片</button>
+<div id="loading"></div>
+<div id="result"></div>
+
+<script>
+var mode='txt2img';
+var refImageData=null;
+
+// ---- 模式切换 ----
+function switchMode(m){
+mode=m;
+document.querySelectorAll('.mode-tab').forEach(function(t,i){
+t.classList.toggle('active', (i===0&&m==='txt2img')||(i===1&&m==='img2img'));
+});
+document.getElementById('img2img-area').style.display=m==='img2img'?'block':'none';
+if(m==='img2img'){
+document.getElementById('prompt').placeholder='描述你想让图片变成什么样（可选）';
+document.getElementById('prompt-label').textContent='描述词';
+}else{
+document.getElementById('prompt').placeholder='输入提示词...';
+document.getElementById('prompt-label').textContent='提示词';
+}
+}
+
+// ---- 文件读取 ----
+function handleFile(input){
+if(!input.files||!input.files[0])return;
+var file=input.files[0];
+if(file.size>5*1024*1024){alert('图片太大啦，最多5MB');return}
+var reader=new FileReader();
+reader.onload=function(e){
+refImageData=e.target.result; // data:image/png;base64,...
+document.getElementById('file-label').textContent='✅ '+file.name+' ('+(file.size/1024).toFixed(1)+' KB)';
+document.getElementById('preview').innerHTML='<img id="preview-img" src="'+refImageData+'">';
+};
+reader.readAsDataURL(file);
+}
+
+// ---- 核心生成逻辑 ----
+function generate(){
+var p=document.getElementById('prompt').value.trim();
+var isImg2Img=(mode==='img2img');
+
+// 校验
+if(isImg2Img && !refImageData){
+alert('图生图模式需要先选择一张参考图喔~');return;
+}
+if(!isImg2Img && !p){alert('请输入提示词');return;}
+
+var style=document.getElementById('style').value;
+if(style && p){
+p = p + ', ' + style;
+} else if(!isImg2Img && !p && !style){
+alert('请输入提示词');return;
+}
+
+var size=document.getElementById('size').value.split('x');
+var w=size[0], h=size[1];
+var seedRaw=document.getElementById('seed').value.trim();
+var modelVal=document.getElementById('model').value;
+
+var negprompt=document.getElementById('negprompt').value.trim();
+
+// 种子处理：留空/0 则生成随机整数(1~999999999)
+var seedNum;
+if(!seedRaw||seedRaw==='0'){
+  seedNum=Math.floor(Math.random()*999999999)+1;
+  document.getElementById('seed').value=seedNum;
+}else{
+  seedNum=parseInt(seedRaw);
+}
+
+document.getElementById('loading').textContent=isImg2Img?'正在基于参考图生成，稍等喔~':'正在生成，稍等喔~';
+document.getElementById('result').innerHTML='';
+
+// 文生图：走 GET 请求（POST API 不认 seed 且被 Cloudflare 强缓存）
+// 加 t=Date.now() 做 cache-buster，防止相同 prompt 命中缓存返回旧图
+if(!isImg2Img){
+var urlParams=new URLSearchParams({
+model:modelVal,
+width:w,
+height:h,
+seed:seedNum,
+nologo:'true',
+nofilter:'true'
+});
+if(negprompt) urlParams.set('negative_prompt',negprompt);
+var fullUrl='https://image.pollinations.ai/prompt/'+encodeURIComponent(p)+'?'+urlParams.toString()+'&t='+Date.now();
+
+var img=new Image();
+img.onload=function(){
+document.getElementById('loading').textContent='';
+document.getElementById('seed').value='';
+document.getElementById('result').innerHTML='<img src="'+fullUrl+'" title="右键可保存图片"><br><a href="'+fullUrl+'" download="ai-image.png" style="color:#0af;display:inline-block;margin-top:8px;font-size:.9rem">⬇️ 下载图片</a><br><span style="font-size:.8rem;color:#666">Seed: '+seedNum+'</span>';
+};
+img.onerror=function(){
+document.getElementById('loading').textContent='生成失败，请检查网络或提示词后重试';
+};
+img.src=fullUrl;
+return;
+}
+
+// 图生图：走 POST（GET 不支持 base64 上传，seed 也不受控所以忽略）
+var payload={
+prompt:p,
+model:modelVal,
+width:parseInt(w),
+height:parseInt(h),
+nologo:true,
+nofilter:true,
+image:refImageData
+};
+if(negprompt) payload.negative_prompt=negprompt;
+
+var xhr=new XMLHttpRequest();
+xhr.open('POST','https://image.pollinations.ai/prompt/'+encodeURIComponent(p));
+xhr.setRequestHeader('Content-Type','application/json');
+xhr.responseType='blob';
+xhr.onload=function(){
+if(xhr.status===200 && xhr.response){
+var blob=xhr.response;
+var url=URL.createObjectURL(blob);
+document.getElementById('loading').textContent='';
+document.getElementById('seed').value='';
+document.getElementById('result').innerHTML='<img src="'+url+'" title="右键可保存图片"><br><a href="'+url+'" download="ai-image.png" style="color:#0af;display:inline-block;margin-top:8px;font-size:.9rem">⬇️ 下载图片</a>';
+} else {
+document.getElementById('loading').textContent='生成失败：HTTP '+xhr.status+' '+xhr.statusText+'\n请检查参数后重试';
+}
+};
+xhr.onerror=function(){
+document.getElementById('loading').textContent='网络错误，生成失败。请检查网络连接后重试';
+};
+xhr.send(JSON.stringify(payload));
+}
+
+// 回车触发
+document.getElementById('prompt').addEventListener('keydown',function(e){if(e.key==='Enter')generate()});
+
+// 可选：URL参数解析（让页面也能通过链接带参打开）
+(function(){
+var sp=new URLSearchParams(location.search);
+if(sp.get('prompt'))document.getElementById('prompt').value=sp.get('prompt');
+if(sp.get('model'))document.getElementById('model').value=sp.get('model');
+if(sp.get('size'))document.getElementById('size').value=sp.get('size');
+})();
+</script>
+</body>
+</html>
