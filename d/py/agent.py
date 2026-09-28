@@ -1,9 +1,11 @@
 # agent.py 跨平台简易Agent
 import os
+import sys
 import json
 import platform
 import sqlite3
 import time
+import re
 from datetime import datetime, timedelta
 from openai import OpenAI, RateLimitError
 from dotenv import load_dotenv
@@ -11,16 +13,30 @@ from dotenv import load_dotenv
 # 加载 .env 文件
 load_dotenv()
 
+# 修复：Windows GBK 控制台打印 emoji（✅🧹🆕📦🔧等）会抛 UnicodeEncodeError，
+# 强制 stdout/stderr 使用 UTF-8 输出并容错替换，确保 emoji 打印不崩溃
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 # ===================== 配置区 =====================
 API_KEY = os.getenv("AGNES_API_KEY", "")
 BASE_URL = os.getenv("BASE_URL", "https://apihub.agnes-ai.com/v1")
+
+# 修复：云端模型名通过环境变量 AGNES_MODEL 覆盖（默认 agnes-2.5-flash），消除双处硬编码
+AGNES_MODEL = os.getenv("AGNES_MODEL", "agnes-2.5-flash")
+# 修复：上下文压缩 token 阈值提取为常量（v0.13.1: 12000 → 100000，适配 agnes-2.5-flash 512K 窗口）
+COMPRESS_TOKEN_THRESHOLD = 100000
 
 LOCAL_BASE_URL = os.getenv("LOCAL_BASE_URL", "http://localhost:8080/v1")
 LOCAL_API_KEY = os.getenv("LOCAL_API_KEY", "ollama")
 LOCAL_MODEL = os.getenv("LOCAL_MODEL", "llama")
 
-MAX_TURNS = 45
-MAX_TURNS_COMPRESS_THRESHOLD = 25  # 达到此轮数时触发上下文压缩（兜底）
+MAX_TURNS = 100
+MAX_TURNS_COMPRESS_THRESHOLD = 60  # 达到此轮数时触发上下文压缩（兜底）
 TEMPERATURE = 0.05
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -146,9 +162,15 @@ def query_memory(keyword: str) -> str:
     """模糊检索记忆库，返回匹配结果"""
     # 当前记忆检索为SQL LIKE文本匹配，不做向量改造，保留现状，后续需要语义检索再扩展。
     conn = _get_conn()
+    # 修复：转义 LIKE 通配符（\ % _），避免关键词含 % 或 _ 时匹配到全部记录
+    escaped = keyword.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
+    like_pattern = f"%{escaped}%"
+    # 修复：限制最多返回 10 条，避免结果过多刷屏
     cursor = conn.execute(
-        "SELECT id, title, content, tags, created_at FROM memories WHERE title LIKE ? OR content LIKE ? OR tags LIKE ?",
-        (f"%{keyword}%", f"%{keyword}%", f"%{keyword}%")
+        "SELECT id, title, content, tags, created_at FROM memories "
+        "WHERE title LIKE ? ESCAPE '\\' OR content LIKE ? ESCAPE '\\' OR tags LIKE ? ESCAPE '\\' "
+        "LIMIT 10",
+        (like_pattern, like_pattern, like_pattern)
     )
     rows = cursor.fetchall()
     conn.close()
@@ -163,7 +185,7 @@ def build_system_context(user_query: str = ""):
     """查询与当前对话相关的记忆，注入系统提示"""
     try:
         # 优先使用当前用户查询作为关键词，避免依赖旧 current_messages
-        keyword = user_query.strip()[:10] if user_query else ""
+        keyword = user_query.strip()[:30] if user_query else ""
         if not keyword:
             return ""
         result = query_memory(keyword)
@@ -175,8 +197,8 @@ def build_system_context(user_query: str = ""):
 
 # ================================================
 
-MODEL_LIST = ["agnes-2.5-flash", "llama"]
-current_model = "agnes-2.5-flash"
+MODEL_LIST = [AGNES_MODEL, "llama"]
+current_model = AGNES_MODEL
 
 def get_client(model_name):
     if model_name == "llama":
@@ -186,7 +208,7 @@ def get_client(model_name):
 def get_model_name(model_name):
     if model_name == "llama":
         return LOCAL_MODEL
-    return "agnes-2.5-flash"
+    return AGNES_MODEL
 
 client = get_client(current_model)
 
@@ -217,14 +239,47 @@ def count_tokens_approx(text) -> int:
     en_chars = len(text) - cn_chars
     return cn_chars // 2 + en_chars // 4
 
+# P0 FIX: 完整的消息token计数函数，包含 tool_calls 中的 arguments
+def count_message_tokens(msg: dict) -> int:
+    """计算单条消息的token数，包括content和tool_calls中的arguments"""
+    if not isinstance(msg, dict):
+        return 0
+    
+    total = 0
+    
+    # 计算 content 字段
+    content = msg.get("content", "")
+    if content and isinstance(content, str):
+        total += count_tokens_approx(content)
+    
+    # 计算 tool_calls 字段
+    tool_calls = msg.get("tool_calls", [])
+    if tool_calls:
+        for tc in tool_calls:
+            if isinstance(tc, dict):
+                # 计算 tool_calls 每个字段的token
+                func = tc.get("function", {})
+                if isinstance(func, dict):
+                    name = func.get("name", "")
+                    args_json = func.get("arguments", "")
+                    total += count_tokens_approx(name)
+                    total += count_tokens_approx(args_json)
+                # id 字段
+                tc_id = tc.get("id", "")
+                total += count_tokens_approx(tc_id)
+    
+    return total
+
 # ===================== 对话状态 =====================
 current_messages = None
-current_turn_count = 0
+current_dialog_turn = 0  # P1: 用户对话轮次计数
+compression_attempted = False  # 修复：压缩失败标记提升为模块级全局变量，压缩失败后本进程内不再每轮重复尝试
 
 def new_conversation():
-    global current_messages, current_turn_count
+    global current_messages, current_dialog_turn, compression_attempted
     current_messages = None
-    current_turn_count = 0
+    current_dialog_turn = 0
+    compression_attempted = False
     return "🆕 已创建新对话，上下文已清空"
 
 def reset_context(user_query: str, messages: list) -> tuple[list, int]:
@@ -233,10 +288,12 @@ def reset_context(user_query: str, messages: list) -> tuple[list, int]:
     
     # 保留原始Agent系统提示词
     original_system = None
+    first_user_msg = None  # P1 FIX: 保留第一条用户消息
     for msg in messages:
         if isinstance(msg, dict) and msg.get("role") == "system":
             original_system = msg.get("content", "")
-            break
+        elif isinstance(msg, dict) and msg.get("role") == "user" and first_user_msg is None:
+            first_user_msg = msg.get("content", "")  # 保存第一条用户消息
     
     sys_msg = {
         "role": "system",
@@ -249,15 +306,25 @@ def reset_context(user_query: str, messages: list) -> tuple[list, int]:
     retry_count, max_retries = 0, 3
     while True:
         try:
-            # 过滤掉 recent 中的 system 消息，避免发送多个 system
+            # P1 FIX: 显式把第一条 user 消息拼到 recent 前面，确保摘要包含原始问题
             recent = [m for m in (messages[-20:] if len(messages) > 20 else messages)
                       if not (isinstance(m, dict) and m.get("role") == "system")]
+            if first_user_msg and recent and recent[0].get("role") != "user":
+                # 如果 recent 的第一条不是 user，且我们保存了第一条用户消息，则插入到前面
+                recent.insert(0, {"role": "user", "content": first_user_msg})
+            
             resp = client.chat.completions.create(
                 model=get_model_name(current_model),
                 messages=[sys_msg] + recent,
                 temperature=0.1
             )
-            summary = resp.choices[0].message.content.strip()
+            # 修复：choices 为空或 content 为 None 时避免崩溃
+            if not resp.choices:
+                return messages, 0
+            summary = (resp.choices[0].message.content or "").strip()
+            if not summary:
+                print("⚠️ 摘要模型返回空内容，跳过压缩")
+                return messages, 0
             break
         except RateLimitError as e:
             retry_count += 1
@@ -272,13 +339,23 @@ def reset_context(user_query: str, messages: list) -> tuple[list, int]:
                     print("🔄 配额耗尽，降级到本地模型压缩上下文...")
                     switch_model("llama")
                     try:
-                        recent = messages[-20:] if len(messages) > 20 else messages
+                        # 修复：降级分支的 recent 列表同样过滤 system 消息，与主分支保持一致
+                        recent = [m for m in (messages[-20:] if len(messages) > 20 else messages)
+                                  if not (isinstance(m, dict) and m.get("role") == "system")]
+                        if first_user_msg and recent and recent[0].get("role") != "user":
+                            recent.insert(0, {"role": "user", "content": first_user_msg})
                         resp = client.chat.completions.create(
                             model=get_model_name(current_model),
                             messages=[sys_msg] + recent,
                             temperature=0.1
                         )
-                        summary = resp.choices[0].message.content.strip()
+                        # 修复：choices 为空或 content 为 None 时避免崩溃
+                        if not resp.choices:
+                            return messages, 0
+                        summary = (resp.choices[0].message.content or "").strip()
+                        if not summary:
+                            print("⚠️ 本地模型摘要返回空内容，跳过压缩")
+                            return messages, 0
                         break
                     except Exception as e2:
                         print(f"❌ 本地模型压缩也失败: {e2}")
@@ -290,6 +367,10 @@ def reset_context(user_query: str, messages: list) -> tuple[list, int]:
             wait = min(2 ** retry_count, 10)
             print(f"⚠️ 限流，等待 {wait}s 后重试压缩 ({retry_count}/{max_retries})...")
             time.sleep(wait)
+        except Exception as e:
+            # 修复：非限流类 API 异常（断连/认证/超时等）不再冒泡崩溃，跳过压缩
+            print(f"❌ 摘要生成异常: {e}，跳过上下文压缩")
+            return messages, 0
 
     print(f"✅ 上下文已压缩，摘要长度: {len(summary)} 字")
     save_memory(f"对话摘要 {datetime.now().strftime('%H:%M')}", summary, "temp_context")
@@ -299,6 +380,7 @@ def reset_context(user_query: str, messages: list) -> tuple[list, int]:
         "你是本机终端智能助手，可以使用提供的工具完成用户任务。"
     )
     
+    # P1 FIX: 修压缩后 system 里「原始问题：」残缺 - 直接拼接 user_query
     new_messages = [
         {
             "role": "system",
@@ -306,7 +388,7 @@ def reset_context(user_query: str, messages: list) -> tuple[list, int]:
                 f"{new_system_content}\n\n"
                 "以下是之前的对话摘要，请基于它继续帮助用户：\n"
                 f"{summary}\n\n"
-                "原始问题："
+                f"当前问题：{user_query}"
             )
         },
         {"role": "user", "content": user_query}
@@ -352,12 +434,58 @@ def shell_run(cmd: str, **kwargs):
         d_tokens = dangerous.lower().split()
         if all(t in tokens for t in d_tokens):
             return f"⛔ 安全拦截：命令包含高危操作 '{dangerous}'，已拒绝执行"
+
+    # 修复：等号/无空格模式（如 dd if=...、mkfs、chmod 777 /）按空格分词无法匹配，改用正则
+    eq_patterns = [
+        r"dd\s+if=/",          # 读取块设备/文件
+        r"dd\s+of=/",          # 修复：向块设备/磁盘写入（如 dd if=/dev/zero of=/dev/sda 可覆盖磁盘）
+        r"mkfs\.",             # 创建文件系统
+        r"chmod\s+777\s+/",    # 根目录全权限
+        r"chown\s+-r\s*/",     # 递归改属主到根
+        r"format\s+[a-z]:",    # Windows 磁盘格式化
+    ]
+    for pat in eq_patterns:
+        if re.search(pat, cmd_lower):
+            return f"⛔ 安全拦截：命令匹配高危模式 '{pat}'，已拒绝执行"
+
+    # P0 FIX: 修复正则 group 索引错误 - rm_match.group(3) → group(2)
+    # 正则只有2个捕获组：flag (第1组) 和 target (第2组)
+    rm_match = re.search(r"(?:^|[;&|]{1,2}\s*)\s*rm\s+(-[a-z]*r[a-z]*f?|[a-z]*f[a-z]*r?)?\s+(\S+)", cmd_lower)
+    if rm_match:
+        target = rm_match.group(2).strip("'\"").rstrip("/\\")  # P0 FIX: group(3) → group(2)
+        home_path = os.path.expanduser("~")
+        protected = {"", "/", "*", "~", "$HOME", home_path, "/root", "/etc", "/usr", "/var",
+                     "/bin", "/sbin", "/boot", "/lib", "/lib64", "/dev", "/proc", "/sys"}
+        # 修复：补充 Windows 常见危险路径（Windows 下 target 以盘符反斜杠出现，保护判断不区分大小写）
+        win_protected = {"c:", "c:\\windows", "c:\\program files", "c:\\program files (x86)",
+                         "c:\\users", "c:\\programdata", "c:\\recovery",
+                         "c:\\system volume information", "c:\\$recycle.bin"}
+        target_lower = target.lower()
+        # Termux 特有保护路径
+        termux_protected = {"/data/data", "/data/data/com.termux",
+                            "/data/data/com.termux/files"}
+        if target_lower in termux_protected or target_lower.startswith("/data/data/"):
+            return f"⛔ 安全拦截：拒绝删除 Termux 系统路径 '{rm_match.group(2)}'，已拒绝执行"
+        if (target in protected or target_lower in win_protected
+                or target.startswith(("/home/", "/root/"))
+                or target_lower.startswith(("c:\\windows\\", "c:\\program files\\",
+                                            "c:\\program files (x86)\\", "c:\\users\\",
+                                            "c:\\programdata\\"))):
+            return f"⛔ 安全拦截：拒绝删除受保护路径 '{rm_match.group(2)}'，已拒绝执行"
     
     try:
         if IS_WIN:
-            proc = subprocess.run(["powershell", "-Command", cmd], capture_output=True, text=True, timeout=120)
+            # 修复：显式指定 UTF-8 编码，避免中文乱码（GBK 环境默认编码）
+            proc = subprocess.run(["powershell", "-Command", cmd], capture_output=True, text=True,
+                                  encoding="utf-8", errors="replace", timeout=120)
+        elif IS_TERMUX:
+            # Termux 使用 bash（路径固定）
+            proc = subprocess.run(cmd, shell=True, executable="/data/data/com.termux/files/usr/bin/bash", 
+                capture_output=True, text=True, timeout=120)
         else:
-            proc = subprocess.run(cmd, shell=True, executable=os.environ.get("SHELL", "/bin/sh"), capture_output=True, text=True, timeout=120)
+            # Linux/macOS 使用 SHELL 环境变量
+            proc = subprocess.run(cmd, shell=True, executable=os.environ.get("SHELL", "/bin/sh"), 
+                capture_output=True, text=True, timeout=120)
         
         stdout = proc.stdout
         stderr = proc.stderr
@@ -386,9 +514,23 @@ def read_file(path: str, **kwargs):
     except ValueError:
         # Windows 跨盘符时 commonpath 抛异常，视为不允许访问
         return f"⛔ 安全拦截：禁止读取脚本目录之外的文件 ({path})"
-    
+
+    # 修复：禁止读取敏感配置文件（含密钥/凭据）
+    fname = os.path.basename(abs_path).lower()
+    if fname in (".env", ".git-credentials", ".netrc", "id_rsa", "id_ed25519", "known_hosts") \
+            or fname.endswith((".pem", ".key", ".p12")):
+        return f"⛔ 安全拦截：禁止读取敏感文件 ({path})"
+
+    # 修复：限制读取文件大小，避免超大文件整体读入内存
     try:
-        with open(abs_path, "r", encoding="utf-8") as f:
+        if os.path.getsize(abs_path) > 2 * 1024 * 1024:
+            return f"⛔ 安全拦截：文件过大（{os.path.getsize(abs_path)} 字节，上限 2MB），拒绝读取"
+    except OSError:
+        pass
+
+    try:
+        # 修复：errors="replace" 避免 GBK 等编码文件读取报错
+        with open(abs_path, "r", encoding="utf-8", errors="replace") as f:
             content = f.read()
         if len(content) > 8000:
             content = content[:8000] + "\n... [内容已截断，超过8000字符]"
@@ -407,9 +549,16 @@ def write_file(path: str, content: str, **kwargs):
     except ValueError:
         # Windows 跨盘符时 commonpath 抛异常，视为不允许访问
         return f"⛔ 安全拦截：禁止写入脚本目录之外的文件 ({path})"
+
+    # 修复：禁止覆盖敏感配置文件（含密钥/凭据）
+    fname = os.path.basename(abs_path).lower()
+    if fname in (".env", ".git-credentials", ".netrc", "id_rsa", "id_ed25519") \
+            or fname.endswith((".pem", ".key", ".p12")):
+        return f"⛔ 安全拦截：禁止写入敏感文件 ({path})"
     
     try:
-        os.makedirs(os.path.dirname(abs_path), exist_ok=True)
+        # 修复：path 无目录部分（如 "test.txt"）时 dirname 返回空串，兜底为 "."
+        os.makedirs(os.path.dirname(abs_path) or ".", exist_ok=True)
         with open(abs_path, "w", encoding="utf-8") as f:
             f.write(content)
         return "write ok"
@@ -434,10 +583,28 @@ def log_tool_call(tool_name: str, args: dict, result: str):
     """记录工具调用日志到sqlite"""
     try:
         conn = _get_conn()
-        summary = result[:100] + "..." if len(result) > 100 else result
+        # 修复：日志脱敏，避免密钥/Token 等敏感信息明文落库
+        safe_args = dict(args or {})
+        for k in list(safe_args.keys()):
+            if any(s in k.lower() for s in ("key", "token", "secret", "password", "api")):
+                safe_args[k] = "***"
+        safe_result = result
+        # P2 FIX: 日志脱敏改用正则精确匹配，避免误拦
+        # 匹配真实的密钥格式（如 sk- 后跟20+位字母数字）
+        sensitive_patterns = [
+            r'sk-[A-Za-z0-9]{20,}',  # OpenAI 密钥格式
+            r'api[_-]?key[=:\s]+[A-Za-z0-9_-]{10,}',  # api_key=xxx
+            r'token[=:\s]+[A-Za-z0-9_-]{10,}',  # token=xxx
+            r'password[=:\s]+\S+',  # password=xxx
+            r'secret[=:\s]+[A-Za-z0-9_-]{10,}',  # secret=xxx
+        ]
+        for pattern in sensitive_patterns:
+            safe_result = re.sub(pattern, "[REDACTED]", safe_result, flags=re.IGNORECASE)
+        
+        summary = safe_result[:100] + "..." if len(safe_result) > 100 else safe_result
         conn.execute(
             "INSERT INTO tool_log (timestamp, tool_name, args, result_summary) VALUES (?, ?, ?, ?)",
-            (datetime.now().strftime("%Y-%m-%d %H:%M:%S"), tool_name, json.dumps(args, ensure_ascii=False), summary)
+            (datetime.now().strftime("%Y-%m-%d %H:%M:%S"), tool_name, json.dumps(safe_args, ensure_ascii=False), summary)
         )
         conn.commit()
         conn.close()
@@ -445,17 +612,15 @@ def log_tool_call(tool_name: str, args: dict, result: str):
         print(f"⚠️ 工具日志记录失败: {e}")
 
 def agent_loop(user_query: str):
-    global current_messages, current_turn_count
+    global current_messages, current_dialog_turn, compression_attempted
 
-    # 每轮用户输入时先增加轮次计数（区分对话轮次和工具调用轮次）
-    current_turn_count += 1
-    turn_count = current_turn_count
+    # P1 FIX: 使用 dialog_turn 记录用户对话轮次，不与 tool_turn 混淆
+    current_dialog_turn += 1
+    tool_turn = 0  # 工具调用轮次单独计数
 
     # 新建对话指令
     if user_query.strip() in ["新建对话", "new", "new对话", "新对话", "清空对话"]:
-        current_messages = None
-        current_turn_count = 0
-        print("🆕 已创建新对话，上下文已清空")
+        print(new_conversation())
         return
 
     # 处理记忆指令
@@ -551,34 +716,39 @@ def agent_loop(user_query: str):
 
     actual_model = get_model_name(current_model)
     print(f"\n📡使用模型: {actual_model}")
-
-    turn_count = current_turn_count if current_turn_count is not None else 0
     
-    # 计算总token数（用于触发压缩）
-    total_tokens = sum(
-        count_tokens_approx(m.get("content", "") if isinstance(m, dict) else getattr(m, "content", "") or "")
-        for m in messages
-    )
+    # P0 FIX: 计算总token数，包含 tool_calls
+    total_tokens = sum(count_message_tokens(m) if isinstance(m, dict) else 0 for m in messages)
 
-    for _ in range(MAX_TURNS):
-        # 检查累计轮次是否已超限
-        if turn_count >= MAX_TURNS:
-            print(f"\n⚠️ 已达最大轮次 {MAX_TURNS}，停止")
-            break
+    # 修复：压缩失败标记为模块级全局变量（compression_attempted），
+    # 压缩失败后本进程内不再每轮重复尝试；新对话（new）时由 new_conversation 重置
+
+    # 修复：改用 while 循环，压缩重置轮次后不丢失剩余迭代额度
+    while tool_turn < MAX_TURNS:
+        # P1 FIX: 使用 dialog_turn 和 tool_turn 分别判断，避免语义混淆
         # 检测是否接近上限，触发上下文压缩（以token为主，轮数为兜底）
-        if (total_tokens > 12000 or turn_count >= MAX_TURNS_COMPRESS_THRESHOLD) and turn_count < MAX_TURNS:
-            new_messages, new_turn = reset_context(user_query, messages)
-            if new_messages is messages and new_turn == 0:
-                # 压缩失败，保持原有轮次计数，避免轮次统计丢失
-                print("⚠️ 上下文压缩失败，本轮跳过压缩")
-                pass
+        if (total_tokens > COMPRESS_TOKEN_THRESHOLD or tool_turn >= MAX_TURNS_COMPRESS_THRESHOLD) and tool_turn < MAX_TURNS:
+            if compression_attempted:
+                # P0 FIX: 压缩失败后硬截断兜底 - 保留 system + 最近 N 条消息
+                print("⚠️ 上下文压缩失败，本进程内不再重复尝试压缩，执行硬截断...")
+                # 安全截断：保留 system + 从最近 user 消息开始的完整对话，避免孤立 tool 消息
+                head = messages[:1]  # 只保 system
+                tail_start = len(messages) - 1
+                while tail_start > 0 and messages[tail_start].get("role") != "user":
+                    tail_start -= 1
+                messages = head + messages[tail_start:]
+                total_tokens = sum(count_message_tokens(m) if isinstance(m, dict) else 0 for m in messages)
             else:
-                messages, turn_count = new_messages, new_turn
-                actual_model = get_model_name(current_model)
-                total_tokens = sum(
-                    count_tokens_approx(m.get("content", "") if isinstance(m, dict) else getattr(m, "content", "") or "")
-                    for m in messages
-                )
+                new_messages, new_tool_turn = reset_context(user_query, messages)
+                if new_messages is messages and new_tool_turn == 0:
+                    # 压缩失败，保持原有轮次计数，标记本进程内跳过压缩
+                    print("⚠️ 上下文压缩失败，本进程内不再重复尝试压缩")
+                    compression_attempted = True
+                else:
+                    messages, tool_turn = new_messages, new_tool_turn
+                    compression_attempted = False
+                    actual_model = get_model_name(current_model)
+                    total_tokens = sum(count_message_tokens(m) if isinstance(m, dict) else 0 for m in messages)
         # 处理 API 限流：指数退避重试
         retry_count = 0
         max_retries = 3
@@ -618,19 +788,35 @@ def agent_loop(user_query: str):
                             break
                         except Exception as e2:
                             print(f"❌ 本地模型调用也失败: {e2}")
+                    # 修复：异常退出前保存当前状态，避免压缩后的新上下文丢失
+                    current_messages = messages
                     return
                 if retry_count > max_retries:
                     print(f"❌ API 限流，已重试 {max_retries} 次，跳过本轮对话")
+                    # 修复：异常退出前保存当前状态
+                    current_messages = messages
                     return
                 wait_time = min(2 ** retry_count, 10)
                 print(f"⚠️ API 限流，等待 {wait_time} 秒后重试 ({retry_count}/{max_retries})...")
                 time.sleep(wait_time)
+            except Exception as e:
+                # 修复：非限流类 API 异常（网络断连/APIConnectionError/AuthenticationError/超时等）不崩溃，
+                # 打印错误、保存状态后返回，主循环继续
+                print(f"❌ API 调用异常: {e}，跳过本轮")
+                current_messages = messages
+                return
+        # 修复：choices 为空时避免 IndexError 崩溃
+        if not resp.choices:
+            print("⚠️ API 返回空 choices，跳过本轮")
+            current_messages = messages
+            return
         msg = resp.choices[0].message
         if not msg.tool_calls:
             print(f"\n🤖Agent:\n{msg.content}")
+            # 修复：将最终回复也加入上下文，避免下一轮模型丢失自己上一轮的回答
+            messages.append(msg.model_dump() if hasattr(msg, "model_dump") else msg.dict())
             # 保存当前对话状态
             current_messages = messages
-            current_turn_count = turn_count
             return
         messages.append(msg.model_dump() if hasattr(msg, "model_dump") else msg.dict())
         for tc in msg.tool_calls:
@@ -638,18 +824,34 @@ def agent_loop(user_query: str):
             try:
                 args = json.loads(tc.function.arguments)
             except json.JSONDecodeError:
-                args = {}
+                # P1 FIX: 工具参数 JSON 解析失败时，回传错误让模型重试，而不是静默传空 dict
+                error_msg = f"❌ 参数解析失败: 无效的 JSON 格式 '{tc.function.arguments}'"
+                print(f"⚠️ {error_msg}")
+                messages.append({
+                    "role": "tool",
+                    "tool_call_id": tc.id,
+                    "content": error_msg
+                })
+                continue  # 跳过本次工具调用，让模型重新生成
             if fname not in tool_map:
                 res = f"error: 未知工具 {fname}"
                 args = {}
             else:
-                print(f"\n🔧调用工具 {fname} → {args}")
+                # 修复：打印前脱敏，避免含密码/密钥的命令参数明文泄露到 stdout
+                safe_args = dict(args or {})
+                for k in list(safe_args.keys()):
+                    if any(s in k.lower() for s in ("key", "token", "secret", "password", "api")):
+                        safe_args[k] = "***"
+                print(f"\n🔧调用工具 {fname} → {safe_args}")
                 try:
                     res = tool_map[fname](**args)
                 except Exception as e:
                     res = f"error: 工具执行异常 {e}"
             # 记录工具调用日志
             log_tool_call(fname, args, res)
+            # 修复：工具返回为 None 时兜底为空串，避免 len(None) 崩溃
+            if res is None:
+                res = ""
             # 截断tool输出并警告
             if len(res) > 12000:
                 res = res[:12000] + "\n... [工具输出已截断，超过12000字符]"
@@ -658,18 +860,13 @@ def agent_loop(user_query: str):
                 "tool_call_id": tc.id,
                 "content": res
             })
-        turn_count += 1
-        # 更新token计数
-        total_tokens = sum(
-            count_tokens_approx(m.get("content", "") if isinstance(m, dict) else getattr(m, "content", "") or "")
-            for m in messages
-        )
+        tool_turn += 1
+        # P0 FIX: 更新token计数时使用新的 count_message_tokens 函数
+        total_tokens = sum(count_message_tokens(m) if isinstance(m, dict) else 0 for m in messages)
     
     print(f"\n⚠️已到达最大轮次 {MAX_TURNS}，自动停止。")
     # 保存当前对话状态
     current_messages = messages
-    current_turn_count = turn_count
-
 if __name__ == "__main__":
     if not API_KEY:
         print("⚠️ 错误：未在 .env 文件中找到 AGNES_API_KEY")
@@ -685,11 +882,24 @@ if __name__ == "__main__":
     print(f"👋输入 quit 退出\n")
 
     while True:
-        q = input("👤我：").strip()
+        # 修复：捕获 EOF(Ctrl+D) 与 KeyboardInterrupt(Ctrl+C)，优雅退出
+        try:
+            q = input("👤我：").strip()
+        except (EOFError, KeyboardInterrupt):
+            print("\n👋 已退出")
+            break
+        # 修复：空输入直接跳过，不发送空 user 消息给模型
+        if not q:
+            continue
         if q.lower() in ["quit", "exit"]:
             break
         if q.startswith("model "):
             new_model = q[6:].strip().lower()
             switch_model(new_model)
             continue
-        agent_loop(q)
+        # 修复：主循环全局异常兜底，任何 API/工具异常都不再导致进程崩溃退出
+        try:
+            agent_loop(q)
+        except Exception as e:
+            print(f"❌ 处理输入时发生异常: {e}，已跳过本轮，程序继续运行")
+            continue
